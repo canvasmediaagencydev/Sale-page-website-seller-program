@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Image from "next/image";
+import SplashCursor from "@/components/SplashCursor";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,24 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className=" ">
-        {/* Optimized background image */}
-           <Image
-             src="/img/bg.jpg"
-             alt="Aurora background"
-             fill
-             priority
-             quality={60}
-             sizes="100vw"
-             style={{
-               objectFit: "cover",
-               zIndex: -1,
-               pointerEvents: "none",
-               userSelect: "none",
-             }}
-           />
+      <body className="">
+        <SplashCursor />
         <div className="relative z-10">
-          <Navbar />
+          <Navbar className="fixed inset-x-0 top-0 z-50" />
           {children}
         </div>
       </body>
