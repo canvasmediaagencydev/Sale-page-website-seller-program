@@ -19,7 +19,7 @@ export default function RootLayout({
       <body className="">
         <SplashCursor />
         <div className="relative z-10">
-          <Navbar className="fixed inset-x-0 top-0 z-50" />
+          <Navbar className="absolute inset-x-0 top-0 z-50" />
           {children}
         </div>
       </body>
