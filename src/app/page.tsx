@@ -94,7 +94,7 @@ export default function Home() {
                 ด้วยประสบการณ์เดินทางทั่วโลกกว่า 8 ปี มีลูกค้าไว้วางใจมากมาย <br className="md:block hidden" />
                 วันนี้เราพร้อมเปิดรับตัวแทนขาย มอบค่าคอมมิชชั่นที่สูง มีทีมงานคอยเคียงข้าง เพื่อให้คุณปิดการขายได้ง่ายขึ้น
               </p>
-              <div className="mt-6 md:mt-10 flex flex-col gap-4 md:gap-6 bg-gray-100 p-5 rounded-3xl ">
+              <div className="mt-6 md:mt-10 flex flex-col gap-4 md:gap-6 bg-gray-100 md:bg-white p-5 rounded-3xl ">
                 <div className="text-2xl md:text-6xl font-semibold">
                   <div className="flex items-center md:justify-between justify-around">
                     <div>
