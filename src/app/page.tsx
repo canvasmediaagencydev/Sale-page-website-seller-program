@@ -1,13 +1,13 @@
 import Button from "@/components/Button";
 import BlurText from "@/components/BlurText";
 import Image from "next/image";
-import Navbar from "@/components/Navbar";
+import CountUp from "@/components/CountUp";
 
 export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="min-h-screen relative bg-cover bg-center bg-no-repeat rounded-b-3xl lg:rounded-b-4xl overflow-hidden" style={{backgroundImage: 'url(/img/bg.jpg)'}}>
+      <section className="min-h-screen relative bg-cover bg-center bg-no-repeat rounded-b-3xl lg:rounded-b-4xl overflow-hidden" style={{ backgroundImage: 'url(/img/bg.jpg)' }}>
         <div className="container mx-auto text-white min-h-screen flex flex-col lg:flex-row px-4 lg:px-0">
           <div className="flex-1 pt-25 mt-20 md:mt-30 md:pt-24 lg:pt-30 relative z-10">
             <div className="flex flex-col gap-2 lg:gap-4 items-center md:items-start  lg:text-left">
@@ -26,17 +26,17 @@ export default function Home() {
                 className="text-lg font-semibold md:text-2xl flex lg:text-4xl"
               />
             </div>
-            
-            <div 
+
+            <div
               className="bg-black/60 backdrop-blur-xs w-full max-w-2xl mx-auto lg:mx-0 items-center flex justify-center flex-col rounded-2xl lg:rounded-3xl py-8 md:py-12 lg:py-15 px-6 md:px-8 lg:px-10 mt-8 lg:mt-6 gap-6 lg:gap-8 animate-fade-in-up"
-              style={{ 
+              style={{
                 animationDelay: '1s',
                 animationFillMode: 'both'
               }}
             >
-              <p 
+              <p
                 className="text-lg md:text-2xl lg:text-3xl leading-7 md:leading-9 lg:leading-10 text-center lg:text-start animate-fade-in"
-                style={{ 
+                style={{
                   animationDelay: '1.3s',
                   animationFillMode: 'both'
                 }}
@@ -46,7 +46,7 @@ export default function Home() {
               </p>
               <div
                 className="animate-fade-in-scale w-full flex justify-center"
-                style={{ 
+                style={{
                   animationDelay: '1.6s',
                   animationFillMode: 'both'
                 }}
@@ -62,10 +62,87 @@ export default function Home() {
       </section>
 
       {/* Section 2 */}
-      <section className="min-h-screen  text-gray-900">
-        <div className="container mx-auto py-20">
-          <h2 className="text-6xl font-bold text-center mb-10">Section 2</h2>
-          <p className="text-2xl text-center">เนื้อหาส่วนที่ 2 ของเว็บไซต์</p>
+      <section className="min-h-screen text-gray-900">
+        <div className="container mx-auto py-8 md:py-15">
+          <div>
+            <div className="flex justify-center items-center gap-5">
+              <p className="md:text-4xl font-medium">ทัวร์ต่างประเทศมากมาย สร้างรายได้ได้ตลอดทั้งปี</p>
+              <Image src="/img/image 5.png" alt="Tour" width={200} height={300} className="hidden md:block" />
+            </div>
+            <div className="flex justify-center items-center gap-5 md:mt-4 mt-2">
+              <Image src="/img/image 6.png" alt="Tour" width={200} height={300} className="hidden md:block" />
+              <p className="md:text-4xl text-gray-700">ไม่มีขั้นต่ำกดดัน ไม่ต้องเข้าออฟฟิศ ไม่ต้องดูแลลูกค้าเอง</p>
+            </div>
+          </div>
+          <div className="flex flex-col md:flex-row mt-8 md:mt-30 px-4 md:px-0">
+            <div className="w-full md:w-1/3 flex items-center justify-center mb-8 md:mb-0 relative">
+              <Image src="/img/7411 1.svg" alt="Tour" width={300} height={225} className="w-full max-w-[250px] h-auto md:max-w-[400px] z-10 shadow-lg rounded-4xl" />
+              <div className="bg-gray-800 hidden md:block w-100 h-130 absolute top-5 left-7 rounded-4xl"></div>
+            </div>
+            <div className="flex-1 md:mx-20 mx-0">
+              <p className="text-2xl md:text-5xl md:leading-14 font-semibold mb-4 text-center md:text-left">
+                ร่วมเป็นส่วนหนึ่งของทีมเรา <br/>
+                เพื่อรับค่าคอมมิชชั่นที่สูงกว่า!
+              </p>
+              <p className="text-md md:text-lg lg:text-xl text-center md:text-left leading-6 md:leading-normal">
+                ด้วยประสบการณ์เดินทางทั่วโลกกว่า 8 ปี มีลูกค้าไว้วางใจมากมาย <br className="md:block hidden"/>
+                วันนี้เราพร้อมเปิดรับตัวแทนขาย มอบค่าคอมมิชชั่นที่สูง มีทีมงานคอยเคียงข้าง เพื่อให้คุณปิดการขายได้ง่ายขึ้น
+              </p>
+              <div className="mt-8 md:mt-10 flex flex-col gap-4 md:gap-6">
+                <div className="text-2xl md:text-6xl font-semibold">
+                  <div className="flex items-center md:justify-between justify-around">
+                    <div>
+                      <CountUp
+                        from={0}
+                        to={3000}
+                        separator=","
+                        direction="up"
+                        duration={1}
+                        className="count-up-text"
+                      />+
+                    </div>
+                     <p className="text-lg md:text-4xl font-normal text-gray-700">
+                      ค่าคอมมิชชั่นสูง
+                     </p>
+                  </div>
+                </div>
+                <div className="text-2xl md:text-6xl font-semibold">
+                  <div className="flex items-center  md:justify-between justify-around">
+                    <div className="">
+                      <CountUp
+                        from={0}
+                        to={8}
+                        separator=","
+                        direction="up"
+                        duration={1}
+                        className="count-up-text "
+                      /> +
+                    </div>
+                     <p className="text-lg md:text-4xl font-normal text-gray-700">
+                      ประสบการณ์
+                     </p>
+                  </div>
+                </div>
+                <div className="text-2xl md:text-6xl font-semibold">
+                  <div className="flex items-center  md:justify-between justify-around">
+                    <div>
+                      <CountUp
+                        from={0}
+                        to={2400}
+                        separator=","
+                        direction="up"
+                        duration={2}
+                        className="count-up-text"
+                      />+
+                    </div>
+                     <p className="text-lg md:text-4xl font-normal text-gray-700">
+                      ลูกค้าที่ไว้วางใจ
+                     </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>
