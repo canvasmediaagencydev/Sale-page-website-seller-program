@@ -2,6 +2,8 @@ import Button from "@/components/Button";
 import BlurText from "@/components/BlurText";
 import Image from "next/image";
 import CountUp from "@/components/CountUp";
+import CircularText from "@/components/CircularText";
+import AutoPlayVideo from "@/components/AutoPlayVideo";
 
 export default function Home() {
   return (
@@ -51,7 +53,7 @@ export default function Home() {
                   animationFillMode: 'both'
                 }}
               >
-                <Button className="bg-orange-600 hover:bg-orange-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-lg md:text-xl font-semibold w-full md:w-auto transition-all transform hover:scale-105">
+                <Button className="bg-orange-600 hover:bg-orange-700 text-white px-6 md:px-30 py-3 md:py-4 rounded-full text-lg md:text-xl font-semibold w-full md:w-auto transition-all transform hover:scale-105">
                   สมัครสมาชิกได้เลย
                 </Button>
               </div>
@@ -62,7 +64,7 @@ export default function Home() {
       </section>
 
       {/* Section 2 */}
-      <section className="min-h-screen text-gray-900">
+      <section className="md:min-h-screen text-gray-900">
         <div className="container mx-auto py-8 md:py-15">
           <div>
             <div className="flex justify-center items-center gap-5">
@@ -81,11 +83,11 @@ export default function Home() {
             </div>
             <div className="flex-1 md:mx-20 mx-0">
               <p className="text-2xl md:text-5xl md:leading-14 font-semibold mb-4 text-center md:text-left">
-                ร่วมเป็นส่วนหนึ่งของทีมเรา <br/>
+                ร่วมเป็นส่วนหนึ่งของทีมเรา <br />
                 เพื่อรับค่าคอมมิชชั่นที่สูงกว่า!
               </p>
               <p className="text-md md:text-lg lg:text-xl text-center md:text-left leading-6 md:leading-normal">
-                ด้วยประสบการณ์เดินทางทั่วโลกกว่า 8 ปี มีลูกค้าไว้วางใจมากมาย <br className="md:block hidden"/>
+                ด้วยประสบการณ์เดินทางทั่วโลกกว่า 8 ปี มีลูกค้าไว้วางใจมากมาย <br className="md:block hidden" />
                 วันนี้เราพร้อมเปิดรับตัวแทนขาย มอบค่าคอมมิชชั่นที่สูง มีทีมงานคอยเคียงข้าง เพื่อให้คุณปิดการขายได้ง่ายขึ้น
               </p>
               <div className="mt-8 md:mt-10 flex flex-col gap-4 md:gap-6">
@@ -101,9 +103,9 @@ export default function Home() {
                         className="count-up-text"
                       />+
                     </div>
-                     <p className="text-lg md:text-4xl font-normal text-gray-700">
+                    <p className="text-lg md:text-4xl font-normal text-gray-700">
                       ค่าคอมมิชชั่นสูง
-                     </p>
+                    </p>
                   </div>
                 </div>
                 <div className="text-2xl md:text-6xl font-semibold">
@@ -118,9 +120,9 @@ export default function Home() {
                         className="count-up-text "
                       /> +
                     </div>
-                     <p className="text-lg md:text-4xl font-normal text-gray-700">
+                    <p className="text-lg md:text-4xl font-normal text-gray-700">
                       ประสบการณ์
-                     </p>
+                    </p>
                   </div>
                 </div>
                 <div className="text-2xl md:text-6xl font-semibold">
@@ -135,14 +137,50 @@ export default function Home() {
                         className="count-up-text"
                       />+
                     </div>
-                     <p className="text-lg md:text-4xl font-normal text-gray-700">
+                    <p className="text-lg md:text-4xl font-normal text-gray-700">
                       ลูกค้าที่ไว้วางใจ
-                     </p>
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Program section */}
+      <section className="min-h-screen text-gray-900 container md:pt-10 mx-auto">
+        <div>
+          <div className="relative flex justify-center items-center mt-5 px-5">
+            <Image src="/img/labtop.svg" alt="Seller Program" width={300} height={300} className="md:hidden z-20" />
+            <CircularText
+              text="SELLER*PROGRAM*BEST*"
+              onHover="speedUp"
+              spinDuration={20}
+              className="absolute -top-15 right-40 z-10 md:hidden"
+            />
+          </div>
+
+          <div className="bg-black flex flex-col text-white mx-5 p-8 rounded-3xl md:p-10 md:px-30 relative">
+            <div className="md:w-4/7">
+              <p className="md:text-6xl text-xl items-center font-semibold">Seller Program</p>
+              <p className="md:text-2xl mt-4">เพิ่มประสิทธิภาพการขาย ด้วยระบบหลังบ้านที่ทันสมัย
+                ติดตามยอด และสถานะทุกขั้นตอน โปร่งใส ชัดเจน
+                ตรวจสอบเรียลไทม์ได้ตลอด 24 ชั่วโมง
+              </p>
+              <Button className="bg-orange-600 hover:bg-orange-700 text-white px-4 md:px-30 py-3 md:py-4 rounded-full text-md md:text-xl font-semibold w-full md:w-auto transition-all transform hover:scale-105 mt-8">
+                ร่วมทีมกับเราตอนนี้
+              </Button>
+            </div>
+            <Image src="/img/labtop.svg" alt="Seller Program" width={400} height={300} className="w-2/5 absolute right-10 -top-25 hidden md:block" />
+          </div>
+        </div>
+        <div className="flex justify-center items-center md:mt-10 p-4 md:p-8">
+          <AutoPlayVideo
+            src="https://player.mux.com/PJD5WuOZZgVlr1vMylE1101Fow5nicWNqxLUOt2nKPTw?"
+            style={{ width: "95%", border: "none", aspectRatio: "16/9" }}
+            className="rounded-xl md:rounded-2xl w-full md:w-4/6"
+          />
         </div>
       </section>
     </>
