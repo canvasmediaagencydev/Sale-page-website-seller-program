@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import SplashCursor from "@/components/SplashCursor";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,11 +26,12 @@ export default function RootLayout({
         />
       </head>
       <body className="">
-        {/* <SplashCursor /> */}
+        <SplashCursor />
         <div className="relative z-10 overflow-x-hidden">
           <Navbar className="absolute inset-x-0 top-0 z-50" />
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   );

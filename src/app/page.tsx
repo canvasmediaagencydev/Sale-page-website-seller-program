@@ -8,6 +8,7 @@ import TripCard from "@/components/TripsCard";
 import { trips } from "@/data/trips";
 
 
+
 export default function Home() {
   return (
     <>
@@ -209,7 +210,7 @@ export default function Home() {
       </section>
 
       {/* trips */}
-      <section className="container mx-auto   md:py-4 md:px-10">
+      <section className="container mx-auto mb-10  md:py-4 md:px-10">
         <div className="text-center mb-8 md:mb-12">
           <div className="p-8">
             <Button className="bg-orange-600 hover:bg-orange-700 text-white px-4 md:px-30 md:py-4 rounded-full text-md md:text-xl font-semibold w-full md:w-auto transition-all transform hover:scale-105 ">
