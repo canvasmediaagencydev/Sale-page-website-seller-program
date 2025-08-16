@@ -4,6 +4,8 @@ import Image from "next/image";
 import CountUp from "@/components/CountUp";
 import CircularText from "@/components/CircularText";
 import AutoPlayVideo from "@/components/AutoPlayVideo";
+import TripCard from "@/components/TripsCard";
+import { trips } from "@/data/trips";
 
 
 export default function Home() {
@@ -70,7 +72,7 @@ export default function Home() {
         <div className="container mx-auto py-5  md:py-15">
           <div className="hidden md:block">
             <div className="flex justify-center items-center gap-5">
-              <p className="md:text-4xl text-lg font-medium">ทัวร์ต่างประเทศมากมาย สร้างรายได้ได้ตลอดทั้งปี</p>
+              <p className="md:text-4xl text-lg">ทัวร์ต่างประเทศมากมาย สร้างรายได้ได้ตลอดทั้งปี</p>
               <Image src="/img/image 5.png" alt="Tour" width={200} height={300} className="hidden md:block" />
             </div>
             <div className="flex justify-center items-center gap-5 md:mt-4 mt-2">
@@ -80,9 +82,9 @@ export default function Home() {
           </div>
           <div className="flex flex-col md:flex-row mt-8 md:mt-30 px-4 md:px-0">
             <p className="text-2xl md:text-5xl md:leading-14 md:hidden font-semibold mb-4 text-center md:text-left">
-                ร่วมเป็นส่วนหนึ่งของทีมเรา <br />
-                เพื่อรับค่าคอมมิชชั่นที่สูงกว่า!
-              </p>
+              ร่วมเป็นส่วนหนึ่งของทีมเรา <br />
+              เพื่อรับค่าคอมมิชชั่นที่สูงกว่า!
+            </p>
             <div className="w-full md:w-1/3 flex items-center justify-center mb-8 md:mb-0 relative">
               <Image src="/img/7411 1.svg" alt="Tour" width={300} height={225} className="w-full max-w-[250px] h-auto md:max-w-[400px] z-10 shadow-lg rounded-4xl" />
               <div className="bg-gray-800 hidden md:block w-100 h-130 absolute top-5 left-7 rounded-4xl"></div>
@@ -170,7 +172,7 @@ export default function Home() {
           <div className="bg-black flex flex-col text-white mx-5 p-8 rounded-3xl md:p-10 md:px-30 relative">
             <div className="md:w-4/7">
               <p className="md:text-6xl text-xl items-center font-semibold"
-              style={{ fontFamily: 'Playfair Display, serif' }}>Seller Program</p>
+                style={{ fontFamily: 'Playfair Display, serif' }}>Seller Program</p>
               <p className="md:text-2xl mt-4">เพิ่มประสิทธิภาพการขาย ด้วยระบบหลังบ้านที่ทันสมัย
                 ติดตามยอด และสถานะทุกขั้นตอน โปร่งใส ชัดเจน
                 ตรวจสอบเรียลไทม์ได้ตลอด 24 ชั่วโมง
@@ -195,7 +197,7 @@ export default function Home() {
       <section className="flex flex-col md:flex-row container mx-auto my-10 md:mt-15 py-15 justify-center items-center border-t-2 border-b-2 border-gray-200">
         <div className="w-full p-5 order-2 md:order-1">
           <p className="text-2xl md:text-5xl font-semibold text-center md:text-end" style={{ fontFamily: 'Playfair Display, serif' }}>
-            We Work With The <br/>Best Partners
+            We Work With The <br />Best Partners
           </p>
           <p className="text-center md:text-end text-base md:text-lg mt-3 md:mt-5" style={{ fontFamily: 'Playfair Display, serif' }}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ut harum, quisquam vitae tenetur, autem maxime maiores doloremque eaque consectetur veritatis commodi.
@@ -203,6 +205,31 @@ export default function Home() {
         </div>
         <div className="w-full order-1 md:order-2 mb-6 md:mb-0">
           <Image src="/img/gogo.png" alt="Partner Logo" width={200} height={100} className="mx-auto w-32 h-auto md:w-55 md:h-auto" />
+        </div>
+      </section>
+
+      {/* trips */}
+      <section className="container mx-auto   md:py-4 md:px-10">
+        <div className="text-center mb-8 md:mb-12">
+          <div className="p-8">
+            <Button className="bg-orange-600 hover:bg-orange-700 text-white px-4 md:px-30 md:py-4 rounded-full text-md md:text-xl font-semibold w-full md:w-auto transition-all transform hover:scale-105 ">
+              ร่วมทีมกับเราตอนนี้
+            </Button>
+          </div>
+          <p className="text-2xl md:text-4xl font-semibold mb-4">
+            ทริปขายดีประจำเดือน
+          </p>
+          <p className="text-gray-600 text-xl mb-6">
+            เลือกทริปที่คุณชอบและเริ่มสร้างรายได้กันเลย
+          </p>
+
+        </div>
+
+        {/* Trip Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4 md:px-0">
+          {trips.map((trip) => (
+            <TripCard key={trip.id} trip={trip} />
+          ))}
         </div>
       </section>
 
