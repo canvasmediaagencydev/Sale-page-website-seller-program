@@ -5,6 +5,7 @@ import CountUp from "@/components/CountUp";
 import CircularText from "@/components/CircularText";
 import AutoPlayVideo from "@/components/AutoPlayVideo";
 
+
 export default function Home() {
   return (
     <>
@@ -19,6 +20,7 @@ export default function Home() {
                 animateBy="words"
                 direction="top"
                 className="text-5xl md:text-7xl flex lg:text-9xl font-bold"
+                style={{ fontFamily: 'Playfair Display, serif' }}
               />
               <BlurText
                 text="ทัวร์ต่างประเทศโดยไกด์ช่างภาพมืออาชีพ"
@@ -167,7 +169,8 @@ export default function Home() {
 
           <div className="bg-black flex flex-col text-white mx-5 p-8 rounded-3xl md:p-10 md:px-30 relative">
             <div className="md:w-4/7">
-              <p className="md:text-6xl text-xl items-center font-semibold">Seller Program</p>
+              <p className="md:text-6xl text-xl items-center font-semibold"
+              style={{ fontFamily: 'Playfair Display, serif' }}>Seller Program</p>
               <p className="md:text-2xl mt-4">เพิ่มประสิทธิภาพการขาย ด้วยระบบหลังบ้านที่ทันสมัย
                 ติดตามยอด และสถานะทุกขั้นตอน โปร่งใส ชัดเจน
                 ตรวจสอบเรียลไทม์ได้ตลอด 24 ชั่วโมง
@@ -187,6 +190,22 @@ export default function Home() {
           />
         </div>
       </section>
+
+      {/* partner */}
+      <section className="flex flex-col md:flex-row container mx-auto my-10 md:mt-15 py-15 justify-center items-center border-t-2 border-b-2 border-gray-200">
+        <div className="w-full p-5 order-2 md:order-1">
+          <p className="text-2xl md:text-5xl font-semibold text-center md:text-end" style={{ fontFamily: 'Playfair Display, serif' }}>
+            We Work With The <br/>Best Partners
+          </p>
+          <p className="text-center md:text-end text-base md:text-lg mt-3 md:mt-5" style={{ fontFamily: 'Playfair Display, serif' }}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ut harum, quisquam vitae tenetur, autem maxime maiores doloremque eaque consectetur veritatis commodi.
+          </p>
+        </div>
+        <div className="w-full order-1 md:order-2 mb-6 md:mb-0">
+          <Image src="/img/gogo.png" alt="Partner Logo" width={200} height={100} className="mx-auto w-32 h-auto md:w-55 md:h-auto" />
+        </div>
+      </section>
+
     </>
   );
 }
