@@ -8,7 +8,6 @@ import CircularText from "@/components/CircularText";
 import AutoPlayVideo from "@/components/AutoPlayVideo";
 import TripCard from "@/components/TripsCard";
 import { fetchTripsWithSchedules, TripWithDetails } from "@/lib/supabase";
-import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
 
 
@@ -274,8 +273,6 @@ export default function Home() {
           )}
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }
