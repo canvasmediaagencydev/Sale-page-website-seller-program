@@ -26,7 +26,7 @@ export default function RootLayout({
         />
       </head>
       <body className="">
-        <SplashCursor />
+        {/* <SplashCursor /> */}
         <div className="relative z-10 overflow-x-hidden">
           <Navbar className="absolute inset-x-0 top-0 z-50" />
           {children}

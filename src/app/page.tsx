@@ -1,3 +1,5 @@
+"use client"
+
 import Button from "@/components/Button";
 import BlurText from "@/components/BlurText";
 import Image from "next/image";
@@ -5,11 +7,30 @@ import CountUp from "@/components/CountUp";
 import CircularText from "@/components/CircularText";
 import AutoPlayVideo from "@/components/AutoPlayVideo";
 import TripCard from "@/components/TripsCard";
-import { trips } from "@/data/trips";
+import { fetchTripsWithSchedules, TripWithDetails } from "@/lib/supabase";
+import Footer from "@/components/Footer";
+import { useEffect, useState } from "react";
 
 
 
 export default function Home() {
+  const [trips, setTrips] = useState<TripWithDetails[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadTrips() {
+      try {
+        const data = await fetchTripsWithSchedules();
+        setTrips(data);
+      } catch (error) {
+        console.error('Error loading trips:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadTrips();
+  }, []);
   return (
     <>
       {/* Hero Section */}
@@ -228,12 +249,33 @@ export default function Home() {
 
         {/* Trip Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4 md:px-0">
-          {trips.map((trip) => (
-            <TripCard key={trip.id} trip={trip} />
-          ))}
+          {loading ? (
+            // Loading skeleton
+            Array.from({ length: 6 }).map((_, index) => (
+              <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden w-full max-w-sm mx-auto animate-pulse">
+                <div className="h-48 bg-gray-300"></div>
+                <div className="p-4">
+                  <div className="h-6 bg-gray-300 rounded mb-2"></div>
+                  <div className="h-4 bg-gray-300 rounded mb-3 w-3/4"></div>
+                  <div className="h-10 bg-gray-300 rounded mb-3"></div>
+                  <div className="h-6 bg-gray-300 rounded mb-4 w-1/2"></div>
+                  <div className="h-10 bg-gray-300 rounded"></div>
+                </div>
+              </div>
+            ))
+          ) : trips.length > 0 ? (
+            trips.map((trip) => (
+              <TripCard key={trip.id} trip={trip} />
+            ))
+          ) : (
+            <div className="col-span-full text-center py-8">
+              <p className="text-gray-500 text-lg">ไม่พบข้อมูลทริป</p>
+            </div>
+          )}
         </div>
       </section>
 
+      <Footer />
     </>
   );
 }

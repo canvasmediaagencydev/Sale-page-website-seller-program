@@ -3,22 +3,33 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Trip, TripDate } from "@/data/trips";
+import { TripWithDetails } from "@/lib/supabase";
+import { LuCalendarDays } from "react-icons/lu";
 
 interface TripCardProps {
-    trip: Trip;
+    trip: TripWithDetails;
 }
 
 function TripCard({ trip }: TripCardProps) {
-    const [selectedDateIndex, setSelectedDateIndex] = useState(0);
-    const selectedTripDate = trip.tripDates[selectedDateIndex];
+    const [selectedScheduleIndex, setSelectedScheduleIndex] = useState(0);
+    const selectedSchedule = trip.trip_schedules[selectedScheduleIndex];
+    
+    // Format dates to Thai format
+    const formatDate = (dateString: string) => {
+        const date = new Date(dateString);
+        const thaiMonths = [
+            'ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.',
+            'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'
+        ];
+        return `${date.getDate()} ${thaiMonths[date.getMonth()]} ${date.getFullYear() + 543}`;
+    };
 
     return (
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 w-full max-w-sm mx-auto">
             {/* Cover Image */}
             <div className="relative h-48 w-full">
                 <Image
-                    src={trip.coverImage}
+                    src={trip.cover_image_url || "/img/bg.jpg"}
                     alt={trip.title}
                     fill
                     className="object-cover"
@@ -30,47 +41,56 @@ function TripCard({ trip }: TripCardProps) {
                         (e.target as HTMLImageElement).src = "/img/bg.jpg";
                     }}
                 />
-                <div className="absolute top-3 left-3 bg-black/40 text-white px-2 py-1 rounded-lg text-lg font-semibold backdrop-blur-sm">
-                    {selectedTripDate.availableSeats} ที่นั่งเหลือ
-                </div>
+                {selectedSchedule && (
+                    <div className="absolute top-3 left-3 bg-black/40 text-white px-2 py-1 rounded-lg text-lg font-semibold backdrop-blur-sm">
+                        {selectedSchedule.available_seats} ที่นั่งเหลือ
+                    </div>
+                )}
             </div>
 
             {/* Content */}
             <div className="p-4">
                 {/* Title */}
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                    {trip.title}
+                <h3 className="text-xl font-semibold text-gray-800 mb-3 h-14 flex items-start">
+                    <span className="line-clamp-2 leading-7">
+                        {trip.title}
+                    </span>
                 </h3>
 
-                {/* Duration */}
+                {/* deadline */}
                 <div className="flex items-center text-gray-600 mb-3">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span className="text-sm">{trip.duration}</span>
+                    <LuCalendarDays className="w-4 h-4 mr-2" />
+                    <span className="text-sm">
+                        {selectedSchedule 
+                            ? `ปิดรับสมัคร: ${formatDate(selectedSchedule.registration_deadline)}`
+                            : 'ไม่มีข้อมูลกำหนดการ'
+                        }
+                    </span>
                 </div>
 
                 {/* Travel Dates Selection */}
-                <div className="mb-3">
-                    <p className="text-sm text-gray-600 mb-2">เลือกรอบเดินทาง:</p>
-                    <select
-                        value={selectedDateIndex}
-                        onChange={(e) => setSelectedDateIndex(Number(e.target.value))}
-                        className="w-full p-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-orange-500 focus:border-orange-500 "
-                    >
-                        {trip.tripDates.map((tripDate, index) => (
-                            <option key={index} value={index}>
-                                {tripDate.startDate} - {tripDate.endDate} ({tripDate.availableSeats} ที่นั่ง)
-                            </option>
-                        ))}
-                    </select>
-                </div>
+                {trip.trip_schedules && trip.trip_schedules.length > 0 && (
+                    <div className="mb-3">
+                        <p className="text-sm text-gray-600 mb-2">เลือกรอบเดินทาง:</p>
+                        <select
+                            value={selectedScheduleIndex}
+                            onChange={(e) => setSelectedScheduleIndex(Number(e.target.value))}
+                            className="w-full p-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-orange-500 focus:border-orange-500 "
+                        >
+                            {trip.trip_schedules.map((schedule, index) => (
+                                <option key={schedule.id} value={index}>
+                                    {formatDate(schedule.departure_date)} - {formatDate(schedule.return_date)} ({schedule.available_seats} ที่นั่ง)
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                )}
 
                 {/* Commission */}
                 <div className="flex items-center justify-between mb-4">
                     <div>
                         <span className="text-orange-600 text-2xl font-bold">
-                            คอมมิชชั่น {trip.commission.toLocaleString()}.-
+                            คอมมิชชั่น {trip.commission_value.toLocaleString()}.-
                         </span>
                     </div>
                 </div>
