@@ -8,6 +8,8 @@ import CircularText from "@/components/CircularText";
 import AutoPlayVideo from "@/components/AutoPlayVideo";
 import TripCard from "@/components/TripsCard";
 import { fetchTripsWithSchedules, TripWithDetails } from "@/lib/supabase";
+import Pagination from "@/components/Pagination";
+import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
 
 
@@ -15,6 +17,8 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [trips, setTrips] = useState<TripWithDetails[]>([]);
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
 
   useEffect(() => {
     async function loadTrips() {
@@ -30,6 +34,21 @@ export default function Home() {
 
     loadTrips();
   }, []);
+
+  // Calculate pagination
+  const totalPages = Math.ceil(trips.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentTrips = trips.slice(startIndex, endIndex);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    // Scroll to trips section
+    const tripsSection = document.getElementById('trips-section');
+    if (tripsSection) {
+      tripsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <>
       {/* Hero Section */}
@@ -220,8 +239,11 @@ export default function Home() {
           <p className="text-2xl md:text-5xl font-semibold text-center md:text-end" style={{ fontFamily: 'Playfair Display, serif' }}>
             We Work With The <br />Best Partners
           </p>
-          <p className="text-center md:text-end text-base md:text-lg mt-3 md:mt-5" style={{ fontFamily: 'Playfair Display, serif' }}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ut harum, quisquam vitae tenetur, autem maxime maiores doloremque eaque consectetur veritatis commodi.
+          <p className="text-center md:text-end text-base md:text-lg mt-3 md:mt-5">
+            เราร่วมมือกับพันธมิตรคุณภาพ
+            เพื่อทำให้ทุกทริปกับ Gography พิเศษยิ่งขึ้น
+            มากกว่าแค่การเดินทาง แต่คือประสบการณ์น่าจดจำ
+            พร้อมสิทธิประโยชน์ที่รอคุณอยู่
           </p>
         </div>
         <div className="w-full order-1 md:order-2 mb-6 md:mb-0">
@@ -230,7 +252,7 @@ export default function Home() {
       </section>
 
       {/* trips */}
-      <section className="container mx-auto mb-10  md:py-4 md:px-10">
+      <section id="trips-section" className="container mx-auto mb-10  md:py-4 md:px-10">
         <div className="text-center mb-8 md:mb-12">
           <div className="p-8">
             <Button className="bg-orange-600 hover:bg-orange-700 text-white px-4 md:px-30 md:py-4 rounded-full text-md md:text-xl font-semibold w-full md:w-auto transition-all transform hover:scale-105 ">
@@ -250,7 +272,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4 md:px-0">
           {loading ? (
             // Loading skeleton
-            Array.from({ length: 6 }).map((_, index) => (
+            Array.from({ length: itemsPerPage }).map((_, index) => (
               <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden w-full max-w-sm mx-auto animate-pulse">
                 <div className="h-48 bg-gray-300"></div>
                 <div className="p-4">
@@ -263,7 +285,7 @@ export default function Home() {
               </div>
             ))
           ) : trips.length > 0 ? (
-            trips.map((trip) => (
+            currentTrips.map((trip) => (
               <TripCard key={trip.id} trip={trip} />
             ))
           ) : (
@@ -272,6 +294,17 @@ export default function Home() {
             </div>
           )}
         </div>
+
+        {/* Pagination */}
+        {!loading && trips.length > 0 && (
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+            itemsPerPage={itemsPerPage}
+            totalItems={trips.length}
+          />
+        )}
       </section>
     </>
   );

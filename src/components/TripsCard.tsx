@@ -41,11 +41,6 @@ function TripCard({ trip }: TripCardProps) {
                         (e.target as HTMLImageElement).src = "/img/bg.jpg";
                     }}
                 />
-                {selectedSchedule && (
-                    <div className="absolute top-3 left-3 bg-black/40 text-white px-2 py-1 rounded-lg text-lg font-semibold backdrop-blur-sm">
-                        {selectedSchedule.available_seats} ที่นั่งเหลือ
-                    </div>
-                )}
             </div>
 
             {/* Content */}
@@ -79,7 +74,7 @@ function TripCard({ trip }: TripCardProps) {
                         >
                             {trip.trip_schedules.map((schedule, index) => (
                                 <option key={schedule.id} value={index}>
-                                    {formatDate(schedule.departure_date)} - {formatDate(schedule.return_date)} ({schedule.available_seats} ที่นั่ง)
+                                    {formatDate(schedule.departure_date)} - {formatDate(schedule.return_date)}
                                 </option>
                             ))}
                         </select>

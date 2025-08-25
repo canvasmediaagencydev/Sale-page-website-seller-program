@@ -16,6 +16,8 @@ export type Database = {
     Tables: {
       bookings: {
         Row: {
+          approved_at: string | null
+          approved_by: string | null
           booking_date: string | null
           commission_amount: number
           created_at: string | null
@@ -29,6 +31,8 @@ export type Database = {
           updated_at: string | null
         }
         Insert: {
+          approved_at?: string | null
+          approved_by?: string | null
           booking_date?: string | null
           commission_amount: number
           created_at?: string | null
@@ -42,6 +46,8 @@ export type Database = {
           updated_at?: string | null
         }
         Update: {
+          approved_at?: string | null
+          approved_by?: string | null
           booking_date?: string | null
           commission_amount?: number
           created_at?: string | null
@@ -56,6 +62,13 @@ export type Database = {
         }
         Relationships: [
           {
+            foreignKeyName: "bookings_approved_by_fkey"
+            columns: ["approved_by"]
+            isOneToOne: false
+            referencedRelation: "user_profiles"
+            referencedColumns: ["id"]
+          },
+          {
             foreignKeyName: "bookings_customer_id_fkey"
             columns: ["customer_id"]
             isOneToOne: false
@@ -68,6 +81,13 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "trip_schedules"
             referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "bookings_trip_schedule_id_fkey"
+            columns: ["trip_schedule_id"]
+            isOneToOne: false
+            referencedRelation: "trips_with_next_schedule"
+            referencedColumns: ["next_schedule_id"]
           },
         ]
       }
@@ -203,6 +223,13 @@ export type Database = {
             referencedRelation: "trips"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "trip_schedules_trip_id_fkey"
+            columns: ["trip_id"]
+            isOneToOne: false
+            referencedRelation: "trips_with_next_schedule"
+            referencedColumns: ["id"]
+          },
         ]
       }
       trips: {
@@ -335,12 +362,87 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      seller_booking_stats: {
+        Row: {
+          booking_count: number | null
+          seller_id: string | null
+          total_amount: number | null
+          total_commission: number | null
+          trip_id: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "trip_schedules_trip_id_fkey"
+            columns: ["trip_id"]
+            isOneToOne: false
+            referencedRelation: "trips"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "trip_schedules_trip_id_fkey"
+            columns: ["trip_id"]
+            isOneToOne: false
+            referencedRelation: "trips_with_next_schedule"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      trips_with_next_schedule: {
+        Row: {
+          commission_type: string | null
+          commission_value: number | null
+          country_flag: string | null
+          country_id: string | null
+          country_name: string | null
+          cover_image_url: string | null
+          created_at: string | null
+          created_by: string | null
+          description: string | null
+          duration_days: number | null
+          duration_nights: number | null
+          geography_link: string | null
+          id: string | null
+          is_active: boolean | null
+          next_available_seats: number | null
+          next_departure_date: string | null
+          next_registration_deadline: string | null
+          next_return_date: string | null
+          next_schedule_id: string | null
+          price_per_person: number | null
+          title: string | null
+          total_seats: number | null
+          updated_at: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "trips_country_id_fkey"
+            columns: ["country_id"]
+            isOneToOne: false
+            referencedRelation: "countries"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Functions: {
+      get_available_countries: {
+        Args: Record<PropertyKey, never>
+        Returns: Json
+      }
       get_available_seats: {
         Args: { schedule_id: string }
         Returns: number
+      }
+      get_booking_stats: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          approved_bookings: number
+          cancelled_bookings: number
+          inprogress_bookings: number
+          pending_bookings: number
+          rejected_bookings: number
+          total_bookings: number
+        }[]
       }
       get_sellers_with_emails: {
         Args: Record<PropertyKey, never>
@@ -364,6 +466,25 @@ export type Database = {
           status: string
           updated_at: string
         }[]
+      }
+      get_trip_stats: {
+        Args: { p_user_id: string; p_user_role: string }
+        Returns: Json
+      }
+      get_trips_with_seller_data: {
+        Args: {
+          p_countries?: string[]
+          p_filter?: string
+          p_page?: number
+          p_page_size?: number
+          p_user_id: string
+          p_user_role: string
+        }
+        Returns: Json
+      }
+      refresh_seller_booking_stats: {
+        Args: Record<PropertyKey, never>
+        Returns: undefined
       }
     }
     Enums: {
