@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   keywords: ["ตัวแทนขายทัวร์", "คอมมิชชั่น", "ทัวร์ต่างประเทศ", "PayDee", "งานพาร์ทไทม์"],
   authors: [{ name: "PayDee" }],
   openGraph: {
-    title: "PayDee - Best Commission Worldwide Tour",
-    description: "ร่วมเป็นตัวแทนขายทัวร์กับ PayDee รับค่าคอมมิชชั่นสูง มีทีมงานคอยสนับสนุน ไม่มีขั้นต่ำ ไม่ต้องเข้าออฟฟิศ",
     url: "https://paydee.com",
     siteName: "PayDee",
     images: [
