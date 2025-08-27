@@ -5,12 +5,14 @@ import BlurText from "@/components/BlurText";
 import Image from "next/image";
 import CountUp from "@/components/CountUp";
 import CircularText from "@/components/CircularText";
-import AutoPlayVideo from "@/components/AutoPlayVideo";
-import TripCard from "@/components/TripsCard";
 import { fetchTripsWithSchedules, TripWithDetails } from "@/lib/supabase";
 import Pagination from "@/components/Pagination";
 import Footer from "@/components/Footer";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo, lazy, Suspense } from "react";
+
+// Lazy load components that are not immediately visible
+const TripCard = lazy(() => import("@/components/TripsCard"));
+const AutoPlayVideo = lazy(() => import("@/components/AutoPlayVideo"));
 
 
 
@@ -35,20 +37,24 @@ export default function Home() {
     loadTrips();
   }, []);
 
-  // Calculate pagination
-  const totalPages = Math.ceil(trips.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const currentTrips = trips.slice(startIndex, endIndex);
+  // Memoize expensive calculations
+  const paginationData = useMemo(() => {
+    const totalPages = Math.ceil(trips.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const currentTrips = trips.slice(startIndex, endIndex);
+    
+    return { totalPages, currentTrips };
+  }, [trips, currentPage, itemsPerPage]);
 
-  const handlePageChange = (page: number) => {
+  const handlePageChange = useMemo(() => (page: number) => {
     setCurrentPage(page);
     // Scroll to trips section
     const tripsSection = document.getElementById('trips-section');
     if (tripsSection) {
       tripsSection.scrollIntoView({ behavior: 'smooth' });
     }
-  };
+  }, []);
   return (
     <>
       {/* Hero Section */}
@@ -113,7 +119,16 @@ export default function Home() {
           <div className="hidden md:block">
             <div className="flex justify-center items-center gap-5">
               <p className="md:text-4xl text-lg">ทัวร์ต่างประเทศมากมาย สร้างรายได้ได้ตลอดทั้งปี</p>
-              <Image src="/img/image 5.png" alt="Tour" width={200} height={300} className="hidden md:block" />
+              <Image 
+                src="/img/image 5.png" 
+                alt="Tour" 
+                width={200} 
+                height={300} 
+                className="hidden md:block"
+                priority
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkrHB0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+              />
             </div>
             <div className="flex justify-center items-center gap-5 md:mt-4 mt-2">
               <Image src="/img/image 6.png" alt="Tour" width={200} height={300} className="hidden md:block" />
@@ -126,7 +141,14 @@ export default function Home() {
               เพื่อรับค่าคอมมิชชั่นที่สูงกว่า!
             </p>
             <div className="w-full md:w-1/3 flex items-center justify-center mb-8 md:mb-0 relative">
-              <Image src="/img/7411 1.svg" alt="Tour" width={300} height={225} className="w-full max-w-[250px] h-auto md:max-w-[400px] z-10 shadow-lg rounded-4xl" />
+              <Image 
+                src="/img/7411 1.svg" 
+                alt="Tour" 
+                width={300} 
+                height={225} 
+                className="w-full max-w-[250px] h-auto md:max-w-[400px] z-10 shadow-lg rounded-4xl"
+                priority
+              />
               <div className="bg-gray-800 hidden md:block w-100 h-130 absolute top-5 left-7 rounded-4xl"></div>
             </div>
             <div className="flex-1 md:mx-20 mx-0">
@@ -225,11 +247,19 @@ export default function Home() {
           </div>
         </div>
         <div className="flex justify-center items-center md:mt-10 p-4 md:p-8">
-          <AutoPlayVideo
-            src="https://player.mux.com/PJD5WuOZZgVlr1vMylE1101Fow5nicWNqxLUOt2nKPTw?"
-            style={{ width: "95%", border: "none", aspectRatio: "16/9" }}
-            className="rounded-xl md:rounded-2xl w-full md:w-4/6"
-          />
+          <Suspense 
+            fallback={
+              <div className="w-full md:w-4/6 aspect-video bg-gray-300 rounded-xl md:rounded-2xl animate-pulse flex items-center justify-center">
+                <div className="text-gray-500">Loading video...</div>
+              </div>
+            }
+          >
+            <AutoPlayVideo
+              src="https://player.mux.com/PJD5WuOZZgVlr1vMylE1101Fow5nicWNqxLUOt2nKPTw?"
+              style={{ width: "95%", border: "none", aspectRatio: "16/9" }}
+              className="rounded-xl md:rounded-2xl w-full md:w-4/6"
+            />
+          </Suspense>
         </div>
       </section>
 
@@ -285,8 +315,24 @@ export default function Home() {
               </div>
             ))
           ) : trips.length > 0 ? (
-            currentTrips.map((trip) => (
-              <TripCard key={trip.id} trip={trip} />
+            paginationData.currentTrips.map((trip) => (
+              <Suspense 
+                key={trip.id} 
+                fallback={
+                  <div className="bg-white rounded-2xl shadow-lg overflow-hidden w-full max-w-sm mx-auto animate-pulse">
+                    <div className="h-48 bg-gray-300"></div>
+                    <div className="p-4">
+                      <div className="h-6 bg-gray-300 rounded mb-2"></div>
+                      <div className="h-4 bg-gray-300 rounded mb-3 w-3/4"></div>
+                      <div className="h-10 bg-gray-300 rounded mb-3"></div>
+                      <div className="h-6 bg-gray-300 rounded mb-4 w-1/2"></div>
+                      <div className="h-10 bg-gray-300 rounded"></div>
+                    </div>
+                  </div>
+                }
+              >
+                <TripCard trip={trip} />
+              </Suspense>
             ))
           ) : (
             <div className="col-span-full text-center py-8">
@@ -299,7 +345,7 @@ export default function Home() {
         {!loading && trips.length > 0 && (
           <Pagination
             currentPage={currentPage}
-            totalPages={totalPages}
+            totalPages={paginationData.totalPages}
             onPageChange={handlePageChange}
             itemsPerPage={itemsPerPage}
             totalItems={trips.length}

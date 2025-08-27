@@ -6,6 +6,7 @@ import SplashCursor from "@/components/SplashCursor";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://paydee.com'),
   title: "PayDee - Best Commission Worldwide Tour",
   description: "ร่วมเป็นตัวแทนขายทัวร์กับ PayDee รับค่าคอมมิชชั่นสูง มีทีมงานคอยสนับสนุน ไม่มีขั้นต่ำ ไม่ต้องเข้าออฟฟิศ",
   keywords: ["ตัวแทนขายทัวร์", "คอมมิชชั่น", "ทัวร์ต่างประเทศ", "PayDee", "งานพาร์ทไทม์"],
@@ -51,9 +52,11 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" 
           rel="stylesheet" 
         />
+        <link rel="dns-prefetch" href="https://nycuvphxbffyzkhbslai.supabase.co" />
+        <link rel="dns-prefetch" href="https://gography-r2.tumwebsme.com" />
       </head>
       <body className="">
-        <SplashCursor />
+        {/* <SplashCursor /> */}
         <div className="relative z-10 overflow-x-hidden">
           <Navbar className="absolute inset-x-0 top-0 z-50" />
           {children}

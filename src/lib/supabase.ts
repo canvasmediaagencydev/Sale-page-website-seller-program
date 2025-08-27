@@ -17,8 +17,19 @@ export interface TripWithDetails extends Trip {
   trip_schedules: TripSchedule[]
 }
 
+// In-memory cache for trips
+let tripsCache: TripWithDetails[] | null = null;
+let cacheTimestamp = 0;
+const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+
 // Function to fetch trips with their schedules and country information
 export async function fetchTripsWithSchedules(): Promise<TripWithDetails[]> {
+  // Check if cache is valid
+  const now = Date.now();
+  if (tripsCache && (now - cacheTimestamp) < CACHE_DURATION) {
+    return tripsCache;
+  }
+
   const { data, error } = await supabase
     .from('trips')
     .select(`
@@ -28,11 +39,16 @@ export async function fetchTripsWithSchedules(): Promise<TripWithDetails[]> {
     `)
     .eq('is_active', true)
     .order('created_at', { ascending: false })
+    .limit(20) // Limit เพื่อลดข้อมูลที่โหลด
 
   if (error) {
     console.error('Error fetching trips:', error)
-    return []
+    return tripsCache || [] // Return cache if available
   }
 
-  return data as TripWithDetails[]
+  // Update cache
+  tripsCache = data as TripWithDetails[];
+  cacheTimestamp = now;
+
+  return tripsCache;
 }
