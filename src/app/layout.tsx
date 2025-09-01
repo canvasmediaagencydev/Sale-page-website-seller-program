@@ -6,7 +6,7 @@ import SplashCursor from "@/components/SplashCursor";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://paydee.com'),
+  metadataBase: new URL('https://www.paydee.me'),
   title: {
     default: "PayDee - ตัวแทนขายทัวร์คอมมิชชั่นสูง รายได้เสริม งานพาร์ทไทม์",
     template: "%s | PayDee"
@@ -30,11 +30,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "PayDee - ตัวแทนขายทัวร์คอมมิชชั่นสูง รายได้เสริม งานพาร์ทไทม์",
     description: "สมัครเป็นตัวแทนขายทัวร์กับ PayDee รับคอมมิชชั่นสูงถึง 3,000+ บาท/ทริป ไม่มีเป้ายอดขายขั้นต่ำ งานพาร์ทไทม์ทำที่บ้าน",
-    url: "https://paydee.com",
+    url: "https://www.paydee.me",
     siteName: "PayDee - ตัวแทนขายทัวร์คอมมิชชั่นสูง",
     images: [
       {
-        url: "https://www.paydee.com/img/bg.jpg",
+        url: "https://www.paydee.me/img/bg.jpg",
         width: 1200,
         height: 630,
         alt: "PayDee ตัวแทนขายทัวร์ คอมมิชชั่นสูง รายได้เสริม งานพาร์ทไทม์",
@@ -83,8 +83,8 @@ export default function RootLayout({
               "name": "PayDee",
               "alternateName": ["เพย์ดี"],
               "description": "แพลตฟอร์มตัวแทนขายทัวร์ที่ให้คอมมิชชั่นสูง พร้อมระบบสนับสนุนการขายครบครัน",
-              "url": "https://paydee.com",
-              "logo": "https://paydee.com/img/bg.jpg",
+              "url": "https://www.paydee.me",
+              "logo": "https://www.paydee.me/img/bg.jpg",
               "foundingDate": "2016",
               "contactPoint": {
                 "@type": "ContactPoint",
@@ -119,8 +119,8 @@ export default function RootLayout({
               "hiringOrganization": {
                 "@type": "Organization",
                 "name": "PayDee",
-                "sameAs": "https://paydee.com",
-                "logo": "https://paydee.com/img/bg.jpg"
+                "sameAs": "https://paydee.me",
+                "logo": "https://www.paydee.me/img/bg.jpg"
               },
               "jobLocation": {
                 "@type": "Place",
