@@ -59,7 +59,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="min-h-screen relative bg-cover bg-center bg-no-repeat rounded-b-3xl lg:rounded-b-4xl overflow-hidden" style={{ backgroundImage: 'url(/img/bg.jpg)' }}>
-        <div className="container mx-auto text-white min-h-screen flex flex-col lg:flex-row px-4 lg:px-0">
+        <div className="container mx-auto max-w-7xl text-white min-h-screen flex flex-col lg:flex-row px-4 lg:px-8 xl:px-12">
           <div className="flex-1 pt-25 mt-20 md:mt-30 md:pt-24 lg:pt-30 relative z-10">
             <div className="flex flex-col gap-2 lg:gap-4 items-center md:items-start  lg:text-left">
               <BlurText
@@ -75,7 +75,7 @@ export default function Home() {
                 delay={150}
                 animateBy="words"
                 direction="bottom"
-                className="text-lg font-semibold md:text-2xl flex lg:text-4xl"
+                className="text-lg font-semibold md:text-2xl flex lg:text-3xl"
               />
             </div>
 
@@ -115,7 +115,7 @@ export default function Home() {
 
       {/* Section 2 */}
       <section className="md:min-h-screen text-gray-900">
-        <div className="container mx-auto py-5  md:py-15">
+        <div className="container mx-auto max-w-7xl py-5 md:py-15 px-4 lg:px-8 xl:px-12">
           <div className="hidden md:block">
             <div className="flex justify-center items-center gap-5">
               <p className="md:text-4xl text-lg">ทัวร์ต่างประเทศมากมาย สร้างรายได้ได้ตลอดทั้งปี</p>
@@ -135,7 +135,7 @@ export default function Home() {
               <p className="md:text-4xl text-lg text-gray-700">ไม่มีขั้นต่ำกดดัน ไม่ต้องเข้าออฟฟิศ ไม่ต้องดูแลลูกค้าเอง</p>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row mt-8 md:mt-30 px-4 md:px-0">
+          <div className="flex flex-col md:flex-row mt-8 md:mt-30">
             <p className="text-2xl md:text-5xl md:leading-14 md:hidden font-semibold mb-4 text-center md:text-left">
               ร่วมเป็นส่วนหนึ่งของทีมเรา <br />
               เพื่อรับค่าคอมมิชชั่นที่สูงกว่า!
@@ -219,7 +219,8 @@ export default function Home() {
       </section>
 
       {/* Program section */}
-      <section className="min-h-screen text-gray-900 container md:pt-10 mx-auto">
+      <section className="min-h-screen text-gray-900">
+        <div className="container mx-auto max-w-7xl md:pt-10 px-4 lg:px-8 xl:px-12">
         <div>
           <div className="relative flex justify-center items-center mt-5 px-5">
             <Image src="/img/labtop.svg" alt="Seller Program" width={300} height={300} className="md:hidden z-20" />
@@ -261,10 +262,12 @@ export default function Home() {
             />
           </Suspense>
         </div>
+        </div>
       </section>
 
       {/* partner */}
-      <section className="flex flex-col md:flex-row container mx-auto my-10 md:mt-15 py-15 justify-center items-center border-t-2 border-b-2 border-gray-200">
+      <section className="my-10 md:mt-15 py-15 border-t-2 border-b-2 border-gray-200">
+        <div className="container mx-auto max-w-7xl px-4 lg:px-8 xl:px-12 flex flex-col md:flex-row justify-center items-center">
         <div className="w-full p-5 order-2 md:order-1">
           <p className="text-2xl md:text-5xl font-semibold text-center md:text-end" style={{ fontFamily: 'Playfair Display, serif' }}>
             We Work With The <br />Best Partners
@@ -279,10 +282,12 @@ export default function Home() {
         <div className="w-full order-1 md:order-2 mb-6 md:mb-0">
           <Image src="/img/gogo.png" alt="Partner Logo" width={200} height={100} className="mx-auto w-32 h-auto md:w-55 md:h-auto" />
         </div>
+        </div>
       </section>
 
       {/* trips */}
-      <section id="trips-section" className="container mx-auto mb-10  md:py-4 md:px-10">
+      <section id="trips-section" className="mb-10 md:py-4">
+        <div className="container mx-auto max-w-7xl px-4 lg:px-8 xl:px-12">
         <div className="text-center mb-8 md:mb-12">
           <div className="p-8">
             <Button className="bg-orange-600 hover:bg-orange-700 text-white px-4 md:px-30 md:py-4 rounded-full text-md md:text-xl font-semibold w-full md:w-auto transition-all transform hover:scale-105 ">
@@ -299,11 +304,11 @@ export default function Home() {
         </div>
 
         {/* Trip Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4 md:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 md:gap-8 justify-items-center">
           {loading ? (
             // Loading skeleton
             Array.from({ length: itemsPerPage }).map((_, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden w-full max-w-sm mx-auto animate-pulse">
+              <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden w-full max-w-sm animate-pulse">
                 <div className="h-48 bg-gray-300"></div>
                 <div className="p-4">
                   <div className="h-6 bg-gray-300 rounded mb-2"></div>
@@ -319,7 +324,7 @@ export default function Home() {
               <Suspense 
                 key={trip.id} 
                 fallback={
-                  <div className="bg-white rounded-2xl shadow-lg overflow-hidden w-full max-w-sm mx-auto animate-pulse">
+                  <div className="bg-white rounded-2xl shadow-lg overflow-hidden w-full max-w-sm animate-pulse">
                     <div className="h-48 bg-gray-300"></div>
                     <div className="p-4">
                       <div className="h-6 bg-gray-300 rounded mb-2"></div>
@@ -351,6 +356,7 @@ export default function Home() {
             totalItems={trips.length}
           />
         )}
+        </div>
       </section>
     </>
   );

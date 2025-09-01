@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaLine } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="bg-slate-800 rounded-t-3xl text-white py-8 p-5 md:py-12">
-      <div className="container mx-auto px-4 md:px-8">
+      <div className="container mx-auto max-w-7xl px-4 md:px-8 lg:px-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           {/* Left Section - Logo and Company Info */}
           <div className="flex-1">

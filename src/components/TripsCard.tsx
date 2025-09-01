@@ -25,7 +25,7 @@ function TripCard({ trip }: TripCardProps) {
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 w-full max-w-sm mx-auto">
+        <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 w-full max-w-sm">
             {/* Cover Image */}
             <div className="relative h-48 w-full">
                 <Image

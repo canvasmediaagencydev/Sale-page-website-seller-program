@@ -229,3 +229,23 @@
   opacity: 0;
   animation-fill-mode: both;
 }
+
+/* Responsive container improvements for ultra-wide screens */
+@media (min-width: 1920px) {
+  .ultra-wide-container {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Ensure text doesn't get too wide and hard to read */
+  .text-content-width {
+    max-width: 800px;
+  }
+  
+  /* Prevent images from becoming too large */
+  .max-image-size {
+    max-width: 500px;
+    max-height: 400px;
+  }
+}
