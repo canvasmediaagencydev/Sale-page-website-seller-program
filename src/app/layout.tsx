@@ -7,19 +7,37 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://paydee.com'),
-  title: "PayDee - Best Commission Worldwide Tour",
-  description: "ร่วมเป็นตัวแทนขายทัวร์กับ PayDee รับค่าคอมมิชชั่นสูง มีทีมงานคอยสนับสนุน ไม่มีขั้นต่ำ ไม่ต้องเข้าออฟฟิศ",
-  keywords: ["ตัวแทนขายทัวร์", "คอมมิชชั่น", "ทัวร์ต่างประเทศ", "PayDee", "งานพาร์ทไทม์"],
+  title: {
+    default: "ตัวแทนขายทัวร์ คอมมิชชั่นสูง | PayDee - รายได้เสริมจากการขายทัวร์",
+    template: "%s | PayDee ตัวแทนขายทัวร์"
+  },
+  description: "สมัครเป็นตัวแทนขายทัวร์กับ PayDee รับคอมมิชชั่นสูงถึง 3,000+ บาท/ทริป ไม่มีเป้ายอดขายขั้นต่ำ งานพาร์ทไทม์ทำที่บ้าน ทีมงานช่วยปิดการขาย มีระบบหลังบ้านครบครัน",
+  keywords: [
+    "ตัวแทนขายทัวร์",
+    "คอมมิชชั่นทัวร์", 
+    "งานขายทัวร์",
+    "รายได้เสริม",
+    "งานพาร์ทไทม์",
+    "ทัวร์ต่างประเทศ",
+    "agent ขายทัวร์",
+    "สมัครตัวแทนขาย",
+    "คอมมิชชั่นสูง",
+    "งานทำที่บ้าน",
+    "ธุรกิจท่องเที่ยว",
+    "PayDee"
+  ],
   authors: [{ name: "PayDee" }],
   openGraph: {
+    title: "ตัวแทนขายทัวร์ คอมมิชชั่นสูง | PayDee - รายได้เสริมจากการขายทัวร์",
+    description: "สมัครเป็นตัวแทนขายทัวร์กับ PayDee รับคอมมิชชั่นสูงถึง 3,000+ บาท/ทริป ไม่มีเป้ายอดขายขั้นต่ำ งานพาร์ทไทม์ทำที่บ้าน",
     url: "https://paydee.com",
-    siteName: "PayDee",
+    siteName: "PayDee - ตัวแทนขายทัวร์คอมมิชชั่นสูง",
     images: [
       {
         url: "/img/bg.jpg",
         width: 1200,
         height: 630,
-        alt: "PayDee - ตัวแทนขายทัวร์ค่าคอมมิชชั่นสูง",
+        alt: "PayDee ตัวแทนขายทัวร์ คอมมิชชั่นสูง รายได้เสริม งานพาร์ทไทม์",
       },
     ],
     locale: "th_TH",
@@ -54,6 +72,80 @@ export default function RootLayout({
         />
         <link rel="dns-prefetch" href="https://nycuvphxbffyzkhbslai.supabase.co" />
         <link rel="dns-prefetch" href="https://gography-r2.tumwebsme.com" />
+        <link rel="canonical" href="https://paydee.com" />
+        
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "PayDee",
+              "alternateName": ["เพย์ดี"],
+              "description": "แพลตฟอร์มตัวแทนขายทัวร์ที่ให้คอมมิชชั่นสูง พร้อมระบบสนับสนุนการขายครบครัน",
+              "url": "https://paydee.com",
+              "logo": "https://paydee.com/img/bg.jpg",
+              "foundingDate": "2016",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+66-97-919-9293",
+                "contactType": "customer service",
+                "areaServed": "TH",
+                "availableLanguage": ["th", "en"]
+              },
+              "offers": {
+                "@type": "Offer",
+                "description": "โอกาสเป็นตัวแทนขายทัวร์ คอมมิชชั่นสูงถึง 3,000+ บาทต่อทริป ไม่มีขั้นต่ำ",
+                "category": "Business Opportunity"
+              },
+              "serviceType": "Travel Agency",
+              "areaServed": {
+                "@type": "Country",
+                "name": "Thailand"
+              }
+            })
+          }}
+        />
+        
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "JobPosting",
+              "title": "ตัวแทนขายทัวร์ - คอมมิชชั่นสูง",
+              "description": "เปิดรับสมัครตัวแทนขายทัวร์ รับคอมมิชชั่นสูงถึง 3,000+ บาทต่อทริป ไม่มีเป้ายอดขายขั้นต่ำ ทำงานที่บ้านได้ ทีมงานสนับสนุน",
+              "employmentType": "PART_TIME",
+              "hiringOrganization": {
+                "@type": "Organization",
+                "name": "PayDee",
+                "sameAs": "https://paydee.com",
+                "logo": "https://paydee.com/img/bg.jpg"
+              },
+              "jobLocation": {
+                "@type": "Place",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": "TH",
+                  "addressRegion": "ทั่วประเทศไทย"
+                }
+              },
+              "baseSalary": {
+                "@type": "MonetaryAmount",
+                "currency": "THB",
+                "value": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 1000,
+                  "maxValue": 10000,
+                  "unitText": "MONTH"
+                }
+              },
+              "workHours": "Flexible",
+              "datePosted": "2024-01-01",
+              "validThrough": "2024-12-31"
+            })
+          }}
+        />
       </head>
       <body className="">
         {/* <SplashCursor /> */}

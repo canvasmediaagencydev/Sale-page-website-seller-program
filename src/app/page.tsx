@@ -93,8 +93,8 @@ export default function Home() {
                   animationFillMode: 'both'
                 }}
               >
-                มาร่วมทีมเป็นตัวแทนขายทัวร์กับ Gography <br className="hidden md:block" />
-                เปลี่ยนประสบการณ์ของคุณให้เป็นรายได้เพิ่ม
+                มาร่วมทีมเป็นตัวแทนขายทัวร์กับ PayDee <br className="hidden md:block" />
+                เปลี่ยนประสบการณ์ของคุณให้เป็นรายได้เสริมพิเศษ
               </p>
               <div
                 className="animate-fade-in-scale w-full flex justify-center"
