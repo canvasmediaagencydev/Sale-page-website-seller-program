@@ -8,8 +8,8 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   metadataBase: new URL('https://paydee.com'),
   title: {
-    default: "ตัวแทนขายทัวร์ คอมมิชชั่นสูง | PayDee - รายได้เสริมจากการขายทัวร์",
-    template: "%s | PayDee ตัวแทนขายทัวร์"
+    default: "PayDee - ตัวแทนขายทัวร์คอมมิชชั่นสูง รายได้เสริม งานพาร์ทไทม์",
+    template: "%s | PayDee"
   },
   description: "สมัครเป็นตัวแทนขายทัวร์กับ PayDee รับคอมมิชชั่นสูงถึง 3,000+ บาท/ทริป ไม่มีเป้ายอดขายขั้นต่ำ งานพาร์ทไทม์ทำที่บ้าน ทีมงานช่วยปิดการขาย มีระบบหลังบ้านครบครัน",
   keywords: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "PayDee" }],
   openGraph: {
-    title: "ตัวแทนขายทัวร์ คอมมิชชั่นสูง | PayDee - รายได้เสริมจากการขายทัวร์",
+    title: "PayDee - ตัวแทนขายทัวร์คอมมิชชั่นสูง รายได้เสริม งานพาร์ทไทม์",
     description: "สมัครเป็นตัวแทนขายทัวร์กับ PayDee รับคอมมิชชั่นสูงถึง 3,000+ บาท/ทริป ไม่มีเป้ายอดขายขั้นต่ำ งานพาร์ทไทม์ทำที่บ้าน",
     url: "https://paydee.com",
     siteName: "PayDee - ตัวแทนขายทัวร์คอมมิชชั่นสูง",
