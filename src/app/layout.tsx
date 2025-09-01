@@ -120,7 +120,7 @@ export default function RootLayout({
                 "@type": "Organization",
                 "name": "PayDee",
                 "sameAs": "https://paydee.com",
-                "logo": "https://paydee.com/img/bg.jpg"
+                "logo": "https://www.paydee.me/img/bg.jpg"
               },
               "jobLocation": {
                 "@type": "Place",
