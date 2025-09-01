@@ -71,9 +71,7 @@ export default function RootLayout({
           rel="stylesheet" 
         />
         <link rel="dns-prefetch" href="https://nycuvphxbffyzkhbslai.supabase.co" />
-        <link rel="dns-prefetch" href="https://gography-r2.tumwebsme.com" />
-        <link rel="canonical" href="https://paydee.com" />
-        
+        <link rel="canonical" href="https://www.paydee.me" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
