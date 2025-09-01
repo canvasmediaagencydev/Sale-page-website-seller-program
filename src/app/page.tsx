@@ -149,7 +149,7 @@ export default function Home() {
                 className="w-full max-w-[250px] h-auto md:max-w-[400px] z-10 shadow-lg rounded-4xl"
                 priority
               />
-              <div className="bg-gray-800 hidden md:block w-100 h-130 absolute top-5 left-7 rounded-4xl"></div>
+              <div className="bg-gray-800 hidden md:block w-100 h-130 absolute top-4 left-2 rounded-4xl"></div>
             </div>
             <div className="flex-1 md:mx-20 mx-0">
               <p className="text-2xl md:text-5xl md:leading-14 hidden md:block font-semibold mb-4 text-center md:text-left">
