@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "PayDee - ตัวแทนขายทัวร์คอมมิชชั่นสูง",
     images: [
       {
-        url: "/img/bg.jpg",
+        url: "https://paydee.com/img/bg.jpg",
         width: 1200,
         height: 630,
         alt: "PayDee ตัวแทนขายทัวร์ คอมมิชชั่นสูง รายได้เสริม งานพาร์ทไทม์",
@@ -120,7 +120,7 @@ export default function RootLayout({
                 "@type": "Organization",
                 "name": "PayDee",
                 "sameAs": "https://paydee.com",
-                "logo": "https://www.paydee.me/img/bg.jpg"
+                "logo": "https://paydee.com/img/bg.jpg"
               },
               "jobLocation": {
                 "@type": "Place",
