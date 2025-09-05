@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import SplashCursor from "@/components/SplashCursor";
 import Footer from "@/components/Footer";
+import DisableRightClick from "@/components/DisableRightClick";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.paydee.me'),
@@ -146,6 +147,7 @@ export default function RootLayout({
         />
       </head>
       <body className="">
+        <DisableRightClick />
         {/* <SplashCursor /> */}
         <div className="relative z-10 overflow-x-hidden">
           <Navbar className="absolute inset-x-0 top-0 z-50" />

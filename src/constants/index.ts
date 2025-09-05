@@ -18,8 +18,8 @@ export const STATISTICS = {
 
 export const CONTACT_INFO = {
   PHONE: '097-919-9293',
-  EMAIL: 'info@gography.net',
-  LINE_ID: '@Gography',
+  EMAIL: 'info@paydee.me',
+  LINE_ID: '@paydee',
   ADDRESS: {
     STREET: '79/576 ซอยสนามกีฬาแห่ง 150 แขวงสะพานสูง',
     DISTRICT: 'เขตสะพานสูง',
@@ -33,3 +33,4 @@ export const BRAND = {
   TAGLINE: 'ตัวแทนขายทัวร์คอมมิชชั่นสูง',
   DESCRIPTION: 'สร้างรายได้เสริมจากการขายทัวร์',
 } as const;
+
