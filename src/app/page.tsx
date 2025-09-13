@@ -7,6 +7,7 @@ import CircularText from "@/components/CircularText";
 import HeroSection from "@/components/sections/HeroSection";
 import StatisticsSection from "@/components/sections/StatisticsSection";
 import TripsSection from "@/components/sections/TripsSection";
+import WorkingProcessSection from "@/components/sections/WorkingProcessSection";
 import { useTrips } from "@/hooks/useTrips";
 
 // Lazy load components that are not immediately visible
@@ -97,13 +98,13 @@ const PartnerSection = () => (
     </div>
   </section>
 );
-
 export default function Home() {
   const { trips, loading, currentPage, paginationData, handlePageChange } = useTrips();
 
   return (
     <>
       <HeroSection />
+      <WorkingProcessSection />
       <StatisticsSection />
       <ProgramSection />
       <PartnerSection />

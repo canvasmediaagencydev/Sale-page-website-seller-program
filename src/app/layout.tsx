@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import SplashCursor from "@/components/SplashCursor";
 import Footer from "@/components/Footer";
 import DisableRightClick from "@/components/DisableRightClick";
+import ContactStickyButton from "@/components/ContactStickyButton";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.paydee.me'),
@@ -154,6 +155,7 @@ export default function RootLayout({
           {children}
         </div>
         <Footer />
+        <ContactStickyButton />
       </body>
     </html>
   );

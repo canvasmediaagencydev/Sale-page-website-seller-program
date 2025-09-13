@@ -28,9 +28,9 @@ const StatisticItem = ({ value, label, duration = 1, suffix = "+" }: StatisticIt
 
 const StatisticsSection = () => {
   return (
-    <section className="md:min-h-screen text-gray-900">
-      <div className="container mx-auto max-w-7xl py-5 md:py-15 px-4 lg:px-8 xl:px-12">
-        <div className="hidden md:block">
+    <section className="pb-25 text-gray-900">
+      <div className="container mx-auto max-w-7xl px-4 ">
+        {/* <div className="hidden md:block">
           <div className="flex justify-center items-center gap-5">
             <p className="md:text-4xl text-lg">ทัวร์ต่างประเทศมากมาย สร้างรายได้ได้ตลอดทั้งปี</p>
             <Image 
@@ -48,9 +48,9 @@ const StatisticsSection = () => {
             <Image src="/img/image 6.png" alt="Tour" width={200} height={300} className="hidden md:block" />
             <p className="md:text-4xl text-lg text-gray-700">ไม่มีขั้นต่ำกดดัน ไม่ต้องเข้าออฟฟิศ ไม่ต้องดูแลลูกค้าเอง</p>
           </div>
-        </div>
+        </div> */}
         
-        <div className="flex flex-col md:flex-row mt-8 md:mt-30">
+        <div className="flex flex-col md:flex-row mt-8 md:mt-15">
           <p className="text-2xl md:text-5xl md:leading-14 md:hidden font-semibold mb-4 text-center md:text-left">
             ร่วมเป็นส่วนหนึ่งของทีมเรา <br />
             เพื่อรับค่าคอมมิชชั่นที่สูงกว่า!

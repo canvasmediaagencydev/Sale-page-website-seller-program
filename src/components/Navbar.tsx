@@ -10,7 +10,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className={`container mx-auto max-w-7xl my-2 md:my-4 mt-4 md:mt-8 md:bg-black/40 md:backdrop-blur-sm rounded-full md:shadow-lg py-3 md:py-4 px-5 md:px-[80px] flex items-center justify-between animate-fade-in-down ${className}`}>
+    <nav className={`container mx-auto max-w-7xl my-2 md:my-4 mt-4 md:mt-8 md:bg-black/40 md:backdrop-blur-xs rounded-full md:shadow-lg py-3 md:py-4 px-5 md:px-[80px] flex items-center justify-between animate-fade-in-down ${className}`}>
       <div className="flex items-center space-x-4">
         <span className="font-bold text-4xl md:text-3xl text-white">Logo</span>
       </div>

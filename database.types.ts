@@ -10,7 +10,7 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "12.2.12 (cd3cf9e)"
+    PostgrestVersion: "13.0.4"
   }
   public: {
     Tables: {
@@ -19,11 +19,17 @@ export type Database = {
           approved_at: string | null
           approved_by: string | null
           booking_date: string | null
+          cancelled_at: string | null
           commission_amount: number
           created_at: string | null
           customer_id: string | null
+          deposit_amount: number | null
+          deposit_paid_at: string | null
+          full_payment_at: string | null
           id: string
           notes: string | null
+          payment_status: string | null
+          remaining_amount: number | null
           seller_id: string | null
           status: string | null
           total_amount: number
@@ -34,11 +40,17 @@ export type Database = {
           approved_at?: string | null
           approved_by?: string | null
           booking_date?: string | null
-          commission_amount: number
+          cancelled_at?: string | null
+          commission_amount?: number
           created_at?: string | null
           customer_id?: string | null
+          deposit_amount?: number | null
+          deposit_paid_at?: string | null
+          full_payment_at?: string | null
           id?: string
           notes?: string | null
+          payment_status?: string | null
+          remaining_amount?: number | null
           seller_id?: string | null
           status?: string | null
           total_amount: number
@@ -49,11 +61,17 @@ export type Database = {
           approved_at?: string | null
           approved_by?: string | null
           booking_date?: string | null
+          cancelled_at?: string | null
           commission_amount?: number
           created_at?: string | null
           customer_id?: string | null
+          deposit_amount?: number | null
+          deposit_paid_at?: string | null
+          full_payment_at?: string | null
           id?: string
           notes?: string | null
+          payment_status?: string | null
+          remaining_amount?: number | null
           seller_id?: string | null
           status?: string | null
           total_amount?: number
@@ -76,6 +94,13 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "bookings_seller_id_fkey"
+            columns: ["seller_id"]
+            isOneToOne: false
+            referencedRelation: "user_profiles"
+            referencedColumns: ["id"]
+          },
+          {
             foreignKeyName: "bookings_trip_schedule_id_fkey"
             columns: ["trip_schedule_id"]
             isOneToOne: false
@@ -88,6 +113,63 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "trips_with_next_schedule"
             referencedColumns: ["next_schedule_id"]
+          },
+        ]
+      }
+      commission_payments: {
+        Row: {
+          amount: number
+          booking_id: string | null
+          created_at: string | null
+          id: string
+          notes: string | null
+          paid_at: string | null
+          payment_type: string
+          percentage: number | null
+          seller_id: string | null
+          status: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          amount: number
+          booking_id?: string | null
+          created_at?: string | null
+          id?: string
+          notes?: string | null
+          paid_at?: string | null
+          payment_type: string
+          percentage?: number | null
+          seller_id?: string | null
+          status?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          amount?: number
+          booking_id?: string | null
+          created_at?: string | null
+          id?: string
+          notes?: string | null
+          paid_at?: string | null
+          payment_type?: string
+          percentage?: number | null
+          seller_id?: string | null
+          status?: string | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "commission_payments_booking_id_fkey"
+            columns: ["booking_id"]
+            isOneToOne: false
+            referencedRelation: "bookings"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "commission_payments_seller_id_fkey"
+            columns: ["seller_id"]
+            isOneToOne: false
+            referencedRelation: "user_profiles"
+            referencedColumns: ["id"]
           },
         ]
       }
@@ -155,7 +237,15 @@ export type Database = {
           referred_by_seller_id?: string | null
           updated_at?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "customers_referred_by_seller_id_fkey"
+            columns: ["referred_by_seller_id"]
+            isOneToOne: false
+            referencedRelation: "user_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       sales_targets: {
         Row: {
@@ -182,7 +272,15 @@ export type Database = {
           target_month?: string
           updated_at?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "sales_targets_seller_id_fkey"
+            columns: ["seller_id"]
+            isOneToOne: false
+            referencedRelation: "user_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       trip_schedules: {
         Row: {
@@ -243,7 +341,7 @@ export type Database = {
           description: string | null
           duration_days: number
           duration_nights: number
-          geography_link: string | null
+          file_link: string | null
           id: string
           is_active: boolean | null
           price_per_person: number
@@ -261,7 +359,7 @@ export type Database = {
           description?: string | null
           duration_days: number
           duration_nights: number
-          geography_link?: string | null
+          file_link?: string | null
           id?: string
           is_active?: boolean | null
           price_per_person: number
@@ -279,7 +377,7 @@ export type Database = {
           description?: string | null
           duration_days?: number
           duration_nights?: number
-          geography_link?: string | null
+          file_link?: string | null
           id?: string
           is_active?: boolean | null
           price_per_person?: number
@@ -293,6 +391,13 @@ export type Database = {
             columns: ["country_id"]
             isOneToOne: false
             referencedRelation: "countries"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "trips_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "user_profiles"
             referencedColumns: ["id"]
           },
         ]
@@ -358,7 +463,15 @@ export type Database = {
           status?: string | null
           updated_at?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "user_profiles_approved_by_fkey"
+            columns: ["approved_by"]
+            isOneToOne: false
+            referencedRelation: "user_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {
@@ -400,7 +513,7 @@ export type Database = {
           description: string | null
           duration_days: number | null
           duration_nights: number | null
-          geography_link: string | null
+          file_link: string | null
           id: string | null
           is_active: boolean | null
           next_available_seats: number | null
@@ -419,6 +532,13 @@ export type Database = {
             columns: ["country_id"]
             isOneToOne: false
             referencedRelation: "countries"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "trips_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "user_profiles"
             referencedColumns: ["id"]
           },
         ]
@@ -481,6 +601,14 @@ export type Database = {
           p_user_role: string
         }
         Returns: Json
+      }
+      is_storage_admin: {
+        Args: Record<PropertyKey, never>
+        Returns: boolean
+      }
+      is_storage_file_owner: {
+        Args: { file_path: string }
+        Returns: boolean
       }
       refresh_seller_booking_stats: {
         Args: Record<PropertyKey, never>
