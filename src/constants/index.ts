@@ -3,11 +3,11 @@ export const PAGINATION = {
 } as const;
 
 export const ANIMATION_DELAYS = {
-  HERO_TITLE: 150,
-  HERO_SUBTITLE: 150,
-  HERO_CONTENT: '1s',
-  HERO_TEXT: '1.3s',
-  HERO_BUTTON: '1.6s',
+  HERO_TITLE: 0.15,
+  HERO_SUBTITLE: 0.3,
+  HERO_CONTENT: 1.0,
+  HERO_TEXT: 1.3,
+  HERO_BUTTON: 1.6,
 } as const;
 
 export const STATISTICS = {

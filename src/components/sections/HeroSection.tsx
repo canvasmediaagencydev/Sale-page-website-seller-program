@@ -4,7 +4,16 @@ import BlurText from "@/components/BlurText";
 import Button from "@/components/Button";
 import { ANIMATION_DELAYS } from "@/constants";
 import { AnimationConfig } from "@/types";
-import { RiArrowDownWideFill } from "react-icons/ri";
+import {
+  RiArrowDownWideFill,
+  RiMoneyDollarCircleFill,
+  RiGiftFill,
+  RiCustomerService2Fill,
+  RiBarChartBoxFill,
+  RiRocketFill,
+  RiFileTextFill,
+  RiFireFill
+} from "react-icons/ri";
 
 interface HeroSectionProps {
   className?: string;
@@ -30,130 +39,158 @@ const HeroSection = ({ className = "" }: HeroSectionProps) => {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
         <div className="flex flex-col items-center space-y-2 animate-bounce" style={{ animationDuration: '2s' }}>
-          <span className="text-white/70 text-sm font-medium">เลื่อนลง</span>
           <RiArrowDownWideFill className="text-white/70 w-6 h-6" />
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 container mx-auto max-w-7xl min-h-screen flex items-center px-4 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+      <div className="relative z-10 container mx-auto max-w-7xl min-h-screen flex items-center px-4 lg:px-8 xl:px-16">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 xl:gap-24 items-center min-h-screen py-32 w-full">
           {/* Left Content */}
-          <div className="text-white space-y-8">
+          <div className="lg:col-span-7 text-white space-y-1">
             {/* Badge */}
             <div
-              className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium animate-fade-in"
-              style={{ animationDelay: ANIMATION_DELAYS.HERO_TITLE }}
+              className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-paydee-orange-primary/20 to-paydee-yellow-primary/20 backdrop-blur-sm rounded-full text-sm font-semibold border border-paydee-yellow-primary/30 animate-fade-in"
+              style={{ animationDelay: `${ANIMATION_DELAYS.HERO_TITLE}s` }}
             >
-              <span className="w-2 h-2 bg-paydee-yellow-primary rounded-full mr-2 animate-pulse"></span>
-              ใหม่! โปรแกรมตัวแทนขาย
+              <RiFireFill className="text-paydee-yellow-primary text-lg animate-pulse" />
+              รับตัวแทนขายใหม่ - คอมมิชชั่นสูงสุด 15,000 บาท!
             </div>
 
             {/* Main Title */}
-            <div className="space-y-4">
+            <div className="space-y-2">
+              <div className="space-y-4">
+                <div
+                  className="text-7xl md:text-8xl xl:text-9xl font-black leading-none"
+                  style={{
+                    fontFamily: 'Playfair Display, serif',
+                    background: 'linear-gradient(135deg, #ffffff 0%, #febf12 25%, #fe9812 50%, #ffffff 75%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundSize: '200% 200%',
+                    animation: `paydee-title 1s ease-out ${ANIMATION_DELAYS.HERO_TITLE + 0.2}s both, gradient-shift 3s ease-in-out infinite`,
+                    animationDelay: `${ANIMATION_DELAYS.HERO_TITLE + 0.2}s`
+                  }}
+                >
+                  PayDee
+                </div>
+                <div className="text-lg md:text-xl text-paydee-yellow-primary font-semibold tracking-widest uppercase">
+                  ศูนย์รวมทัวร์ต่างประเทศ
+                </div>
+              </div>
+
               <BlurText
-                text="PayDee"
-                delay={ANIMATION_DELAYS.HERO_TITLE}
-                animateBy="words"
-                direction="top"
-                className="text-6xl md:text-8xl lg:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-paydee-yellow-primary to-white"
-                style={{ fontFamily: 'Playfair Display, serif' }}
-              />
-              <BlurText
-                text="ทัวร์ต่างประเทศ"
+                text="เปลี่ยนความหลงใหลในการเดินทางให้กลายเป็นรายได้หลักหลายหมื่นบาทต่อเดือน"
                 delay={ANIMATION_DELAYS.HERO_SUBTITLE}
                 animateBy="words"
                 direction="bottom"
-                className="text-2xl md:text-4xl font-semibold text-paydee-yellow-primary"
-              />
-              <BlurText
-                text="โดยไกด์ช่างภาพมืออาชีพ"
-                delay={ANIMATION_DELAYS.HERO_SUBTITLE + 0.2}
-                animateBy="words"
-                direction="bottom"
-                className="text-xl md:text-2xl font-normal text-white/90"
+                className="text-xl md:text-2xl xl:text-3xl font-bold text-white/95 leading-relaxed max-w-3xl"
               />
             </div>
 
-            {/* Description */}
+            {/* Key Benefits */}
             <div
-              className="space-y-6 animate-fade-in-up"
+              className="space-y-8 animate-fade-in-up"
               style={{
-                animationDelay: ANIMATION_DELAYS.HERO_CONTENT,
+                animationDelay: `${ANIMATION_DELAYS.HERO_CONTENT}s`,
                 ...animationConfig
               }}
             >
-              <p
-                className="text-xl md:text-2xl leading-relaxed text-white/90 max-w-2xl animate-fade-in"
-                style={{
-                  animationDelay: ANIMATION_DELAYS.HERO_TEXT
-                }}
-              >
-                มาร่วมทีมเป็นตัวแทนขายทัวร์กับ <span className="text-paydee-yellow-primary font-semibold">PayDee</span>
-                <br />เปลี่ยนประสบการณ์ของคุณให้เป็นรายได้เสริมพิเศษ
-              </p>
+              {/* Features Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                <div className="flex items-start space-x-4 p-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-paydee-orange-primary to-paydee-yellow-primary rounded-xl flex items-center justify-center text-white shadow-lg">
+                    <RiMoneyDollarCircleFill className="text-2xl" />
+                  </div>
+                  <div>
+                    <div className="text-white font-semibold text-lg">คอมมิชชั่นสูงสุด</div>
+                    <div className="text-paydee-yellow-primary font-bold text-xl">15,000 บาท/ทริป</div>
+                  </div>
+                </div>
 
-              {/* Features */}
-              <div className="grid md:grid-cols-2 gap-4 text-sm md:text-base">
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-paydee-yellow-primary rounded-full"></div>
-                  <span>คอมมิชชั่นสูงสุด 15,000 บาท/ทริป</span>
+                <div className="flex items-start space-x-4 p-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-paydee-blue-primary to-paydee-blue-light rounded-xl flex items-center justify-center text-white shadow-lg">
+                    <RiGiftFill className="text-2xl" />
+                  </div>
+                  <div>
+                    <div className="text-white font-semibold text-lg">ฟรี! ไม่มีค่าใช้จ่าย</div>
+                    <div className="text-white/80">สมัครได้ทันที ไม่มีค่าแอบแฝง</div>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-paydee-yellow-primary rounded-full"></div>
-                  <span>ไม่มีค่าสมัครสมาชิก</span>
+
+                <div className="flex items-start space-x-4 p-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-400 rounded-xl flex items-center justify-center text-white shadow-lg">
+                    <RiCustomerService2Fill className="text-2xl" />
+                  </div>
+                  <div>
+                    <div className="text-white font-semibold text-lg">ทีมสนับสนุน 24/7</div>
+                    <div className="text-white/80">คอยช่วยเหลือทุกขั้นตอน</div>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-paydee-yellow-primary rounded-full"></div>
-                  <span>ทีมงานสนับสนุน 24/7</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-paydee-yellow-primary rounded-full"></div>
-                  <span>ระบบติดตามยอดขายแบบเรียลไทม์</span>
+
+                <div className="flex items-start space-x-4 p-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-white shadow-lg">
+                    <RiBarChartBoxFill className="text-2xl" />
+                  </div>
+                  <div>
+                    <div className="text-white font-semibold text-lg">ระบบเรียลไทม์</div>
+                    <div className="text-white/80">ติดตามยอดขายได้ตลอดเวลา</div>
+                  </div>
                 </div>
               </div>
 
               {/* CTA Buttons */}
               <div
-                className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in-scale"
+                className="flex flex-col sm:flex-row gap-6 pt-6 animate-fade-in-scale"
                 style={{
-                  animationDelay: ANIMATION_DELAYS.HERO_BUTTON
+                  animationDelay: `${ANIMATION_DELAYS.HERO_BUTTON}s`
                 }}
               >
-                <Button className="bg-gradient-to-r from-paydee-orange-primary to-paydee-yellow-primary hover:from-paydee-yellow-primary hover:to-paydee-orange-primary text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl">
-                  เริ่มต้นเป็นตัวแทนขาย
+                <Button className="group relative bg-gradient-to-r from-paydee-orange-primary via-paydee-yellow-primary to-paydee-orange-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all duration-500 transform hover:scale-105 shadow-2xl hover:shadow-paydee-orange-primary/25 border-2 border-paydee-yellow-primary/50">
+                  <span className="relative z-10 flex items-center gap-3">
+                    <RiRocketFill className="text-2xl" />
+                    เริ่มต้นเป็นตัวแทนขาย
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-paydee-yellow-primary to-paydee-orange-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                 </Button>
-                <button className="border-2 border-white/30 hover:border-white text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 backdrop-blur-sm">
-                  ดูรายละเอียด
-                </button>
               </div>
             </div>
           </div>
 
-          {/* Right Content - Stats/Visual */}
-          <div className="hidden lg:block">
-            <div className="relative">
-              {/* Floating Stats Cards */}
-              <div className="space-y-6">
-                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-                  <div className="text-3xl font-bold text-paydee-yellow-primary mb-2">15,000+</div>
-                  <div className="text-white/80">บาท คอมมิชชั่นสูงสุด</div>
+          {/* Right Content - Enhanced Stats */}
+          <div className="lg:col-span-5 hidden lg:block">
+            <div className="relative h-full flex items-center justify-end">
+              {/* Main Stats Container */}
+              <div className="relative w-full max-w-sm ml-auto">
+                {/* Center Card - Made larger and more prominent */}
+                <div className="relative z-20 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-xl rounded-4xl p-10 border border-white/30 shadow-2xl animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+                  <div className="text-center">
+                    <div className="text-6xl font-black text-paydee-yellow-primary mb-3 tracking-tight">15,000</div>
+                    <div className="text-white font-bold text-xl mb-6">บาท/ทริป</div>
+                    <div className="text-white/80 text-base leading-relaxed">คอมมิชชั่นสูงสุด<br/>ที่คุณจะได้รับ</div>
+                  </div>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 ml-12 animate-fade-in-up" style={{ animationDelay: '1s' }}>
-                  <div className="text-3xl font-bold text-paydee-yellow-primary mb-2">500+</div>
-                  <div className="text-white/80">ตัวแทนขายที่ไว้วางใจ</div>
+                {/* Floating Cards - Better positioned */}
+                <div className="absolute -top-28 -right-12 z-10 bg-gradient-to-br from-paydee-orange-primary/90 to-paydee-yellow-primary/90 backdrop-blur-lg rounded-3xl p-7 border border-white/40 shadow-xl animate-fade-in-up transform rotate-3" style={{ animationDelay: '0.8s' }}>
+                  <div className="text-3xl font-black text-white mb-2">500+</div>
+                  <div className="text-white text-sm font-semibold">ตัวแทนขายที่ไว้วางใจ</div>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 animate-fade-in-up" style={{ animationDelay: '1.2s' }}>
-                  <div className="text-3xl font-bold text-paydee-yellow-primary mb-2">5+</div>
-                  <div className="text-white/80">ปี ประสบการณ์</div>
+                <div className="absolute -bottom-25 -left-10 z-10 bg-gradient-to-br from-paydee-blue-primary/90 to-paydee-blue-light/90 backdrop-blur-lg rounded-3xl p-7 border border-white/40 shadow-xl animate-fade-in-up transform -rotate-2" style={{ animationDelay: '1s' }}>
+                  <div className="text-3xl font-black text-white mb-2">5+</div>
+                  <div className="text-white text-sm font-semibold">ปี ประสบการณ์ในวงการ</div>
+                </div>
+
+                <div className="absolute -top-20 -left-12 z-15 bg-gradient-to-br from-green-500/90 to-emerald-400/90 backdrop-blur-lg rounded-3xl p-6 border border-white/40 shadow-xl animate-fade-in-up transform rotate-2" style={{ animationDelay: '1.2s' }}>
+                  <div className="text-2xl font-black text-white mb-1">24/7</div>
+                  <div className="text-white text-xs font-semibold">สนับสนุนลูกค้า</div>
                 </div>
               </div>
 
-              {/* Decorative Elements */}
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-paydee-yellow-primary/20 rounded-full blur-3xl"></div>
-              <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-paydee-orange-primary/20 rounded-full blur-2xl"></div>
+              {/* More subtle decorative elements */}
+              <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-gradient-to-br from-paydee-yellow-primary/20 to-paydee-orange-primary/10 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute bottom-1/4 left-1/4 w-24 h-24 bg-gradient-to-tr from-paydee-blue-primary/20 to-paydee-blue-light/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
             </div>
           </div>
         </div>

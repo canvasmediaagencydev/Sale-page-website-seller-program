@@ -183,6 +183,29 @@
   }
 }
 
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* PayDee title animation - combines fade in with gradient */
+@keyframes paydee-title {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+    background-position: 0% 50%;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    background-position: 100% 50%;
+  }
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -238,6 +261,19 @@
   animation: fadeInDown 0.8s ease-out 0.2s;
   opacity: 0;
   animation-fill-mode: both;
+}
+
+/* Background utility classes */
+.bg-size-200 {
+  background-size: 200% 200%;
+}
+
+.bg-pos-0 {
+  background-position: 0% 50%;
+}
+
+.bg-pos-100 {
+  background-position: 100% 50%;
 }
 
 /* Responsive container improvements for ultra-wide screens */
