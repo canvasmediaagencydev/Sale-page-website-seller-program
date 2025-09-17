@@ -38,20 +38,33 @@ const TripsSection = ({
   totalTrips
 }: TripsSectionProps) => {
   return (
-    <section id="trips-section" className="mb-10 md:py-4">
-      <div className="container mx-auto max-w-7xl px-4 lg:px-8 xl:px-12">
-        <div className="text-center mb-8 md:mb-12">
-          <div className="p-8">
-            <Button className="bg-paydee-orange-primary hover:bg-paydee-yellow-primary text-white px-4 md:px-30 md:py-4 rounded-full text-md md:text-xl font-semibold w-full md:w-auto transition-all transform hover:scale-105">
-              ร่วมทีมกับเราตอนนี้
-            </Button>
+    <section id="trips-section" className="py-20 bg-gradient-to-b from-white to-gray-50/50 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 w-32 h-32 bg-paydee-blue-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-paydee-orange-primary/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto max-w-7xl px-4 lg:px-8 xl:px-16 relative">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-paydee-blue-primary/10 to-paydee-orange-primary/10 backdrop-blur-sm border border-paydee-blue-primary/20 text-paydee-blue-primary rounded-full text-sm font-semibold mb-6">
+            <span className="w-2 h-2 bg-paydee-orange-primary rounded-full mr-2 animate-pulse"></span>
+            ทริปแนะนำ
           </div>
-          <p className="text-2xl md:text-4xl font-semibold mb-4">
-            ทริปขายดีประจำเดือน
-          </p>
-          <p className="text-gray-600 text-xl mb-6">
+          <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-paydee-blue-primary via-paydee-orange-primary to-paydee-yellow-primary">
+              ทริปขายดี
+            </span>
+            <span className="block text-gray-900">
+              ประจำเดือน
+            </span>
+          </h2>
+          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-8">
             เลือกทริปที่คุณชอบและเริ่มสร้างรายได้กันเลย
           </p>
+          <Button className="bg-gradient-to-r from-paydee-orange-primary via-paydee-yellow-primary to-paydee-orange-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl hover:shadow-paydee-orange-primary/25 transform hover:scale-105 transition-all duration-500">
+            ร่วมทีมกับเราตอนนี้
+          </Button>
         </div>
 
         {/* Trip Cards Grid */}

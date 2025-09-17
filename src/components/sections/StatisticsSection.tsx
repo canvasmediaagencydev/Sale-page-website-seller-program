@@ -44,7 +44,7 @@ const StatisticsSection = () => {
               </h2>
               <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-2xl">
                 เปลี่ยนประสบการณ์การเดินทางของคุณให้เป็นรายได้ที่มั่นคง
-                ด้วยคอมมิชชั่นสูงสุด <span className="font-bold text-paydee-orange-primary">15,000 บาทต่อทริป</span>
+                ด้วยคอมมิชชั่นสูงสุด <span className="font-bold text-paydee-orange-primary">3,000+ บาทต่อทริป</span>
               </p>
             </div>
 
@@ -89,7 +89,7 @@ const StatisticsSection = () => {
                 viewport={{ once: true }}
                 className="flex items-start space-x-4"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-400 rounded-xl flex items-center justify-center shadow-lg">
+                <div className="w-12 h-12 bg-gradient-to-br from-paydee-orange-primary to-paydee-yellow-primary rounded-xl flex items-center justify-center shadow-lg">
                   <RiAwardFill className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -105,7 +105,7 @@ const StatisticsSection = () => {
                 viewport={{ once: true }}
                 className="flex items-start space-x-4"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                <div className="w-12 h-12 bg-gradient-to-br from-paydee-blue-primary to-paydee-blue-light rounded-xl flex items-center justify-center shadow-lg">
                   <RiStarFill className="w-6 h-6 text-white" />
                 </div>
                 <div>

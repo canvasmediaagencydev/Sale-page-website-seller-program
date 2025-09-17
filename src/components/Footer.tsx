@@ -1,72 +1,122 @@
 import Image from "next/image";
-import { FaFacebook, FaInstagram, FaLine } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLine, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { RiRocketFill } from "react-icons/ri";
 
 export default function Footer() {
   return (
-    <footer className="bg-paydee-blue-primary text-white py-8 p-5 md:py-12">
-      <div className="container mx-auto max-w-7xl px-4 md:px-8 lg:px-12">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-          {/* Left Section - Logo and Company Info */}
-          <div className="flex-1">
-            <div className="mb-10">
-              <div className="flex items-center gap-3 mb-2">
-                <Image
-                  src="/img/paydee LOGO 03.svg"
-                  alt="PayDee Logo"
-                  width={60}
-                  height={20}
-                  className="h-8 w-auto filter invert"
-                />
-                <span className="text-2xl md:text-4xl font-bold text-white">paydee<span className="text-paydee-yellow-primary">.me</span></span>
+    <footer className="bg-gradient-to-b from-paydee-blue-primary to-paydee-blue-light text-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-paydee-orange-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-40 h-40 bg-paydee-yellow-primary/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative">
+        {/* Main Footer Content */}
+        <div className="py-16">
+          <div className="container mx-auto max-w-7xl px-4 lg:px-8 xl:px-16">
+            <div className="grid lg:grid-cols-4 gap-8 lg:gap-12">
+
+              {/* Company Info */}
+              <div className="lg:col-span-2 space-y-6">
+                <div className="flex items-center gap-3">
+                  <Image
+                    src="/img/paydee LOGO 03.svg"
+                    alt="PayDee Logo"
+                    width={140}
+                    height={45}
+                    className=""
+                  />
+                </div>
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-bold">Paydee Seller Program</h3>
+                  <p className="text-blue-100 text-lg leading-relaxed max-w-md">
+                    ศูนย์รวมทัวร์ต่างประเทศ เปลี่ยนความหลงใหลในการเดินทางให้กลายเป็นรายได้หลักหลายหมื่นบาทต่อเดือน
+                  </p>
+                  <div className="inline-flex items-center px-6 py-3 bg-paydee-orange-primary rounded-full text-white font-semibold hover:bg-paydee-yellow-primary transition-colors cursor-pointer">
+                    <RiRocketFill className="mr-2" />
+                    เริ่มต้นเป็นตัวแทนขาย
+                  </div>
+                </div>
+              </div>
+
+              {/* Contact Info */}
+              <div className="space-y-6">
+                <h4 className="text-xl font-bold">ติดต่อเรา</h4>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <FaMapMarkerAlt className="text-paydee-orange-primary mt-1 flex-shrink-0" />
+                    <p className="text-blue-100">
+                      79/576 ซอยสนามกีฬาแห่ง 150<br />
+                      แขวงสะพานสูง เขตสะพานสูง<br />
+                      กรุงเทพมหานคร 10240
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <FaPhone className="text-paydee-orange-primary" />
+                    <p className="text-blue-100">097-919-9293</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <FaEnvelope className="text-paydee-orange-primary" />
+                    <p className="text-blue-100">info@paydee.me</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <FaLine className="text-paydee-orange-primary" />
+                    <p className="text-blue-100">@paydee</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Social Media */}
+              <div className="space-y-6">
+                <h4 className="text-xl font-bold">ติดตามเรา</h4>
+                <div className="flex gap-4">
+                  <a
+                    href="#"
+                    className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-paydee-orange-primary hover:scale-110 transition-all duration-300"
+                    aria-label="Facebook"
+                  >
+                    <FaFacebook className="text-xl" />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-paydee-orange-primary hover:scale-110 transition-all duration-300"
+                    aria-label="Instagram"
+                  >
+                    <FaInstagram className="text-xl" />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-paydee-orange-primary hover:scale-110 transition-all duration-300"
+                    aria-label="Line"
+                  >
+                    <FaLine className="text-xl" />
+                  </a>
+                </div>
+                <div className="space-y-2">
+                  <p className="text-paydee-yellow-primary font-bold">คอมมิชชั่นสูง</p>
+                  <p className="text-2xl font-black text-white">3,000+ บาท/ทริป</p>
+                </div>
               </div>
             </div>
-            <div>
-              <h3 className="text-xl md:text-2xl font-bold mb-2">PayDee</h3>
-              <p className="text-sm md:text-base text-gray-300 leading-relaxed">
-                79/576 ซอยสนามกีฬาแห่ง 150 แขวงสะพานสูง<br />
-                เขตสะพานสูง กรุงเทพมหานคร 10240
-              </p>
-            </div>
           </div>
+        </div>
 
-          {/* Right Section - Contact Info and Social Media */}
-          <div className="flex-1 md:text-right">
-            <h3 className="text-xl md:text-2xl font-bold mb-4">Follow us</h3>
-            <div className="space-y-2 mb-6">
-              <p className="text-sm md:text-base text-gray-300">
-                Tel: 097-919-9293
+        {/* Bottom Bar */}
+        <div className="border-t border-white/10 py-6">
+          <div className="container mx-auto max-w-7xl px-4 lg:px-8 xl:px-16">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-blue-100 text-sm">
+                © 2024 PayDee. All rights reserved.
               </p>
-              <p className="text-sm md:text-base text-gray-300">
-                Email: info@gography.net
-              </p>
-              <p className="text-sm md:text-base text-gray-300">
-                Line: @Gography
-              </p>
-            </div>
-
-            {/* Social Media Icons */}
-            <div className="flex gap-4 md:justify-end">
-              <a 
-                href="#" 
-                className="w-8 h-8 md:w-10 md:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
-                aria-label="Facebook"
-              >
-                <FaFacebook className="text-lg md:text-xl" />
-              </a>
-              <a 
-                href="#" 
-                className="w-8 h-8 md:w-10 md:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
-                aria-label="Instagram"
-              >
-                <FaInstagram className="text-lg md:text-xl" />
-              </a>
-              <a 
-                href="#" 
-                className="w-8 h-8 md:w-10 md:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
-                aria-label="Line"
-              >
-                <FaLine className="text-lg md:text-xl" />
-              </a>
+              <div className="flex items-center gap-6">
+                <a href="#" className="text-blue-100 hover:text-white text-sm transition-colors">
+                  นโยบายความเป็นส่วนตัว
+                </a>
+                <a href="#" className="text-blue-100 hover:text-white text-sm transition-colors">
+                  เงื่อนไขการใช้งาน
+                </a>
+              </div>
             </div>
           </div>
         </div>

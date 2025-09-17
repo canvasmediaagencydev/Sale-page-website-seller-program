@@ -158,9 +158,6 @@ const WorkingProcessSection = () => {
                   เริ่มต้นเป็นตัวแทนขายวันนี้
                 </span>
               </button>
-              <button className="border-2 border-paydee-blue-primary text-paydee-blue-primary hover:bg-paydee-blue-primary hover:text-white px-6 py-4 rounded-2xl text-base font-semibold transition-all duration-300 transform hover:scale-105">
-                ดูข้อมูลเพิ่มเติม
-              </button>
             </div>
           </div>
         </motion.div>

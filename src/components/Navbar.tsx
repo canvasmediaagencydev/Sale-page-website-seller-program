@@ -37,19 +37,19 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
           <div className="hidden md:flex items-center space-x-8">
             <ul className="flex items-center space-x-8">
               <li>
-                <a href="#about" className="text-white/90 hover:text-white font-medium text-lg transition-all duration-300 hover:scale-105 relative group">
+                <a href="#about" className="text-white/90 hover:text-white font-bold text-lg transition-all duration-300 hover:scale-105 relative group">
                   เกี่ยวกับเรา
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paydee-yellow-primary transition-all duration-300 group-hover:w-full"></span>
                 </a>
               </li>
               <li>
-                <a href="#commission" className="text-white/90 hover:text-white font-medium text-lg transition-all duration-300 hover:scale-105 relative group">
+                <a href="#commission" className="text-white/90 hover:text-white font-bold text-lg transition-all duration-300 hover:scale-105 relative group">
                   ค่าคอมมิชชั่น
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paydee-yellow-primary transition-all duration-300 group-hover:w-full"></span>
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-white/90 hover:text-white font-medium text-lg transition-all duration-300 hover:scale-105 relative group">
+                <a href="#contact" className="text-white/90 hover:text-white font-bold text-lg transition-all duration-300 hover:scale-105 relative group">
                   ติดต่อ
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paydee-yellow-primary transition-all duration-300 group-hover:w-full"></span>
                 </a>
@@ -87,19 +87,19 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
         <div className="pt-24 px-6">
           <ul className="space-y-6">
             <li>
-              <a href="#about" className="block text-white font-medium text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors"
+              <a href="#about" className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}>
                 เกี่ยวกับเรา
               </a>
             </li>
             <li>
-              <a href="#commission" className="block text-white font-medium text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors"
+              <a href="#commission" className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}>
                 ค่าคอมมิชชั่น
               </a>
             </li>
             <li>
-              <a href="#contact" className="block text-white font-medium text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors"
+              <a href="#contact" className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}>
                 ติดต่อ
               </a>
