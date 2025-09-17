@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import { FaFacebook, FaInstagram, FaLine, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { RiRocketFill } from "react-icons/ri";
@@ -35,7 +37,10 @@ export default function Footer() {
                   <p className="text-blue-100 text-lg leading-relaxed max-w-md">
                     ศูนย์รวมทัวร์ต่างประเทศ เปลี่ยนความหลงใหลในการเดินทางให้กลายเป็นรายได้หลักหลายหมื่นบาทต่อเดือน
                   </p>
-                  <div className="inline-flex items-center px-6 py-3 bg-paydee-orange-primary rounded-full text-white font-semibold hover:bg-paydee-yellow-primary transition-colors cursor-pointer">
+                  <div
+                    onClick={() => window.open('https://app.paydee.me', '_blank')}
+                    className="inline-flex items-center px-6 py-3 bg-paydee-orange-primary rounded-full text-white font-semibold hover:bg-paydee-yellow-primary transition-colors cursor-pointer"
+                  >
                     <RiRocketFill className="mr-2" />
                     เริ่มต้นเป็นตัวแทนขาย
                   </div>

@@ -62,7 +62,10 @@ const TripsSection = ({
           <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-8">
             เลือกทริปที่คุณชอบและเริ่มสร้างรายได้กันเลย
           </p>
-          <Button className="bg-gradient-to-r from-paydee-orange-primary via-paydee-yellow-primary to-paydee-orange-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl hover:shadow-paydee-orange-primary/25 transform hover:scale-105 transition-all duration-500">
+          <Button
+            onClick={() => window.open('https://app.paydee.me', '_blank')}
+            className="bg-gradient-to-r from-paydee-orange-primary via-paydee-yellow-primary to-paydee-orange-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl hover:shadow-paydee-orange-primary/25 transform hover:scale-105 transition-all duration-500"
+          >
             ร่วมทีมกับเราตอนนี้
           </Button>
         </div>

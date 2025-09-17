@@ -145,12 +145,14 @@ const HeroSection = ({ className = "" }: HeroSectionProps) => {
                   animationDelay: `${ANIMATION_DELAYS.HERO_BUTTON}s`
                 }}
               >
-                <Button className="group relative bg-gradient-to-r from-paydee-orange-primary via-paydee-yellow-primary to-paydee-orange-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all duration-500 transform hover:scale-105 shadow-2xl hover:shadow-paydee-orange-primary/25 border-2 border-paydee-yellow-primary/50">
+                <Button
+                  onClick={() => window.open('https://app.paydee.me', '_blank')}
+                  className="group relative bg-gradient-to-r from-paydee-orange-primary via-paydee-yellow-primary to-paydee-orange-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all duration-500 transform hover:scale-105 shadow-2xl hover:shadow-paydee-orange-primary/25 border-2 border-paydee-yellow-primary/50"
+                >
                   <span className="relative z-10 flex text-lg md:text-xl items-center gap-3">
                     <RiRocketFill className="md:text-2xl text-lg" />
                     เริ่มต้นเป็นตัวแทนขาย
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-paydee-yellow-primary to-paydee-orange-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                 </Button>
               </div>
             </div>

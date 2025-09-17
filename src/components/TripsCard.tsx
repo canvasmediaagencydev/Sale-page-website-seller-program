@@ -5,6 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { TripWithDetails } from "@/lib/supabase";
 import { LuCalendarDays } from "react-icons/lu";
+import SellerModal from "./SellerModal";
 
 interface TripCardProps {
     trip: TripWithDetails;
@@ -12,6 +13,7 @@ interface TripCardProps {
 
 function TripCard({ trip }: TripCardProps) {
     const [selectedScheduleIndex, setSelectedScheduleIndex] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const selectedSchedule = trip.trip_schedules[selectedScheduleIndex];
     
     // Format dates to Thai format
@@ -92,11 +94,20 @@ function TripCard({ trip }: TripCardProps) {
 
                 {/* Book Button */}
                 <div className="w-3/4 md:w-full md:px-5 flex items-center justify-center mx-auto">
-                    <button className="bg-paydee-orange-primary w-full hover:bg-paydee-yellow-primary text-white font-semibold py-2 px-2 rounded-full duration-200 transition-all transform hover:scale-105">
+                    <button
+                        onClick={() => setIsModalOpen(true)}
+                        className="bg-paydee-orange-primary w-full hover:bg-paydee-yellow-primary text-white font-semibold py-2 px-2 rounded-full duration-200 transition-all transform hover:scale-105"
+                    >
                         ดูทริป
                     </button>
                 </div>
             </div>
+
+            {/* Seller Modal */}
+            <SellerModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+            />
         </div>
     );
 }

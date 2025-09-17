@@ -80,7 +80,10 @@ const ProgramSection = () => (
 
           {/* CTA Button */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button className="bg-gradient-to-r from-paydee-blue-primary via-paydee-orange-primary to-paydee-yellow-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl hover:shadow-paydee-orange-primary/25 transform hover:scale-105 transition-all duration-500">
+            <Button
+              onClick={() => window.open('https://app.paydee.me', '_blank')}
+              className="bg-gradient-to-r from-paydee-blue-primary via-paydee-orange-primary to-paydee-yellow-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl hover:shadow-paydee-orange-primary/25 transform hover:scale-105 transition-all duration-500"
+            >
               เริ่มใช้ระบบวันนี้
             </Button>
           </div>

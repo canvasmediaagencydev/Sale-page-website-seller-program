@@ -162,7 +162,10 @@ const WorkingProcessSection = () => {
               ไม่ต้องรอ! เริ่มสร้างรายได้จากการขายทัวร์ได้ทันที
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="group relative bg-gradient-to-r from-paydee-blue-primary via-paydee-orange-primary to-paydee-yellow-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl hover:shadow-paydee-orange-primary/25 transform hover:scale-105 transition-all duration-500">
+              <button
+                onClick={() => window.open('https://app.paydee.me', '_blank')}
+                className="group relative bg-gradient-to-r from-paydee-blue-primary via-paydee-orange-primary to-paydee-yellow-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl hover:shadow-paydee-orange-primary/25 transform hover:scale-105 transition-all duration-500"
+              >
                 <span className="flex items-center gap-3">
                   <RiRocketFill className="text-xl group-hover:rotate-12 transition-transform duration-300" />
                   เริ่มต้นเป็นตัวแทนขายวันนี้
