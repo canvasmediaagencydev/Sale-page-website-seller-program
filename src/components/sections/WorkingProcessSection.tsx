@@ -99,7 +99,7 @@ const WorkingProcessSection = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-b from-white via-gray-50/50 to-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-white via-gray-50/50 to-white relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-32 h-32 bg-paydee-blue-primary/5 rounded-full blur-3xl"></div>
@@ -114,7 +114,7 @@ const WorkingProcessSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
           <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-paydee-blue-primary/10 to-paydee-orange-primary/10 backdrop-blur-sm border border-paydee-blue-primary/20 text-paydee-blue-primary rounded-full text-sm font-semibold mb-6">
             <span className="w-2 h-2 bg-paydee-orange-primary rounded-full mr-2 animate-pulse"></span>
@@ -133,7 +133,7 @@ const WorkingProcessSection = () => {
         </motion.div>
 
         {/* Process Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 relative mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 relative mb-12">
           {processSteps.map((step, index) => (
             <ProcessStep
               key={step.number}

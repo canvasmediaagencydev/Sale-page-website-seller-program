@@ -38,7 +38,7 @@ const TripsSection = ({
   totalTrips
 }: TripsSectionProps) => {
   return (
-    <section id="trips-section" className="py-20 bg-gradient-to-b from-white to-gray-50/50 relative overflow-hidden">
+    <section id="trips-section" className="py-16 md:py-20 bg-gradient-to-b from-white to-gray-50/50 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-32 h-32 bg-paydee-blue-primary/5 rounded-full blur-3xl"></div>
@@ -46,7 +46,7 @@ const TripsSection = ({
       </div>
 
       <div className="container mx-auto max-w-7xl px-4 lg:px-8 xl:px-16 relative">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-paydee-blue-primary/10 to-paydee-orange-primary/10 backdrop-blur-sm border border-paydee-blue-primary/20 text-paydee-blue-primary rounded-full text-sm font-semibold mb-6">
             <span className="w-2 h-2 bg-paydee-orange-primary rounded-full mr-2 animate-pulse"></span>
             ทริปแนะนำ

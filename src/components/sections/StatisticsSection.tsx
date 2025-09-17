@@ -8,7 +8,7 @@ import { RiMoneyDollarCircleFill, RiTeamFill, RiAwardFill, RiStarFill } from "re
 
 const StatisticsSection = () => {
   return (
-    <section className="py-10 relative overflow-hidden">
+    <section className="py-16 md:py-20 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-24 h-24 bg-paydee-blue-primary rounded-full"></div>

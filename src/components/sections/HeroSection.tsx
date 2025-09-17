@@ -57,13 +57,13 @@ const HeroSection = ({ className = "" }: HeroSectionProps) => {
             </div>
 
             {/* Main Title */}
-            <div className="space-y-2">
-              <div className="space-y-4">
+            <div className="space-y-8">
+              <div className="space-y-8">
                 <div
-                  className="text-5xl md:text-8xl xl:text-9xl font-black leading-none"
+                  className="text-4xl md:text-8xl xl:text-8xl font-black leading-tight"
                   style={{
-                    fontFamily: 'Playfair Display, serif',
-                    background: 'linear-gradient(135deg, #ffffff 0%, #febf12 25%, #fe9812 50%, #ffffff 75%)',
+                    fontFamily: 'Michroma, sans-serif',
+                    background: 'linear-gradient(135deg, #ffffff 0%, #febf12 30%, #fe9812 60%, #ffffff 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundSize: '200% 200%',
@@ -79,11 +79,11 @@ const HeroSection = ({ className = "" }: HeroSectionProps) => {
               </div>
 
               <BlurText
-                text="เปลี่ยนความหลงใหลในการเดินทางให้กลายเป็นรายได้หลักหลายหมื่นบาทต่อเดือน"
+                text="เปลี่ยนความหลงใหลในการเดินทาง ให้กลายเป็นรายได้หลัก หลายหมื่นบาทต่อเดือน"
                 delay={ANIMATION_DELAYS.HERO_SUBTITLE}
                 animateBy="words"
                 direction="bottom"
-                className="text-lg md:text-2xl xl:text-3xl font-bold text-white/95 leading-relaxed max-w-3xl"
+                className="text-lg md:text-2xl xl:text-3xl font-bold text-white/95 leading-relaxed max-w-4xl"
               />
             </div>
 

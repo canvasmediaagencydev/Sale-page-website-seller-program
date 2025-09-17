@@ -13,7 +13,7 @@ import { useTrips } from "@/hooks/useTrips";
 const AutoPlayVideo = lazy(() => import("@/components/AutoPlayVideo"));
 
 const ProgramSection = () => (
-  <section className="py-20 md:py-32 text-gray-900 relative overflow-hidden">
+  <section className="py-16 md:py-24 text-gray-900 relative overflow-hidden">
     {/* Background Elements */}
     <div className="absolute inset-0">
       <div className="absolute top-20 left-20 w-40 h-40 bg-paydee-blue-primary/5 rounded-full blur-3xl"></div>
@@ -83,9 +83,6 @@ const ProgramSection = () => (
             <Button className="bg-gradient-to-r from-paydee-blue-primary via-paydee-orange-primary to-paydee-yellow-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl hover:shadow-paydee-orange-primary/25 transform hover:scale-105 transition-all duration-500">
               เริ่มใช้ระบบวันนี้
             </Button>
-            <button className="border-2 border-paydee-blue-primary text-paydee-blue-primary hover:bg-paydee-blue-primary hover:text-white px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 transform hover:scale-105">
-              ดูคุณสมบัติเพิ่มเติม
-            </button>
           </div>
         </div>
 
@@ -140,7 +137,7 @@ const ProgramSection = () => (
 );
 
 const PartnerSection = () => (
-  <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+  <section className="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
     {/* Subtle background elements */}
     <div className="absolute top-10 left-10 w-20 h-20 bg-paydee-blue-primary/5 rounded-full blur-2xl"></div>
     <div className="absolute bottom-10 right-10 w-24 h-24 bg-paydee-orange-primary/5 rounded-full blur-2xl"></div>

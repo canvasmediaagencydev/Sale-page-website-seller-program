@@ -19,14 +19,16 @@ export default function Footer() {
 
               {/* Company Info */}
               <div className="lg:col-span-2 space-y-6">
-                <div className="flex items-center gap-3">
-                  <Image
-                    src="/img/paydee LOGO 03.svg"
-                    alt="PayDee Logo"
-                    width={140}
-                    height={45}
-                    className=""
-                  />
+                <div className="inline-flex items-center gap-3">
+                  <div className="bg-white/60 backdrop-blur-md rounded-xl p-3 border border-white/30 shadow-lg">
+                    <Image
+                      src="/img/paydee LOGO 03.svg"
+                      alt="PayDee Logo"
+                      width={140}
+                      height={45}
+                      className=""
+                    />
+                  </div>
                 </div>
                 <div className="space-y-4">
                   <h3 className="text-2xl font-bold">Paydee Seller Program</h3>

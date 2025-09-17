@@ -68,9 +68,9 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" 
-          rel="stylesheet" 
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Michroma&display=swap"
+          rel="stylesheet"
         />
         <link rel="dns-prefetch" href="https://nycuvphxbffyzkhbslai.supabase.co" />
         <link rel="canonical" href="https://www.paydee.me" />
