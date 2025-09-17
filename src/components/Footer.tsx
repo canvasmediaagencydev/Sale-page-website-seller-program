@@ -3,16 +3,25 @@ import { FaFacebook, FaInstagram, FaLine } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-800 text-white py-8 p-5 md:py-12">
+    <footer className="bg-paydee-blue-primary text-white py-8 p-5 md:py-12">
       <div className="container mx-auto max-w-7xl px-4 md:px-8 lg:px-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           {/* Left Section - Logo and Company Info */}
           <div className="flex-1">
             <div className="mb-10">
-              <h2 className="text-2xl md:text-4xl font-bold mb-2">Logo</h2>
+              <div className="flex items-center gap-3 mb-2">
+                <Image
+                  src="/img/paydee LOGO 03.svg"
+                  alt="PayDee Logo"
+                  width={60}
+                  height={20}
+                  className="h-8 w-auto filter invert"
+                />
+                <span className="text-2xl md:text-4xl font-bold text-white">paydee<span className="text-paydee-yellow-primary">.me</span></span>
+              </div>
             </div>
             <div>
-              <h3 className="text-xl md:text-2xl font-bold mb-2">GOGRAPHY</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-2">PayDee</h3>
               <p className="text-sm md:text-base text-gray-300 leading-relaxed">
                 79/576 ซอยสนามกีฬาแห่ง 150 แขวงสะพานสูง<br />
                 เขตสะพานสูง กรุงเทพมหานคร 10240

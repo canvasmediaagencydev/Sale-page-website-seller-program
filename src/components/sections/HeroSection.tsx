@@ -64,7 +64,7 @@ const HeroSection = ({ className = "" }: HeroSectionProps) => {
                   animationDelay: ANIMATION_DELAYS.HERO_BUTTON
                 }}
               >
-                <Button className="bg-orange-600 hover:bg-orange-700 text-white px-6 md:px-30 py-3 md:py-4 rounded-full text-lg md:text-xl font-semibold w-full md:w-auto transition-all transform hover:scale-105">
+                <Button className="bg-paydee-orange-primary hover:bg-paydee-yellow-primary text-white px-6 md:px-30 py-3 md:py-4 rounded-full text-lg md:text-xl font-semibold w-full md:w-auto transition-all transform hover:scale-105">
                   สมัครสมาชิกได้เลย
                 </Button>
               </div>

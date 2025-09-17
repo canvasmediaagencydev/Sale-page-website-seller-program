@@ -77,7 +77,7 @@ export function Pagination({
                 onClick={() => onPageChange(page as number)}
                 className={`flex items-center justify-center w-10 h-10 rounded-full text-sm  transition-all duration-200 ${
                   currentPage === page
-                    ? 'bg-slate-800 text-white shadow-lg'
+                    ? 'bg-paydee-blue-primary text-white shadow-lg'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900'
                 }`}
               >

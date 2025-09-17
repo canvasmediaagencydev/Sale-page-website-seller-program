@@ -70,7 +70,7 @@ function TripCard({ trip }: TripCardProps) {
                         <select
                             value={selectedScheduleIndex}
                             onChange={(e) => setSelectedScheduleIndex(Number(e.target.value))}
-                            className="w-full p-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-orange-500 focus:border-orange-500 "
+                            className="w-full p-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-paydee-orange-primary focus:border-paydee-orange-primary"
                         >
                             {trip.trip_schedules.map((schedule, index) => (
                                 <option key={schedule.id} value={index}>
@@ -84,7 +84,7 @@ function TripCard({ trip }: TripCardProps) {
                 {/* Commission */}
                 <div className="flex items-center justify-between mb-4">
                     <div>
-                        <span className="text-orange-600 text-2xl font-bold">
+                        <span className="text-paydee-orange-primary text-2xl font-bold">
                             คอมมิชชั่น {trip.commission_value.toLocaleString()}.-
                         </span>
                     </div>
@@ -92,7 +92,7 @@ function TripCard({ trip }: TripCardProps) {
 
                 {/* Book Button */}
                 <div className="w-3/4 md:w-full md:px-5 flex items-center justify-center mx-auto">
-                    <button className="bg-orange-600 w-full hover:bg-orange-700 text-white font-semibold py-2 px-2 rounded-full  duration-200 transition-all transform hover:scale-105">
+                    <button className="bg-paydee-orange-primary w-full hover:bg-paydee-yellow-primary text-white font-semibold py-2 px-2 rounded-full duration-200 transition-all transform hover:scale-105">
                         ดูทริป
                     </button>
                 </div>

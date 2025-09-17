@@ -21,13 +21,13 @@ const ProcessStep = ({ number, title, description, icon: Icon, index }: ProcessS
   >
     {/* Number Circle */}
     <div className="relative mb-6">
-      <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+      <div className="w-20 h-20 bg-gradient-to-br from-paydee-blue-primary to-paydee-blue-light rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
         {number}
       </div>
       
       {/* Icon Background */}
-      <div className="absolute -top-2 -right-2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center border-2 border-blue-100">
-        <Icon className="w-5 h-5 text-blue-500" />
+      <div className="absolute -top-2 -right-2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center border-2 border-paydee-blue-light/30">
+        <Icon className="w-5 h-5 text-paydee-blue-primary" />
       </div>
     </div>
 
@@ -43,7 +43,7 @@ const ProcessStep = ({ number, title, description, icon: Icon, index }: ProcessS
 
     {/* Connecting Line - Hidden on last item */}
     {index < 3 && (
-      <div className="hidden md:block absolute top-10 left-full w-24 h-0.5 bg-gradient-to-r from-blue-300 to-purple-300 -translate-x-2" />
+      <div className="hidden md:block absolute top-10 left-full w-24 h-0.5 bg-gradient-to-r from-paydee-blue-light to-paydee-orange-primary -translate-x-2" />
     )}
   </motion.div>
 );
@@ -87,7 +87,7 @@ const WorkingProcessSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm mb-4">
+          <div className="inline-block px-4 py-2 bg-paydee-blue-light/20 text-paydee-blue-primary rounded-full text-sm mb-4">
             PROCESS
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -120,7 +120,7 @@ const WorkingProcessSection = () => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+          <button className="bg-gradient-to-r from-paydee-blue-primary to-paydee-orange-primary hover:from-paydee-blue-light hover:to-paydee-yellow-primary text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
             เริ่มต้นเป็นตัวแทนขายวันนี้
           </button>
         </motion.div>

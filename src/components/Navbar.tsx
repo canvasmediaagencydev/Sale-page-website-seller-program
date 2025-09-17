@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 interface NavbarProps {
   className?: string;
@@ -12,14 +13,22 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
   return (
     <nav className={`container mx-auto max-w-7xl my-2 md:my-4 mt-4 md:mt-8 md:bg-black/40 md:backdrop-blur-xs rounded-full md:shadow-lg py-3 md:py-4 px-5 md:px-[80px] flex items-center justify-between animate-fade-in-down ${className}`}>
       <div className="flex items-center space-x-4">
-        <span className="font-bold text-4xl md:text-3xl text-white">Logo</span>
+        <Image
+          src="/img/paydee LOGO 03.svg"
+          alt="PayDee Logo"
+          width={120}
+          height={40}
+          className="h-8 md:h-10 w-auto"
+          priority
+        />
+        <span className="text-paydee-blue-primary font-bold text-xl md:text-2xl">paydee<span className="text-paydee-orange-primary">.me</span></span>
       </div>
       
       {/* Desktop Menu */}
       <ul className="hidden md:flex items-center text-lg lg:text-xl space-x-6 lg:space-x-12">
-        <li><a href="#" className="text-white hover:text-orange-600 font-normal transition-colors">เกี่ยวกับเรา</a></li>
-        <li><a href="#" className="text-white hover:text-orange-600 font-normal transition-colors">ค่าคอมมิชชั่น</a></li>
-        <li><a href="#" className="text-white hover:text-orange-600 font-normal transition-colors">ติดต่อ</a></li>
+        <li><a href="#" className="text-white hover:text-paydee-orange-primary font-normal transition-colors">เกี่ยวกับเรา</a></li>
+        <li><a href="#" className="text-white hover:text-paydee-orange-primary font-normal transition-colors">ค่าคอมมิชชั่น</a></li>
+        <li><a href="#" className="text-white hover:text-paydee-orange-primary font-normal transition-colors">ติดต่อ</a></li>
       </ul>
 
       {/* Mobile Menu Button */}
@@ -38,9 +47,9 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
       {isMobileMenuOpen && (
         <div className="absolute top-full left-4 right-4 mt-2 bg-black/40 backdrop-blur-lg rounded-2xl shadow-lg py-4 md:hidden">
           <ul className="flex flex-col space-y-3 px-6">
-            <li><a href="#" className="block text-white hover:text-orange-600 font-normal transition-colors py-2">เกี่ยวกับเรา</a></li>
-            <li><a href="#" className="block text-white hover:text-orange-600 font-normal transition-colors py-2">ค่าคอมมิชชั่น</a></li>
-            <li><a href="#" className="block text-white hover:text-orange-600 font-normal transition-colors py-2">ติดต่อ</a></li>
+            <li><a href="#" className="block text-white hover:text-paydee-orange-primary font-normal transition-colors py-2">เกี่ยวกับเรา</a></li>
+            <li><a href="#" className="block text-white hover:text-paydee-orange-primary font-normal transition-colors py-2">ค่าคอมมิชชั่น</a></li>
+            <li><a href="#" className="block text-white hover:text-paydee-orange-primary font-normal transition-colors py-2">ติดต่อ</a></li>
           </ul>
         </div>
       )}

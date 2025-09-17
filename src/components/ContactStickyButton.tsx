@@ -28,7 +28,7 @@ export default function ContactStickyButton() {
       label: 'อีเมล',
       value: CONTACT_INFO.EMAIL,
       href: `mailto:${CONTACT_INFO.EMAIL}`,
-      color: 'bg-blue-500 hover:bg-blue-600',
+      color: 'bg-paydee-blue-primary hover:bg-paydee-blue-light',
     },
   ];
 
@@ -70,7 +70,7 @@ export default function ContactStickyButton() {
           className={`w-14 h-14 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-110 ${
             isOpen 
               ? 'bg-red-500 hover:bg-red-600 rotate-180' 
-              : 'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700'
+              : 'bg-gradient-to-r from-paydee-blue-primary to-paydee-orange-primary hover:from-paydee-blue-light hover:to-paydee-yellow-primary'
           }`}
           aria-label={isOpen ? 'ปิดเมนูติดต่อ' : 'เปิดเมนูติดต่อ'}
         >

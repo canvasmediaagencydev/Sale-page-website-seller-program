@@ -38,7 +38,7 @@ const ProgramSection = () => (
               ติดตามยอด และสถานะทุกขั้นตอน โปร่งใส ชัดเจน
               ตรวจสอบเรียลไทม์ได้ตลอด 24 ชั่วโมง
             </p>
-            <Button className="bg-orange-600 hover:bg-orange-700 text-white px-4 md:px-30 py-3 md:py-4 rounded-full text-md md:text-xl font-semibold w-full md:w-auto transition-all transform hover:scale-105 mt-8">
+            <Button className="bg-paydee-orange-primary hover:bg-paydee-yellow-primary text-white px-4 md:px-30 py-3 md:py-4 rounded-full text-md md:text-xl font-semibold w-full md:w-auto transition-all transform hover:scale-105 mt-8">
               ร่วมทีมกับเราตอนนี้
             </Button>
           </div>

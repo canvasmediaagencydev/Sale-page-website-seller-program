@@ -42,7 +42,7 @@ const TripsSection = ({
       <div className="container mx-auto max-w-7xl px-4 lg:px-8 xl:px-12">
         <div className="text-center mb-8 md:mb-12">
           <div className="p-8">
-            <Button className="bg-orange-600 hover:bg-orange-700 text-white px-4 md:px-30 md:py-4 rounded-full text-md md:text-xl font-semibold w-full md:w-auto transition-all transform hover:scale-105">
+            <Button className="bg-paydee-orange-primary hover:bg-paydee-yellow-primary text-white px-4 md:px-30 md:py-4 rounded-full text-md md:text-xl font-semibold w-full md:w-auto transition-all transform hover:scale-105">
               ร่วมทีมกับเราตอนนี้
             </Button>
           </div>
