@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { FiSearch, FiUsers, FiStar, FiTrendingUp } from "react-icons/fi";
+import { RiRocketFill } from "react-icons/ri";
 
 interface ProcessStepProps {
   number: string;
@@ -13,37 +14,48 @@ interface ProcessStepProps {
 
 const ProcessStep = ({ number, title, description, icon: Icon, index }: ProcessStepProps) => (
   <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, delay: index * 0.2 }}
+    initial={{ opacity: 0, y: 50, scale: 0.9 }}
+    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+    transition={{
+      duration: 0.7,
+      delay: index * 0.15,
+      type: "spring",
+      stiffness: 100
+    }}
     viewport={{ once: true }}
-    className="relative flex flex-col items-center text-center group"
+    className="relative group"
   >
-    {/* Number Circle */}
-    <div className="relative mb-6">
-      <div className="w-20 h-20 bg-gradient-to-br from-paydee-blue-primary to-paydee-blue-light rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
-        {number}
+    {/* Main Card */}
+    <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group-hover:border-paydee-orange-primary/30">
+      {/* Number Circle */}
+      <div className="relative mb-6 flex justify-center">
+        <div className="w-20 h-20 bg-gradient-to-br from-paydee-blue-primary to-paydee-blue-light rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+          {number}
+        </div>
+
+        {/* Icon Background */}
+        <div className="absolute -top-2 -right-2 w-10 h-10 bg-gradient-to-br from-paydee-orange-primary to-paydee-yellow-primary rounded-lg shadow-lg flex items-center justify-center border-2 border-white group-hover:scale-110 group-hover:-rotate-12 transition-all duration-500">
+          <Icon className="w-5 h-5 text-white" />
+        </div>
       </div>
-      
-      {/* Icon Background */}
-      <div className="absolute -top-2 -right-2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center border-2 border-paydee-blue-light/30">
-        <Icon className="w-5 h-5 text-paydee-blue-primary" />
+
+      {/* Content */}
+      <div className="text-center space-y-4">
+        <h3 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-paydee-blue-primary transition-colors duration-300">
+          {title}
+        </h3>
+        <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+          {description}
+        </p>
       </div>
     </div>
 
-    {/* Content */}
-    <div className="space-y-3">
-      <h3 className="text-xl md:text-2xl font-semibold text-gray-800">
-        {title}
-      </h3>
-      <p className="text-gray-600 text-sm md:text-base max-w-xs">
-        {description}
-      </p>
-    </div>
-
-    {/* Connecting Line - Hidden on last item */}
+    {/* Connecting Arrow - Hidden on last item */}
     {index < 3 && (
-      <div className="hidden md:block absolute top-10 left-full w-24 h-0.5 bg-gradient-to-r from-paydee-blue-light to-paydee-orange-primary -translate-x-2" />
+      <div className="hidden lg:block absolute top-1/2 -right-6 transform -translate-y-1/2 z-10">
+        <div className="w-12 h-0.5 bg-gradient-to-r from-paydee-blue-light to-paydee-orange-primary"></div>
+        <div className="absolute -right-1 -top-1 w-3 h-3 bg-paydee-orange-primary rounded-full"></div>
+      </div>
     )}
   </motion.div>
 );
@@ -77,29 +89,41 @@ const WorkingProcessSection = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
-      <div className="container mx-auto max-w-7xl px-4 lg:px-8 xl:px-12">
+    <section className="py-20 md:py-32 bg-gradient-to-b from-white via-gray-50/50 to-white relative overflow-hidden">
+      {/* Background Decorations */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-paydee-blue-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-paydee-orange-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-conic from-paydee-yellow-primary/3 via-transparent to-paydee-blue-primary/3 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto max-w-7xl px-4 lg:px-8 xl:px-16 relative">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <div className="inline-block px-4 py-2 bg-paydee-blue-light/20 text-paydee-blue-primary rounded-full text-sm mb-4">
-            PROCESS
+          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-paydee-blue-primary/10 to-paydee-orange-primary/10 backdrop-blur-sm border border-paydee-blue-primary/20 text-paydee-blue-primary rounded-full text-sm font-semibold mb-6">
+            <span className="w-2 h-2 bg-paydee-orange-primary rounded-full mr-2 animate-pulse"></span>
+            ขั้นตอนการทำงาน
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our Working Process
+          <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4 leading-tight">
+            เริ่มขายได้ใน
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-paydee-blue-primary via-paydee-orange-primary to-paydee-yellow-primary">
+              4 ขั้นตอนง่าย
+            </span>
           </h2>
-          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
-            ขั้นตอนการทำงานง่ายๆ เพียง 4 ขั้นตอน เริ่มสร้างรายได้ได้เลย
+          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+            ไม่ต้องมีประสบการณ์ขาย เราจะแนะนำทุกขั้นตอน<br className="hidden md:block" />
+            จนกว่าคุณจะปิดการขายได้สำเร็จ
           </p>
         </motion.div>
 
         {/* Process Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 relative mb-16">
           {processSteps.map((step, index) => (
             <ProcessStep
               key={step.number}
@@ -116,13 +140,29 @@ const WorkingProcessSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          transition={{ duration: 0.6, delay: 1 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center"
         >
-          <button className="bg-gradient-to-r from-paydee-blue-primary to-paydee-orange-primary hover:from-paydee-blue-light hover:to-paydee-yellow-primary text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-            เริ่มต้นเป็นตัวแทนขายวันนี้
-          </button>
+          <div className="bg-gradient-to-r from-paydee-blue-primary/5 to-paydee-orange-primary/5 rounded-3xl p-8 border border-paydee-blue-primary/10">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              พร้อมเริ่มต้นแล้วใช่ไหม?
+            </h3>
+            <p className="text-gray-600 text-lg mb-6 max-w-xl mx-auto">
+              ไม่ต้องรอ! เริ่มสร้างรายได้จากการขายทัวร์ได้ทันที
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="group relative bg-gradient-to-r from-paydee-blue-primary via-paydee-orange-primary to-paydee-yellow-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl hover:shadow-paydee-orange-primary/25 transform hover:scale-105 transition-all duration-500">
+                <span className="flex items-center gap-3">
+                  <RiRocketFill className="text-xl group-hover:rotate-12 transition-transform duration-300" />
+                  เริ่มต้นเป็นตัวแทนขายวันนี้
+                </span>
+              </button>
+              <button className="border-2 border-paydee-blue-primary text-paydee-blue-primary hover:bg-paydee-blue-primary hover:text-white px-6 py-4 rounded-2xl text-base font-semibold transition-all duration-300 transform hover:scale-105">
+                ดูข้อมูลเพิ่มเติม
+              </button>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

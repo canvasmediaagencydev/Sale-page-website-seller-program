@@ -276,6 +276,15 @@
   background-position: 100% 50%;
 }
 
+/* Additional border utilities */
+.border-3 {
+  border-width: 3px;
+}
+
+.rounded-4xl {
+  border-radius: 2rem;
+}
+
 /* Responsive container improvements for ultra-wide screens */
 @media (min-width: 1920px) {
   .ultra-wide-container {

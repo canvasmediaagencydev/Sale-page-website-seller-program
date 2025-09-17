@@ -11,7 +11,6 @@ import {
   RiCustomerService2Fill,
   RiBarChartBoxFill,
   RiRocketFill,
-  RiFileTextFill,
   RiFireFill
 } from "react-icons/ri";
 

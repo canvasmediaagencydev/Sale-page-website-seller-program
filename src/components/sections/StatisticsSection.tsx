@@ -3,100 +3,191 @@
 import Image from "next/image";
 import CountUp from "@/components/CountUp";
 import { STATISTICS } from "@/constants";
-import { StatisticItemProps } from "@/types";
-
-const StatisticItem = ({ value, label, duration = 1, suffix = "+" }: StatisticItemProps) => (
-  <div className="text-2xl md:text-6xl font-semibold">
-    <div className="flex items-center md:justify-between justify-around">
-      <div>
-        <CountUp
-          from={0}
-          to={value}
-          separator=","
-          direction="up"
-          duration={duration}
-          className="count-up-text"
-        />
-        {suffix}
-      </div>
-      <p className="text-lg md:text-4xl font-normal text-gray-700">
-        {label}
-      </p>
-    </div>
-  </div>
-);
+import { motion } from "motion/react";
+import { RiMoneyDollarCircleFill, RiTeamFill, RiAwardFill, RiStarFill } from "react-icons/ri";
 
 const StatisticsSection = () => {
   return (
-    <section className="pb-25 text-gray-900">
-      <div className="container mx-auto max-w-7xl px-4 ">
-        {/* <div className="hidden md:block">
-          <div className="flex justify-center items-center gap-5">
-            <p className="md:text-4xl text-lg">ทัวร์ต่างประเทศมากมาย สร้างรายได้ได้ตลอดทั้งปี</p>
-            <Image 
-              src="/img/image 5.png" 
-              alt="Tour" 
-              width={200} 
-              height={300} 
-              className="hidden md:block"
-              priority
-              placeholder="blur"
-              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkrHB0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-            />
-          </div>
-          <div className="flex justify-center items-center gap-5 md:mt-4 mt-2">
-            <Image src="/img/image 6.png" alt="Tour" width={200} height={300} className="hidden md:block" />
-            <p className="md:text-4xl text-lg text-gray-700">ไม่มีขั้นต่ำกดดัน ไม่ต้องเข้าออฟฟิศ ไม่ต้องดูแลลูกค้าเอง</p>
-          </div>
-        </div> */}
-        
-        <div className="flex flex-col md:flex-row mt-8 md:mt-15">
-          <p className="text-2xl md:text-5xl md:leading-14 md:hidden font-semibold mb-4 text-center md:text-left">
-            ร่วมเป็นส่วนหนึ่งของทีมเรา <br />
-            เพื่อรับค่าคอมมิชชั่นที่สูงกว่า!
-          </p>
-          
-          <div className="w-full md:w-1/3 flex items-center justify-center mb-8 md:mb-0 relative">
-            <Image 
-              src="/img/7411 1.svg" 
-              alt="Tour" 
-              width={300} 
-              height={225} 
-              className="w-full max-w-[250px] h-auto md:max-w-[400px] z-10 shadow-lg rounded-4xl"
-              priority
-            />
-            <div className="bg-paydee-blue-primary hidden md:block w-100 h-130 absolute top-4 left-2 rounded-4xl"></div>
-          </div>
-          
-          <div className="flex-1 md:mx-20 mx-0">
-            <p className="text-2xl md:text-5xl md:leading-14 hidden md:block font-semibold mb-4 text-center md:text-left">
-              ร่วมเป็นส่วนหนึ่งของทีมเรา <br />
-              เพื่อรับค่าคอมมิชชั่นที่สูงกว่า!
-            </p>
-            <p className="text-md md:text-lg lg:text-xl text-center md:text-left leading-6 md:leading-normal">
-              ด้วยประสบการณ์เดินทางทั่วโลกกว่า {STATISTICS.EXPERIENCE_YEARS} ปี มีลูกค้าไว้วางใจมากมาย <br className="md:block hidden" />
-              วันนี้เราพร้อมเปิดรับตัวแทนขาย มอบค่าคอมมิชชั่นที่สูง มีทีมงานคอยเคียงข้าง เพื่อให้คุณปิดการขายได้ง่ายขึ้น
-            </p>
-            
-            <div className="mt-6 md:mt-10 flex flex-col gap-4 md:gap-6 bg-gray-100 md:bg-white p-5 rounded-3xl">
-              <StatisticItem 
-                value={STATISTICS.COMMISSION} 
-                label="ค่าคอมมิชชั่นสูง" 
-                duration={1} 
-              />
-              <StatisticItem 
-                value={STATISTICS.EXPERIENCE_YEARS} 
-                label="ประสบการณ์" 
-                duration={1} 
-                suffix=" +"
-              />
-              <StatisticItem 
-                value={STATISTICS.CUSTOMERS} 
-                label="ลูกค้าที่ไว้วางใจ" 
-                duration={2} 
-              />
+    <section className="py-10 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-20 w-24 h-24 bg-paydee-blue-primary rounded-full"></div>
+        <div className="absolute top-40 right-32 w-16 h-16 bg-paydee-orange-primary rounded-full"></div>
+        <div className="absolute bottom-32 left-40 w-20 h-20 bg-paydee-yellow-primary rounded-full"></div>
+        <div className="absolute bottom-20 right-20 w-32 h-32 bg-paydee-blue-light rounded-full"></div>
+      </div>
+
+      <div className="container mx-auto max-w-7xl px-4 lg:px-8 xl:px-16 relative">
+        {/* Main Content Grid */}
+        <div className="grid lg:grid-cols-3 gap-12 lg:gap-16 items-center">
+          {/* Left Column - Main Message */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="lg:col-span-2 space-y-8"
+          >
+            {/* Badge */}
+            <div className="inline-flex items-center px-4 py-2 bg-paydee-orange-primary/10 border border-paydee-orange-primary/20 text-paydee-orange-primary rounded-full text-sm font-semibold">
+              <RiStarFill className="w-4 h-4 mr-2" />
+              ผลลัพธ์ที่พิสูจน์แล้ว
             </div>
-          </div>
+
+            {/* Main Heading */}
+            <div className="space-y-4">
+              <h2 className="text-4xl md:text-6xl font-black text-gray-900 leading-tight">
+                ร่วมเป็น
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-paydee-blue-primary via-paydee-orange-primary to-paydee-yellow-primary">
+                  ตัวแทนขายมืออาชีพ
+                </span>
+              </h2>
+              <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-2xl">
+                เปลี่ยนประสบการณ์การเดินทางของคุณให้เป็นรายได้ที่มั่นคง
+                ด้วยคอมมิชชั่นสูงสุด <span className="font-bold text-paydee-orange-primary">15,000 บาทต่อทริป</span>
+              </p>
+            </div>
+
+            {/* Key Features */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="flex items-start space-x-4"
+              >
+                <div className="w-12 h-12 bg-gradient-to-br from-paydee-blue-primary to-paydee-blue-light rounded-xl flex items-center justify-center shadow-lg">
+                  <RiMoneyDollarCircleFill className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">คอมมิชชั่นสูง</h3>
+                  <p className="text-gray-600">ได้รับคอมมิชชั่นสูงสุด 15,000 บาท ต่อการขาย 1 ทริป</p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="flex items-start space-x-4"
+              >
+                <div className="w-12 h-12 bg-gradient-to-br from-paydee-orange-primary to-paydee-yellow-primary rounded-xl flex items-center justify-center shadow-lg">
+                  <RiTeamFill className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">ทีมสนับสนุน</h3>
+                  <p className="text-gray-600">ทีมงานมืออาชีพคอยช่วยเหลือ 24/7 ตลอดการขาย</p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="flex items-start space-x-4"
+              >
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-400 rounded-xl flex items-center justify-center shadow-lg">
+                  <RiAwardFill className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">ไม่มีค่าสมัคร</h3>
+                  <p className="text-gray-600">เริ่มต้นได้ทันทีโดยไม่มีค่าใช้จ่ายใดๆ ล่วงหน้า</p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                viewport={{ once: true }}
+                className="flex items-start space-x-4"
+              >
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                  <RiStarFill className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">ระบบครบครัน</h3>
+                  <p className="text-gray-600">ระบบจัดการขายและติดตามคอมมิชชั่นแบบเรียลไทม์</p>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Right Column - Statistics */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            {/* Main Image with Stats Overlay */}
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-3xl">
+                <Image
+                  src="/img/7411 1.svg"
+                  alt="PayDee Success"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto object-cover"
+                  priority
+                />
+                {/* Overlay Stats */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6">
+                      <div className="grid grid-cols-2 gap-4 text-center">
+                        <div>
+                          <div className="text-3xl font-black text-paydee-orange-primary mb-1">
+                            <CountUp from={0} to={15} duration={1.5} />K
+                          </div>
+                          <div className="text-sm text-gray-600 font-medium">บาท/ทริป</div>
+                        </div>
+                        <div>
+                          <div className="text-3xl font-black text-paydee-blue-primary mb-1">
+                            <CountUp from={0} to={500} duration={2} />+
+                          </div>
+                          <div className="text-sm text-gray-600 font-medium">ตัวแทนขาย</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Side Stats */}
+            <div className="grid grid-cols-1 gap-4">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-r from-paydee-blue-primary/10 to-paydee-blue-light/10 border border-paydee-blue-primary/20 rounded-2xl p-6 text-center"
+              >
+                <div className="text-4xl font-black text-paydee-blue-primary mb-2">
+                  <CountUp from={0} to={STATISTICS.EXPERIENCE_YEARS} duration={1} />+
+                </div>
+                <div className="text-gray-700 font-semibold">ปี ประสบการณ์</div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-r from-paydee-orange-primary/10 to-paydee-yellow-primary/10 border border-paydee-orange-primary/20 rounded-2xl p-6 text-center"
+              >
+                <div className="text-4xl font-black text-paydee-orange-primary mb-2">
+                  <CountUp from={0} to={Math.floor(STATISTICS.CUSTOMERS / 100)} duration={2} />K+
+                </div>
+                <div className="text-gray-700 font-semibold">ลูกค้าไว้วางใจ</div>
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
