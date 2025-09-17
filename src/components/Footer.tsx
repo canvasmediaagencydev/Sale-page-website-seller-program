@@ -6,7 +6,7 @@ import { RiRocketFill } from "react-icons/ri";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-paydee-blue-primary to-paydee-blue-light text-white relative overflow-hidden">
+    <footer className="bg-paydee-blue-primary text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-32 h-32 bg-paydee-orange-primary/10 rounded-full blur-3xl"></div>

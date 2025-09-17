@@ -62,7 +62,7 @@ const StatisticsSection = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 mb-1">คอมมิชชั่นสูง</h3>
-                  <p className="text-gray-600">ได้รับคอมมิชชั่นสูงสุด 15,000 บาท ต่อการขาย 1 ทริป</p>
+                  <p className="text-gray-600">ได้รับคอมมิชชั่นสูงสุด 3,000+ บาท ต่อการขาย 1 ทริป</p>
                 </div>
               </motion.div>
 
@@ -142,7 +142,7 @@ const StatisticsSection = () => {
                       <div className="grid grid-cols-2 gap-4 text-center">
                         <div>
                           <div className="text-3xl font-black text-paydee-orange-primary mb-1">
-                            <CountUp from={0} to={15} duration={1.5} />K
+                            <CountUp from={0} to={3} duration={1.5} />K+
                           </div>
                           <div className="text-sm text-gray-600 font-medium">บาท/ทริป</div>
                         </div>
