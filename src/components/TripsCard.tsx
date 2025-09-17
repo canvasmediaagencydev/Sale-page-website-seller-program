@@ -96,7 +96,7 @@ function TripCard({ trip }: TripCardProps) {
                 <div className="w-3/4 md:w-full md:px-5 flex items-center justify-center mx-auto">
                     <button
                         onClick={() => setIsModalOpen(true)}
-                        className="bg-paydee-orange-primary w-full hover:bg-paydee-yellow-primary text-white font-semibold py-2 px-2 rounded-full duration-200 transition-all transform hover:scale-105"
+                        className="bg-paydee-orange-primary w-full hover:bg-paydee-yellow-primary text-white font-semibold py-2 px-2 rounded-full duration-200 transition-all transform hover:scale-105 cursor-pointer"
                     >
                         ดูทริป
                     </button>

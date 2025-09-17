@@ -80,21 +80,21 @@ export default function Footer() {
                 <div className="flex gap-4">
                   <a
                     href="#"
-                    className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-paydee-orange-primary hover:scale-110 transition-all duration-300"
+                    className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-paydee-orange-primary hover:scale-110 transition-all duration-300 cursor-pointer"
                     aria-label="Facebook"
                   >
                     <FaFacebook className="text-xl" />
                   </a>
                   <a
                     href="#"
-                    className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-paydee-orange-primary hover:scale-110 transition-all duration-300"
+                    className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-paydee-orange-primary hover:scale-110 transition-all duration-300 cursor-pointer"
                     aria-label="Instagram"
                   >
                     <FaInstagram className="text-xl" />
                   </a>
                   <a
                     href="#"
-                    className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-paydee-orange-primary hover:scale-110 transition-all duration-300"
+                    className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-paydee-orange-primary hover:scale-110 transition-all duration-300 cursor-pointer"
                     aria-label="Line"
                   >
                     <FaLine className="text-xl" />
@@ -117,10 +117,10 @@ export default function Footer() {
                 © 2024 PayDee. All rights reserved.
               </p>
               <div className="flex items-center gap-6">
-                <a href="#" className="text-blue-100 hover:text-white text-sm transition-colors">
+                <a href="#" className="text-blue-100 hover:text-white text-sm transition-colors cursor-pointer">
                   นโยบายความเป็นส่วนตัว
                 </a>
-                <a href="#" className="text-blue-100 hover:text-white text-sm transition-colors">
+                <a href="#" className="text-blue-100 hover:text-white text-sm transition-colors cursor-pointer">
                   เงื่อนไขการใช้งาน
                 </a>
               </div>

@@ -67,7 +67,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
                     e.preventDefault();
                     document.querySelector('#statistics-section')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className={`font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group ${
+                  className={`font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer ${
                     isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/90 hover:text-white'
                   }`}
                 >
@@ -82,7 +82,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
                     e.preventDefault();
                     document.querySelector('#trips-section')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className={`font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group ${
+                  className={`font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer ${
                     isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/90 hover:text-white'
                   }`}
                 >
@@ -97,7 +97,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
                     e.preventDefault();
                     document.querySelector('footer')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className={`font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group ${
+                  className={`font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer ${
                     isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/90 hover:text-white'
                   }`}
                 >
@@ -110,7 +110,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
             {/* CTA Button */}
             <button
               onClick={() => window.open('https://app.paydee.me', '_blank')}
-              className="bg-gradient-to-r from-paydee-orange-primary to-paydee-yellow-primary hover:from-paydee-yellow-primary hover:to-paydee-orange-primary text-white px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="bg-gradient-to-r from-paydee-orange-primary to-paydee-yellow-primary hover:from-paydee-yellow-primary hover:to-paydee-orange-primary text-white px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer"
             >
               เริ่มต้นเลย
             </button>
@@ -118,7 +118,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`md:hidden relative z-50 p-3 rounded-full backdrop-blur-sm transition-all duration-300 ${
+            className={`md:hidden relative z-50 p-3 rounded-full backdrop-blur-sm transition-all duration-300 cursor-pointer ${
               isScrolled
                 ? 'bg-gray-100 hover:bg-gray-200'
                 : 'bg-white/10 hover:bg-white/20'
@@ -169,7 +169,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
         <div className="absolute top-6 right-6">
           <button
             onClick={() => setIsMobileMenuOpen(false)}
-            className="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex flex-col justify-center items-center text-white transition-all duration-300 transform hover:scale-110"
+            className="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex flex-col justify-center items-center text-white transition-all duration-300 transform hover:scale-110 cursor-pointer"
           >
             <div className="w-6 h-0.5 bg-white transform rotate-45 translate-y-0.5 transition-all duration-300"></div>
             <div className="w-6 h-0.5 bg-white transform -rotate-45 -translate-y-0.5 transition-all duration-300"></div>
@@ -185,7 +185,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
                   setIsMobileMenuOpen(false);
                   document.querySelector('#statistics-section')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors"
+                className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors cursor-pointer"
               >
                 เกี่ยวกับเรา
               </a>
@@ -198,7 +198,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
                   setIsMobileMenuOpen(false);
                   document.querySelector('#trips-section')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors"
+                className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors cursor-pointer"
               >
                 ค่าคอมมิชชั่น
               </a>
@@ -211,7 +211,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
                   setIsMobileMenuOpen(false);
                   document.querySelector('footer')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors"
+                className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors cursor-pointer"
               >
                 ติดต่อ
               </a>
@@ -221,7 +221,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
           <div className="mt-8">
             <button
               onClick={() => window.open('https://app.paydee.me', '_blank')}
-              className="w-full bg-gradient-to-r from-paydee-orange-primary to-paydee-yellow-primary text-white px-6 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="w-full bg-gradient-to-r from-paydee-orange-primary to-paydee-yellow-primary text-white px-6 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
             >
               เริ่มต้นเลย
             </button>

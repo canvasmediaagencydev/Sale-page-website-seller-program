@@ -30,7 +30,7 @@ export default function Button({
       type={type}
       onClick={handleClick}
       disabled={disabled}
-      className={`rounded-full bg-paydee-orange-primary hover:bg-paydee-yellow-primary px-18 py-3 text-white hover:cursor-pointer transition-colors ${className}`}
+      className={`rounded-full bg-paydee-orange-primary hover:bg-paydee-yellow-primary px-18 py-3 text-white cursor-pointer transition-colors ${className}`}
     >
       {children}
     </button>

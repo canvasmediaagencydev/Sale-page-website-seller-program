@@ -52,7 +52,7 @@ export default function ContactStickyButton() {
                 href={option.href}
                 target={option.href.startsWith('http') ? '_blank' : undefined}
                 rel={option.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className={`flex items-center gap-3 px-4 py-3 rounded-full text-white shadow-lg transition-all hover:shadow-xl hover:scale-105 ${option.color}`}
+                className={`flex items-center gap-3 px-4 py-3 rounded-full text-white shadow-lg transition-all hover:shadow-xl hover:scale-105 cursor-pointer ${option.color}`}
                 onClick={() => setIsOpen(false)}
               >
                 <option.icon className="w-5 h-5" />
@@ -67,9 +67,9 @@ export default function ContactStickyButton() {
         {/* Main Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`w-14 h-14 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-110 ${
-            isOpen 
-              ? 'bg-red-500 hover:bg-red-600 rotate-180' 
+          className={`w-14 h-14 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-110 cursor-pointer ${
+            isOpen
+              ? 'bg-red-500 hover:bg-red-600 rotate-180'
               : 'bg-gradient-to-r from-paydee-blue-primary to-paydee-orange-primary hover:from-paydee-blue-light hover:to-paydee-yellow-primary'
           }`}
           aria-label={isOpen ? 'ปิดเมนูติดต่อ' : 'เปิดเมนูติดต่อ'}
