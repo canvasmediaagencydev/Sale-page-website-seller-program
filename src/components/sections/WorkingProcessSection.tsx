@@ -26,28 +26,38 @@ const ProcessStep = ({ number, title, description, icon: Icon, index }: ProcessS
     className="relative group"
   >
     {/* Main Card */}
-    <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group-hover:border-paydee-orange-primary/30">
+    <div className="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 group overflow-hidden">
+
+      {/* Subtle Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-paydee-blue-primary/2 via-transparent to-paydee-orange-primary/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
       {/* Number Circle */}
       <div className="relative mb-6 flex justify-center">
-        <div className="w-20 h-20 bg-gradient-to-br from-paydee-blue-primary to-paydee-blue-light rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-          {number}
-        </div>
+        <div className="relative">
+          {/* Main Number */}
+          <div className="w-20 h-20 bg-gradient-to-br from-paydee-blue-primary to-paydee-orange-primary rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+            {number}
+          </div>
 
-        {/* Icon Background */}
-        <div className="absolute -top-2 -right-2 w-10 h-10 bg-gradient-to-br from-paydee-orange-primary to-paydee-yellow-primary rounded-lg shadow-lg flex items-center justify-center border-2 border-white group-hover:scale-110 group-hover:-rotate-12 transition-all duration-500">
-          <Icon className="w-5 h-5 text-white" />
+          {/* Icon Badge */}
+          <div className="absolute -top-2 -right-2 w-10 h-10 bg-gradient-to-br from-paydee-orange-primary to-paydee-yellow-primary rounded-full shadow-md flex items-center justify-center border-2 border-white group-hover:scale-110 transition-transform duration-300">
+            <Icon className="w-5 h-5 text-white" />
+          </div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="text-center space-y-4">
-        <h3 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-paydee-blue-primary transition-colors duration-300">
+      <div className="relative text-center space-y-4">
+        <h3 className="text-lg md:text-xl font-bold text-gray-900 group-hover:text-paydee-blue-primary transition-colors duration-300">
           {title}
         </h3>
-        <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+        <p className="text-gray-600 text-sm leading-relaxed">
           {description}
         </p>
       </div>
+
+      {/* Hover Border */}
+      <div className="absolute inset-0 border-2 border-paydee-orange-primary/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     </div>
 
     {/* Connecting Arrow - Hidden on last item */}
