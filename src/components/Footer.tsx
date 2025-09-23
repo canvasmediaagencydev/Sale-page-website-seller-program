@@ -36,7 +36,7 @@ export default function Footer() {
                 <div className="space-y-4">
                   <h3 className="text-2xl font-bold">{BRAND.NAME} Seller Program</h3>
                   <p className="text-blue-100 text-lg leading-relaxed max-w-md">
-                    ศูนย์รวมทัวร์ต่างประเทศ เปลี่ยนความหลงใหลในการเดินทางให้กลายเป็นรายได้หลักหลายหมื่นบาทต่อเดือน
+                    รวมทัวร์ต่างประเทศ จากทั่วโลกไว้ที่นี่ที่เดียว
                   </p>
                   <div
                     onClick={() => window.open('https://app.paydee.me', '_blank')}

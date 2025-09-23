@@ -60,9 +60,9 @@ const HeroSection = ({ className = "" }: HeroSectionProps) => {
             <div className="space-y-8">
               <div className="space-y-8">
                 <div
-                  className="text-4xl md:text-8xl xl:text-8xl font-black leading-tight"
+                  className="text-4xl md:text-8xl xl:text-8xl mt-1 font-black leading-tight"
                   style={{
-                    fontFamily: 'Michroma, sans-serif',
+                    fontFamily: 'Russo One, sans-serif',
                     background: 'linear-gradient(135deg, #ffffff 0%, #febf12 30%, #fe9812 60%, #ffffff 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
@@ -71,20 +71,14 @@ const HeroSection = ({ className = "" }: HeroSectionProps) => {
                     animationDelay: `${ANIMATION_DELAYS.HERO_TITLE + 0.2}s`
                   }}
                 >
-                  PayDee
+                  Paydee
                 </div>
-                <div className="text-lg md:text-xl text-paydee-yellow-primary font-semibold tracking-widest uppercase">
-                  ศูนย์รวมทัวร์ต่างประเทศ
+                <div className="text-lg md:text-2xl mb-5 text-paydee-yellow-primary font-semibold tracking-widest uppercase">
+                  รวมทัวร์ต่างประเทศ
                 </div>
               </div>
 
-              <BlurText
-                text="เปลี่ยนความหลงใหลในการเดินทาง ให้กลายเป็นรายได้หลัก หลายหมื่นบาทต่อเดือน"
-                delay={ANIMATION_DELAYS.HERO_SUBTITLE}
-                animateBy="words"
-                direction="bottom"
-                className="text-lg md:text-2xl xl:text-3xl font-bold text-white/95 leading-relaxed max-w-4xl"
-              />
+
             </div>
 
             {/* Key Benefits */}

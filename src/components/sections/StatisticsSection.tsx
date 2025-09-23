@@ -43,7 +43,7 @@ const StatisticsSection = () => {
                 </span>
               </h2>
               <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-2xl">
-                เปลี่ยนประสบการณ์การเดินทางของคุณให้เป็นรายได้ที่มั่นคง
+                เปลี่ยนความรู้เรื่องการท่องเที่ยวของคุณให้เป็นรายได้จริง
                 ด้วยคอมมิชชั่นสูงสุด <span className="font-bold text-paydee-orange-primary">3,000+ บาทต่อทริป</span>
               </p>
             </div>
@@ -62,7 +62,7 @@ const StatisticsSection = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 mb-1">คอมมิชชั่นสูง</h3>
-                  <p className="text-gray-600">ได้รับคอมมิชชั่นสูงสุด 3,000+ บาท ต่อการขาย 1 ทริป</p>
+                  <p className="text-gray-600">ได้รับคอมมิชชั่นสูง 3,000+ บาท ต่อการขาย 1 ทริป</p>
                 </div>
               </motion.div>
 
@@ -169,9 +169,9 @@ const StatisticsSection = () => {
                 className="bg-gradient-to-r from-paydee-blue-primary/10 to-paydee-blue-light/10 border border-paydee-blue-primary/20 rounded-2xl p-6 text-center"
               >
                 <div className="text-4xl font-black text-paydee-blue-primary mb-2">
-                  <CountUp from={0} to={STATISTICS.EXPERIENCE_YEARS} duration={1} />+
+                  <CountUp from={0} to={STATISTICS.EXPERIENCE_YEARS} duration={1} />+ ปี
                 </div>
-                <div className="text-gray-700 font-semibold">ปี ประสบการณ์</div>
+                <div className="text-gray-700 font-semibold">ประสบการณ์</div>
               </motion.div>
 
               <motion.div

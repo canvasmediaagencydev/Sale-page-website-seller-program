@@ -74,20 +74,20 @@ const WorkingProcessSection = () => {
   const processSteps = [
     {
       number: "1",
-      title: "สมัครง่าย",
-      description: "สมัครเป็นตัวแทนขายได้ในไม่กี่ขั้นตอน พร้อมเริ่มใช้งานได้ทันที ไม่มีค่าใช้จ่ายแอบแฝง",
+      title: "ข้อมูลโปร่งใส",
+      description: "เราเปิดเผยรายละเอียดทุกอย่างอย่างชัดเจน ไม่มีค่าใช้จ่ายแอบแฝง ข้อมูลทัวร์และคอมมิชชั่นโปร่งใส",
       icon: FiUsers,
     },
     {
       number: "2",
-      title: "เลือกขายทัวร์ที่ใช่",
-      description: "เลือกรายการทัวร์ที่คุณสนใจได้อิสระ ระบบและทีมหลังบ้านสนับสนุนให้การขายง่ายขึ้น",
+      title: "ราคายุติธรรม",
+      description: "ระบบกำหนดราคาทัวร์และคอมมิชชั่นอย่างยุติธรรม มาตรฐานเดียวกันทุกคน ไม่มีการเลือกปฏิบัติ",
       icon: FiSearch,
     },
     {
       number: "3",
-      title: "รับเงินง่าย",
-      description: "เมื่อขายสำเร็จ ระบบจะแสดงคอมมิชชั่นอย่างชัดเจน โปร่งใส ตรวจสอบได้ทุกขั้นตอน",
+      title: "ติดตามได้เรียลไทม์",
+      description: "ระบบแสดงยอดขาย คอมมิชชั่น และสถานะการจ่ายเงินแบบเรียลไทม์ ตรวจสอบได้ทุกเวลา 24/7",
       icon: FiStar,
     },
     {
@@ -118,17 +118,17 @@ const WorkingProcessSection = () => {
         >
           <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-paydee-blue-primary/10 to-paydee-orange-primary/10 backdrop-blur-sm border border-paydee-blue-primary/20 text-paydee-blue-primary rounded-full text-sm font-semibold mb-6">
             <span className="w-2 h-2 bg-paydee-orange-primary rounded-full mr-2 animate-pulse"></span>
-            ขั้นตอนการทำงาน
+            ความโปร่งใสในการขาย
           </div>
           <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4 leading-tight">
-            เริ่มขายได้ใน
+            ทำไมต้อง
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-paydee-blue-primary via-paydee-orange-primary to-paydee-yellow-primary">
-              4 ขั้นตอนง่าย
+              เลือกเรา?
             </span>
           </h2>
           <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            ไม่ต้องมีประสบการณ์ขาย เราจะแนะนำทุกขั้นตอน<br className="hidden md:block" />
-            จนกว่าคุณจะปิดการขายได้สำเร็จ
+            4 ความแตกต่างที่ทำให้เราโดดเด่น<br className="hidden md:block" />
+            เรื่องความโปร่งใสและความน่าเชื่อถือ
           </p>
         </motion.div>
 
