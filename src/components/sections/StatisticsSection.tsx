@@ -38,7 +38,7 @@ const StatisticsSection = () => {
             <div className="space-y-4">
               <h2 className="text-4xl md:text-6xl font-black text-gray-900 leading-tight">
                 ร่วมเป็น
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-paydee-blue-primary via-paydee-orange-primary to-paydee-yellow-primary">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-paydee-blue-primary via-paydee-blue-light">
                   ตัวแทนขายมืออาชีพ
                 </span>
               </h2>

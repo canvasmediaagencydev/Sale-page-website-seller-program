@@ -70,7 +70,7 @@ export default function ContactStickyButton() {
           className={`w-14 h-14 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-110 cursor-pointer ${
             isOpen
               ? 'bg-red-500 hover:bg-red-600 rotate-180'
-              : 'bg-gradient-to-r from-paydee-blue-primary to-paydee-orange-primary hover:from-paydee-blue-light hover:to-paydee-yellow-primary'
+              : 'bg-paydee-blue-primary hover:bg-paydee-blue-light'
           }`}
           aria-label={isOpen ? 'ปิดเมนูติดต่อ' : 'เปิดเมนูติดต่อ'}
         >

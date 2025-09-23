@@ -29,10 +29,10 @@ const ProgramSection = () => (
           ระบบการขายที่ทันสมัย
         </div>
         <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-paydee-blue-primary via-paydee-orange-primary to-paydee-yellow-primary">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-paydee-orange-primary to-paydee-yellow-primary">
             Seller Program
           </span>
-          <span className="block text-gray-900">
+          <span className="block text-gray-900 mt-2">
             ระบบหลังบ้านที่ทันสมัย
           </span>
         </h2>

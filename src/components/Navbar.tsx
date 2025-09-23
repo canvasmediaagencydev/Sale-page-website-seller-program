@@ -24,7 +24,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
   return (
     <nav className={`transition-all duration-500 ease-in-out ${
       isScrolled
-        ? 'fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200/50'
+        ? 'fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg'
         : ''
     } ${className}`}>
       <div className="container mx-auto max-w-7xl px-4 lg:px-8">

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { FaFacebook, FaInstagram, FaLine, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { RiRocketFill } from "react-icons/ri";
+import { CONTACT_INFO, STATISTICS, BRAND } from "@/constants";
 
 export default function Footer() {
   return (
@@ -33,7 +34,7 @@ export default function Footer() {
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-bold">Paydee Seller Program</h3>
+                  <h3 className="text-2xl font-bold">{BRAND.NAME} Seller Program</h3>
                   <p className="text-blue-100 text-lg leading-relaxed max-w-md">
                     ศูนย์รวมทัวร์ต่างประเทศ เปลี่ยนความหลงใหลในการเดินทางให้กลายเป็นรายได้หลักหลายหมื่นบาทต่อเดือน
                   </p>
@@ -54,22 +55,22 @@ export default function Footer() {
                   <div className="flex items-start gap-3">
                     <FaMapMarkerAlt className="text-paydee-orange-primary mt-1 flex-shrink-0" />
                     <p className="text-blue-100">
-                      79/576 ซอยสนามกีฬาแห่ง 150<br />
-                      แขวงสะพานสูง เขตสะพานสูง<br />
-                      กรุงเทพมหานคร 10240
+                      {CONTACT_INFO.ADDRESS.STREET}<br />
+                      {CONTACT_INFO.ADDRESS.DISTRICT}<br />
+                      {CONTACT_INFO.ADDRESS.PROVINCE} {CONTACT_INFO.ADDRESS.POSTAL_CODE}
                     </p>
                   </div>
                   <div className="flex items-center gap-3">
                     <FaPhone className="text-paydee-orange-primary" />
-                    <p className="text-blue-100">097-919-9293</p>
+                    <p className="text-blue-100">{CONTACT_INFO.PHONE}</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <FaEnvelope className="text-paydee-orange-primary" />
-                    <p className="text-blue-100">info@paydee.me</p>
+                    <p className="text-blue-100">{CONTACT_INFO.EMAIL}</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <FaLine className="text-paydee-orange-primary" />
-                    <p className="text-blue-100">@paydee</p>
+                    <p className="text-blue-100">{CONTACT_INFO.LINE_ID}</p>
                   </div>
                 </div>
               </div>
@@ -102,7 +103,7 @@ export default function Footer() {
                 </div>
                 <div className="space-y-2">
                   <p className="text-paydee-yellow-primary font-bold">คอมมิชชั่นสูง</p>
-                  <p className="text-2xl font-black text-white">3,000+ บาท/ทริป</p>
+                  <p className="text-2xl font-black text-white">{STATISTICS.COMMISSION.toLocaleString()}+ บาท/ทริป</p>
                 </div>
               </div>
             </div>
@@ -114,7 +115,7 @@ export default function Footer() {
           <div className="container mx-auto max-w-7xl px-4 lg:px-8 xl:px-16">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-blue-100 text-sm">
-                © 2024 PayDee. All rights reserved.
+                © 2024 {BRAND.NAME}. All rights reserved.
               </p>
               <div className="flex items-center gap-6">
                 <a href="#" className="text-blue-100 hover:text-white text-sm transition-colors cursor-pointer">

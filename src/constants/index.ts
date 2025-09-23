@@ -19,7 +19,7 @@ export const STATISTICS = {
 export const CONTACT_INFO = {
   PHONE: '097-919-9293',
   EMAIL: 'info@paydee.me',
-  LINE_ID: '@paydee',
+  LINE_ID: '@629cggrt',
   ADDRESS: {
     STREET: '79/576 ซอยสนามกีฬาแห่ง 150 แขวงสะพานสูง',
     DISTRICT: 'เขตสะพานสูง',
@@ -29,7 +29,7 @@ export const CONTACT_INFO = {
 } as const;
 
 export const BRAND = {
-  NAME: 'PayDee',
+  NAME: 'Paydee',
   TAGLINE: 'ตัวแทนขายทัวร์คอมมิชชั่นสูง',
   DESCRIPTION: 'สร้างรายได้เสริมจากการขายทัวร์',
 } as const;

@@ -25,7 +25,7 @@ const AutoPlayVideo: React.FC<AutoPlayVideoProps> = ({ src, className = "", styl
             if (!iframeSrc.includes('autoplay=1')) {
               // Add autoplay parameter to the URL
               const separator = iframeSrc.includes('?') ? '&' : '?';
-              iframe.src = `${iframeSrc}${separator}autoplay=1&muted=1`;
+              iframe.src = `${iframeSrc}${separator}autoplay=1&muted=0`;
               setHasPlayed(true);
             }
           }

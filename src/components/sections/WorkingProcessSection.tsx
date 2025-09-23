@@ -35,7 +35,7 @@ const ProcessStep = ({ number, title, description, icon: Icon, index }: ProcessS
       <div className="relative mb-6 flex justify-center">
         <div className="relative">
           {/* Main Number */}
-          <div className="w-20 h-20 bg-gradient-to-br from-paydee-blue-light via-paydee-blue-light to-paydee-orange-primary/30 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+          <div className="w-20 h-20 bg-paydee-blue-primary rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
             {number}
           </div>
 
