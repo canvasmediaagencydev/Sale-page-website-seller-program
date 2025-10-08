@@ -1,365 +1,232 @@
-"use client";
-
 import Link from "next/link";
 
 const SellerRulesPage = () => {
-  const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
-      {/* Hero Section */}
-      <div className="bg-paydee-blue-primary text-white py-16 px-4 pt-40">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              เงื่อนไขและข้อตกลงการใช้บริการ
-            </h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-2">
-              และนโยบายคุ้มครองความเป็นส่วนตัว
-            </p>
-            <p className="text-lg text-blue-200">
-              Paydee.me powered by Gography Tour and Travel Co., Ltd.
-            </p>
-            <p className="text-sm text-blue-300 mt-4">
-              มีผลบังคับใช้ตั้งแต่วันที่ 15 ตุลาคม 2568
-            </p>
-          </div>
-        </div>
-      </div>
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Header Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
 
-      {/* Table of Contents */}
-      {/* <div className="sticky top-20 z-40 bg-white/95 backdrop-blur-sm shadow-md py-4 px-4 mb-8">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-lg font-semibold text-gray-800 mb-3">เนื้อหา</h2>
-          <div className="flex flex-wrap gap-2">
-            {[
-              { id: 'general', label: 'ข้อมูลทั่วไป' },
-              { id: 'registration', label: 'การสมัครสมาชิก' },
-              { id: 'roles', label: 'บทบาทผู้ใช้งาน' },
-              { id: 'payment', label: 'การชำระเงิน' },
-              { id: 'rights', label: 'การคุ้มครองสิทธิ์' },
-              { id: 'security', label: 'ความปลอดภัยข้อมูล' },
-              { id: 'privacy', label: 'นโยบายความเป็นส่วนตัว' },
-              { id: 'modification', label: 'การแก้ไขเงื่อนไข' },
-              { id: 'contact', label: 'การติดต่อ' }
-            ].map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="px-3 py-1 bg-paydee-blue-primary/10 text-paydee-blue-primary rounded-full text-sm font-medium hover:bg-paydee-blue-primary/20 transition-colors"
+        {/* Header Content */}
+        <div className="relative z-10 container mx-auto max-w-7xl min-h-[60vh] flex items-center px-4 lg:px-8 xl:px-16">
+          <div className="text-center text-white space-y-6 py-20 w-full">
+            {/* Badge */}
+            <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-paydee-orange-primary/20 to-paydee-yellow-primary/20 backdrop-blur-sm rounded-full text-sm font-semibold border border-paydee-yellow-primary/30">
+              ข้อตกลงและเงื่อนไขการใช้บริการ
+            </div>
+
+            {/* Main Title */}
+            <div className="space-y-4">
+              <div
+                className="text-4xl md:text-6xl xl:text-7xl font-black leading-tight"
+                style={{
+                  fontFamily: 'Russo One, sans-serif',
+                  background: 'linear-gradient(135deg, #ffffff 0%, #febf12 30%, #fe9812 60%, #ffffff 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundSize: '200% 200%',
+                  animation: 'paydee-title 1s ease-out both, gradient-shift 3s ease-in-out infinite'
+                }}
               >
-                {item.label}
-              </button>
-            ))}
+                Seller Rules
+              </div>
+              <div className="text-lg md:text-2xl text-paydee-yellow-primary font-semibold tracking-widest uppercase">
+                และนโยบายคุ้มครองความเป็นส่วนตัว
+              </div>
+            </div>
+
+            {/* Tagline */}
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 max-w-2xl mx-auto">
+              <p className="text-xl font-bold mb-2">
+                "ทุกบิลโปร่งใส ทุกบาทถึงมือคุณ"
+              </p>
+              <p className="text-sm opacity-90">
+                Fair Pay. Fast Pay. | Paydee.me by Gography Tour and Travel
+              </p>
+            </div>
           </div>
         </div>
-      </div> */}
+      </section>
 
-      {/* Content */}
-      <div className="container mx-auto max-w-4xl px-4 pb-16">
-        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mt-10">
+      {/* Content Section */}
+      <div className="max-w-4xl mx-auto py-12 px-4">
+        <div className="bg-white rounded-lg shadow-sm p-8">
+
+        {/* Content */}
+        <div className="bg-white rounded-lg shadow-sm p-8">
           
           {/* Section 1 */}
-          <section id="general" className="mb-12 scroll-mt-24">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center">
-              <span className="bg-paydee-blue-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">1</span>
-              ข้อมูลทั่วไป
-            </h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+          <section id="general" className="mb-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">1. ข้อมูลทั่วไป</h2>
+            <div className="space-y-3 text-gray-700">
               <p>
-                Paydee.me ("แพลตฟอร์ม") ดำเนินการภายใต้บริษัท Gography Tour and Travel Co., Ltd. ("บริษัท")
+                Paydee.me เป็นแพลตฟอร์มที่ช่วยให้ผู้ขายอิสระ (Seller) สามารถเสนอโปรแกรมทัวร์จากบริษัททัวร์พันธมิตร และรับค่าคอมมิชชั่นจากยอดขายได้อย่างโปร่งใสและรวดเร็ว ภายใต้การดำเนินงานของ บริษัท Gography Tour and Travel Co., Ltd.
               </p>
-              <p>
-                ซึ่งมีวัตถุประสงค์เพื่อเป็นศูนย์กลางรวบรวมโปรแกรมทัวร์จากบริษัททัวร์พันธมิตร และเปิดโอกาสให้ผู้ขายอิสระ ("เซลล์") สามารถเข้ามาเข้าร่วมโปรแกรมเพื่อแนะนำลูกค้าและรับค่าคอมมิชชั่นตามที่กำหนด
-              </p>
-              <p className="bg-paydee-yellow-primary/20 p-4 rounded-lg border-l-4 border-paydee-yellow-primary">
-                การเข้าสู่ระบบ การสมัครสมาชิก หรือการใช้งานแพลตฟอร์มนี้ ถือว่าผู้ใช้งาน ("ท่าน") ได้อ่าน ทำความเข้าใจ และยอมรับเงื่อนไขทั้งหมดในเอกสารนี้
-              </p>
+              <div className="bg-blue-50 p-4 rounded-lg">
+                <p className="text-sm">
+                  การเข้าสู่ระบบ การสมัครสมาชิก หรือการใช้งานแพลตฟอร์มนี้ ถือว่าผู้ใช้งาน ("ท่าน") ได้อ่าน ทำความเข้าใจ และยอมรับเงื่อนไขทั้งหมดในเอกสารนี้
+                </p>
+              </div>
             </div>
           </section>
 
           {/* Section 2 */}
-          <section id="registration" className="mb-12 scroll-mt-24">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center">
-              <span className="bg-paydee-blue-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">2</span>
-              การสมัครสมาชิกและการใช้งาน
-            </h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed">
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>การสมัครสมาชิกต้องใช้ข้อมูลจริงและครบถ้วน โดยบริษัทสงวนสิทธิ์ในการระงับหรือยกเลิกบัญชีหากพบว่ามีการให้ข้อมูลเท็จหรือผิดวัตถุประสงค์</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>ผู้ใช้งานต้องมีอายุไม่ต่ำกว่า 20 ปีบริบูรณ์</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>บัญชีผู้ใช้ไม่สามารถโอนให้บุคคลอื่นได้</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>บริษัทขอสงวนสิทธิ์ในการระงับการเข้าถึงระบบหากมีการใช้งานผิดวัตถุประสงค์ เช่น การละเมิดลิขสิทธิ์ การหลอกลวง หรือการละเมิดข้อตกลงนี้</span>
-                </li>
-              </ul>
-            </div>
+          <section id="qualifications" className="mb-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">2. คุณสมบัติของผู้สมัคร</h2>
+            <ul className="space-y-2 text-gray-700">
+              <li>• อายุไม่ต่ำกว่า 20 ปีบริบูรณ์</li>
+              <li>• ใช้ข้อมูลจริง ครบถ้วน และสามารถตรวจสอบได้</li>
+              <li>• สมัครได้ทั้งพนักงานขาย (Sale Office), ฟรีแลนซ์, หรือผู้ที่สนใจเริ่มอาชีพอิสระ</li>
+              <li>• บัญชีผู้ใช้ 1 คน ต่อ 1 บัญชีเท่านั้น</li>
+              <li className="text-red-600">• บริษัทสงวนสิทธิ์ระงับบัญชี หากมีการให้ข้อมูลเท็จหรือใช้งานผิดวัตถุประสงค์</li>
+            </ul>
           </section>
 
           {/* Section 3 */}
-          <section id="roles" className="mb-12 scroll-mt-24">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center">
-              <span className="bg-paydee-blue-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">3</span>
-              บทบาทของผู้ใช้งาน
-            </h2>
-            
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">3.1 เซลล์ (ผู้ขายโปรแกรมทัวร์)</h3>
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>มีหน้าที่เผยแพร่และแนะนำลูกค้าให้กับบริษัทหรือโปรแกรมทัวร์ที่เข้าร่วม</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>การขายจะถือว่าเสร็จสมบูรณ์เมื่อบริษัทได้รับการชำระเงินจากลูกค้า</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>บริษัทจะโอนค่าคอมมิชชั่นให้ภายใน 24 ชั่วโมง หลังการชำระเงินเสร็จสิ้น</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>เซลล์สามารถตรวจสอบยอดขายและสถานะค่าคอมผ่านระบบ Dashboard ของตนเอง</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>บริษัทขอสงวนสิทธิ์ในการตรวจสอบข้อมูลลูกค้าเพื่อป้องกันการทับซ้อนของการขาย</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>ในกรณีที่ลูกค้าติดต่อบริษัทโดยตรงในภายหลัง ระบบจะตรวจสอบประวัติการเชื่อมโยงเพื่อตัดสินว่าเป็นลูกค้าของเซลล์หรือไม่</span>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">3.2 บริษัททัวร์พันธมิตร</h3>
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>ผู้ว่าจ้างต้องลงทะเบียนและยืนยันตัวตนตามที่บริษัทกำหนด</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>ผู้ว่าจ้างต้องชำระ ค่าธรรมเนียมสมาชิกแรกเข้า 100,000 บาทต่อปี ซึ่งสามารถลงโปรแกรมทัวร์ได้สูงสุด 3 โปรแกรมต่อปี</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>ผู้ว่าจ้างสามารถ นำโปรแกรมทัวร์ไปหมุนเวียนหรือปรับเปลี่ยน ในกรณีที่ขายออกแล้ว หรือเพื่อปรับปรุงรายละเอียดโปรแกรม ให้สอดคล้องกับความต้องการของลูกค้าและมาตรฐานของแพลตฟอร์ม</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>ผู้ว่าจ้างต้องให้ข้อมูลที่ถูกต้องครบถ้วน รวมถึงเอกสารการประกอบธุรกิจที่เกี่ยวข้อง</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>การใช้บริการของแพลตฟอร์มถือว่าผู้ว่าจ้างยอมรับและผูกพันตามข้อตกลงนี้โดยสมบูรณ์</span>
-                </li>
-              </ul>
-            </div>
+          <section id="responsibilities" className="mb-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">3. หน้าที่ของ Seller</h2>
+            <ul className="space-y-2 text-gray-700">
+              <li>• แนะนำโปรแกรมทัวร์ให้ลูกค้าตามข้อมูลที่ระบุในระบบ</li>
+              <li className="font-semibold">• ห้ามเปลี่ยนแปลงราคา หรือให้ข้อมูลผิดจากที่บริษัททัวร์กำหนด</li>
+              <li>• ต้องบันทึกข้อมูลลูกค้าให้ครบถ้วนก่อนการจอง (ชื่อ-สกุล, เบอร์, วันที่เดินทาง)</li>
+              <li>• ตรวจสอบสถานะการขายผ่าน Dashboard ได้ตลอดเวลา</li>
+              <li>• บริษัทมีสิทธิ์ตรวจสอบข้อมูลเพื่อป้องกันการขายซ้ำซ้อน</li>
+              <li>• หากลูกค้ากลับมาติดต่อโดยตรง บริษัทจะตรวจสอบระบบสมาชิกผู้ขายทุกครั้งเพื่อให้สิทธิ์แก่ Seller</li>
+            </ul>
           </section>
 
           {/* Section 4 */}
-          <section id="payment" className="mb-12 scroll-mt-24">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center">
-              <span className="bg-paydee-blue-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">4</span>
-              การชำระเงินและค่าคอมมิชชั่น
-            </h2>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-start">
-                <span className="text-paydee-orange-primary mr-2">•</span>
-                <span>บริษัทจะทำการโอนเงินค่าคอมมิชชั่นให้แก่เซลล์ตามสัดส่วนที่แสดงไว้ในระบบ โดยโอนเข้าบัญชีธนาคารที่ผู้ขายระบุ</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-paydee-orange-primary mr-2">•</span>
-                <span>ค่าคอมมิชชั่นจะคิดจากราคาขายสุทธิหลังหักส่วนลดหรือค่าใช้จ่ายอื่น ๆ</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-paydee-orange-primary mr-2">•</span>
-                <span>บริษัทไม่รับผิดชอบกรณีบัญชีธนาคารของเซลล์ระบุข้อมูลไม่ถูกต้อง</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-paydee-orange-primary mr-2">•</span>
-                <span>บริษัทขอสงวนสิทธิ์ในการปรับอัตราค่าคอมมิชชั่น หรือเงื่อนไขการจ่าย โดยจะแจ้งให้ทราบล่วงหน้า</span>
-              </li>
+          <section id="commission" className="mb-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">4. ระบบค่าคอมมิชชั่น</h2>
+            <div className="bg-green-50 p-4 rounded-lg mb-4">
+              <p className="font-semibold text-green-800">ค่าคอมมิชชั่นเริ่มต้นที่ 2,000 บาทต่อทริป (ขึ้นอยู่กับโปรแกรม)</p>
+            </div>
+            <ul className="space-y-2 text-gray-700">
+              <li>• บริษัทจะโอนเงินให้ภายใน 24 ชั่วโมง หลังทริปได้รับการยืนยัน</li>
+              <li>• สามารถตรวจสอบยอดได้ใน Dashboard แบบเรียลไทม์</li>
+              <li>• ค่าคอมคำนวณจากราคาขายสุทธิหลังหักส่วนลดหรือค่าใช้จ่าย</li>
+              <li className="text-red-600">• หากข้อมูลบัญชีไม่ถูกต้อง บริษัทไม่รับผิดชอบการโอนล้มเหลว</li>
+              <li>• บริษัทสามารถปรับอัตราค่าคอมได้ โดยแจ้งให้ทราบล่วงหน้า</li>
             </ul>
           </section>
 
           {/* Section 5 */}
-          <section id="rights" className="mb-12 scroll-mt-24">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center">
-              <span className="bg-paydee-blue-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">5</span>
-              การคุ้มครองสิทธิ์และความโปร่งใส
-            </h2>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-start">
-                <span className="text-paydee-orange-primary mr-2">•</span>
-                <span>บริษัทมีระบบเชื่อมโยงรหัสลูกค้าเพื่อป้องกันการซ้ำซ้อนระหว่างเซลล์</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-paydee-orange-primary mr-2">•</span>
-                <span>ลูกค้าที่มาจากลิงก์หรือรหัสของเซลล์จะถูกบันทึกโดยอัตโนมัติ เพื่อยืนยันสิทธิ์ค่าคอมมิชชั่น</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-paydee-orange-primary mr-2">•</span>
-                <span>ในกรณีที่มีข้อโต้แย้ง บริษัทจะตรวจสอบจากระบบและหลักฐานที่มีอยู่ก่อนตัดสินผล</span>
-              </li>
+          <section id="transparency" className="mb-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">5. ความโปร่งใสและความยุติธรรม</h2>
+            <ul className="space-y-2 text-gray-700">
+              <li>• ทุกยอดขายจะเชื่อมโยงกับรหัสลูกค้าของ Seller โดยอัตโนมัติ</li>
+              <li>• Dashboard แสดงสถานะบิลแบบเรียลไทม์ (Pending / Confirmed / Paid)</li>
+              <li>• หากมีข้อสงสัย บริษัทจะตรวจสอบหลักฐานก่อนตัดสินผล</li>
+              <li>• ผู้ขายสามารถร้องเรียนหรือสอบถามผ่าน Line OA: PaydeeSupport</li>
             </ul>
           </section>
 
           {/* Section 6 */}
-          <section id="security" className="mb-12 scroll-mt-24">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center">
-              <span className="bg-paydee-blue-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">6</span>
-              การรักษาความปลอดภัยของข้อมูล
-            </h2>
-            <p className="text-gray-700 leading-relaxed">
-              บริษัทให้ความสำคัญกับความปลอดภัยของข้อมูลส่วนบุคคลของผู้ใช้ทุกฝ่าย โดยใช้ระบบเข้ารหัส (Encryption) และการยืนยันตัวตนก่อนเข้าสู่ระบบ เพื่อป้องกันการเข้าถึงโดยไม่ได้รับอนุญาต
-            </p>
+          <section id="communication" className="mb-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">6. ช่องทางสื่อสารและสนับสนุน</h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="font-semibold">Line OA</p>
+                <p className="text-sm text-gray-600">@Paydee.me</p>
+              </div>
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="font-semibold">Email</p>
+                <p className="text-sm text-gray-600">support@paydee.me</p>
+              </div>
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="font-semibold">Facebook Group</p>
+                <p className="text-sm text-gray-600">"Paydee Seller Hub"</p>
+              </div>
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="font-semibold">เวลาทำการ</p>
+                <p className="text-sm text-gray-600">จันทร์–ศุกร์ 09:00–18:00 น.</p>
+              </div>
+            </div>
           </section>
 
           {/* Section 7 */}
-          <section id="privacy" className="mb-12 scroll-mt-24">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center">
-              <span className="bg-paydee-blue-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">7</span>
-              นโยบายคุ้มครองความเป็นส่วนตัว (Privacy Policy)
-            </h2>
-            
-            <div className="mb-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">7.1 การเก็บรวบรวมข้อมูล</h3>
-              <p className="text-gray-700 mb-3">บริษัทอาจเก็บข้อมูลดังต่อไปนี้:</p>
-              <ul className="space-y-2 text-gray-700 ml-4">
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>ข้อมูลส่วนบุคคล เช่น ชื่อ ที่อยู่ หมายเลขโทรศัพท์ อีเมลล์ และข้อมูลบัญชีธนาคาร</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>ข้อมูลการใช้งานระบบ เช่น เวลาเข้าสู่ระบบ การคลิก การขาย และ IP Address</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>ข้อมูลทางเทคนิคเพื่อปรับปรุงประสบการณ์การใช้งาน</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="mb-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">7.2 วัตถุประสงค์การใช้ข้อมูล</h3>
+          <section id="prohibitions" className="mb-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">7. ข้อห้ามและจรรยาบรรณการขาย</h2>
+            <div className="bg-red-50 p-4 rounded-lg">
               <ul className="space-y-2 text-gray-700">
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>เพื่อดำเนินการด้านการขาย การจ่ายค่าคอมมิชชั่น และการติดต่อสื่อสาร</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>เพื่อพัฒนาคุณภาพของบริการและระบบแพลตฟอร์ม</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>เพื่อใช้ในการตลาดหรือโปรโมชั่น (โดยได้รับความยินยอมล่วงหน้า)</span>
-                </li>
+                <li className="font-semibold">• ห้ามโพสต์โฆษณาเท็จ หรือหลอกลวงลูกค้า</li>
+                <li className="font-semibold">• ห้ามรับเงินโดยตรงจากลูกค้า</li>
+                <li className="font-semibold">• ห้ามใช้ชื่อแบรนด์ Paydee.me เพื่อวัตถุประสงค์ที่ไม่เกี่ยวข้อง</li>
               </ul>
-            </div>
-
-            <div className="mb-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">7.3 การเปิดเผยข้อมูลต่อบุคคลที่สาม</h3>
-              <p className="text-gray-700 mb-3">บริษัทจะไม่เปิดเผยข้อมูลส่วนบุคคลแก่บุคคลภายนอก เว้นแต่</p>
-              <ul className="space-y-2 text-gray-700 ml-4">
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>ได้รับความยินยอมจากเจ้าของข้อมูล</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>มีคำสั่งจากศาลหรือหน่วยงานราชการที่มีอำนาจตามกฎหมาย</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="mb-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">7.4 สิทธิของเจ้าของข้อมูล</h3>
-              <p className="text-gray-700 mb-3">ผู้ใช้งานมีสิทธิ์ในการ:</p>
-              <ul className="space-y-2 text-gray-700 ml-4">
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>ขอเข้าถึงข้อมูลส่วนบุคคลของตน</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>ขอแก้ไขหรือยกเลิกบัญชี</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-paydee-orange-primary mr-2">•</span>
-                  <span>ขอให้ลบข้อมูลออกจากระบบ (ภายใต้เงื่อนไขทางกฎหมาย)</span>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">7.5 การเก็บรักษาข้อมูล</h3>
-              <p className="text-gray-700">
-                ข้อมูลส่วนบุคคลจะถูกเก็บไว้ตราบเท่าที่จำเป็นต่อวัตถุประสงค์ทางธุรกิจ หรือจนกว่าผู้ใช้งานจะยกเลิกบัญชีและไม่มีภาระผูกพันใด ๆ คงค้างกับบริษัท
+              <p className="text-red-600 text-sm mt-3">
+                <strong>คำเตือน:</strong> การละเมิดกติกา 2 ครั้งขึ้นไป อาจถูกระงับบัญชีถาวร
               </p>
             </div>
           </section>
 
           {/* Section 8 */}
-          <section id="modification" className="mb-12 scroll-mt-24">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center">
-              <span className="bg-paydee-blue-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">8</span>
-              การแก้ไขเปลี่ยนแปลงเงื่อนไข
-            </h2>
-            <p className="text-gray-700 leading-relaxed">
-              บริษัทขอสงวนสิทธิ์ในการแก้ไข ปรับปรุง หรือเพิ่มเติมข้อตกลงนี้ โดยไม่จำเป็นต้องแจ้งให้ทราบล่วงหน้า ทั้งนี้เงื่อนไขใหม่จะมีผลทันทีเมื่อประกาศบนเว็บไซต์
-            </p>
+          <section id="security" className="mb-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">8. ความปลอดภัยของข้อมูล</h2>
+            <ul className="space-y-2 text-gray-700">
+              <li>• ใช้ระบบเข้ารหัส (Encryption) และยืนยันตัวตนก่อนเข้าสู่ระบบ</li>
+              <li>• ข้อมูลผู้ใช้ทั้งหมดได้รับการคุ้มครองตาม Privacy Policy</li>
+              <li>• ผู้ใช้สามารถขอเข้าถึง แก้ไข หรือลบข้อมูลได้ตามสิทธิ์ที่กฎหมายกำหนด</li>
+            </ul>
           </section>
 
           {/* Section 9 */}
-          <section id="contact" className="mb-12 scroll-mt-24">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center">
-              <span className="bg-paydee-blue-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">9</span>
-              การติดต่อบริษัท
-            </h2>
-            <div className="bg-gradient-to-r from-paydee-blue-primary/10 to-paydee-orange-primary/10 p-6 rounded-xl">
-              <div className="space-y-3 text-gray-700">
-                <p className="font-semibold text-lg">Paydee.me powered by Gography Tour and Travel Co., Ltd.</p>
-                <p>เลขทะเบียนนิติบุคคลเดียวกับบริษัท Gography Tour and Travel</p>
-                <p><strong>ที่ตั้ง:</strong> 79/53 Romkloa soi 1 minburi bangkok 10510</p>
-                <p><strong>อีเมลติดต่อ:</strong> info@gography.net</p>
+          <section id="privacy" className="mb-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">9. นโยบายข้อมูลส่วนบุคคล (Privacy Summary)</h2>
+            <div className="bg-gray-50 p-4 rounded-lg space-y-3">
+              <div>
+                <p className="font-semibold">ข้อมูลที่เก็บรวบรวม:</p>
+                <p className="text-sm text-gray-600">บริษัทเก็บข้อมูลเฉพาะที่จำเป็น เช่น ชื่อ, เบอร์โทร, อีเมล, บัญชีธนาคาร, ประวัติการขาย</p>
+              </div>
+              <div>
+                <p className="font-semibold">วัตถุประสงค์การใช้:</p>
+                <ul className="text-sm text-gray-600">
+                  <li>• จ่ายค่าคอมมิชชั่น</li>
+                  <li>• ปรับปรุงระบบและประสบการณ์ผู้ใช้</li>
+                  <li>• ติดต่อสื่อสารหรือส่งข่าวสารทางการตลาด (เมื่อผู้ใช้ยินยอม)</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-semibold">การเปิดเผยข้อมูล:</p>
+                <p className="text-sm text-gray-600">ไม่เปิดเผยข้อมูลแก่บุคคลที่สาม เว้นแต่ได้รับความยินยอมหรือมีคำสั่งศาล</p>
               </div>
             </div>
           </section>
 
+          {/* Section 10 */}
+          <section id="additional" className="mb-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">10. เงื่อนไขเพิ่มเติม</h2>
+            <ul className="space-y-2 text-gray-700">
+              <li>• บริษัทมีสิทธิ์แก้ไขข้อตกลงโดยไม่ต้องแจ้งล่วงหน้า</li>
+              <li>• เงื่อนไขใหม่จะมีผลทันทีเมื่อประกาศบนเว็บไซต์</li>
+              <li>• การใช้งานระบบต่อเนื่องถือว่ายอมรับเงื่อนไขใหม่แล้ว</li>
+            </ul>
+          </section>
+
+          {/* Contact Information */}
+          <div className="bg-gray-50 p-4 rounded-lg mt-6">
+            <h3 className="font-semibold text-gray-800 mb-2">ข้อมูลติดต่อบริษัท</h3>
+            <div className="text-sm text-gray-600 space-y-1">
+              <p>Paydee.me powered by Gography Tour and Travel Co., Ltd.</p>
+              <p>เลขทะเบียนนิติบุคคลเดียวกับบริษัท Gography Tour and Travel</p>
+              <p><strong>ที่ตั้ง:</strong> 79/53 Romkloa soi 1 minburi bangkok 10510</p>
+              <p><strong>อีเมลติดต่อ:</strong> info@gography.net</p>
+            </div>
+          </div>
+
           {/* Back to Home Button */}
-          <div className="text-center mt-12">
+          <div className="text-center mt-8">
             <Link 
               href="/"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-paydee-blue-primary to-paydee-orange-primary text-white font-semibold rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+              className="inline-block px-6 py-3 bg-paydee-blue-primary text-white font-medium rounded-lg hover:bg-paydee-blue-secondary transition-colors"
             >
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-              </svg>
               กลับสู่หน้าหลัก
             </Link>
           </div>
         </div>
       </div>
     </div>
+    </div>
   );
-};
+}
 
 export default SellerRulesPage;
