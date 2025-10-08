@@ -62,34 +62,26 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
           <div className="hidden md:flex items-center space-x-8">
             <ul className="flex items-center space-x-8">
               <li>
-                <a
-                  href="#statistics-section"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.querySelector('#statistics-section')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
+                <Link
+                  href="/#statistics-section"
                   className={`font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer ${
                     isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/90 hover:text-white'
                   }`}
                 >
                   เกี่ยวกับเรา
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paydee-yellow-primary transition-all duration-300 group-hover:w-full"></span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#trips-section"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.querySelector('#trips-section')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
+                <Link
+                  href="/#trips-section"
                   className={`font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer ${
                     isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/90 hover:text-white'
                   }`}
                 >
                   ค่าคอมมิชชั่น
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paydee-yellow-primary transition-all duration-300 group-hover:w-full"></span>
-                </a>
+                </Link>
               </li>
               <li>
                 <a
@@ -103,19 +95,15 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
                 </a>
               </li>
               <li>
-                <a
-                  href="#footer"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.querySelector('footer')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
+                <Link
+                  href="/#footer"
                   className={`font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer ${
                     isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/90 hover:text-white'
                   }`}
                 >
                   ติดต่อ
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paydee-yellow-primary transition-all duration-300 group-hover:w-full"></span>
-                </a>
+                </Link>
               </li>
             </ul>
 
@@ -190,30 +178,22 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
         <div className="pt-24 px-6">
           <ul className="space-y-6">
             <li>
-              <a
-                href="#statistics-section"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setIsMobileMenuOpen(false);
-                  document.querySelector('#statistics-section')?.scrollIntoView({ behavior: 'smooth' });
-                }}
+              <Link
+                href="/#statistics-section"
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors cursor-pointer"
               >
                 เกี่ยวกับเรา
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#trips-section"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setIsMobileMenuOpen(false);
-                  document.querySelector('#trips-section')?.scrollIntoView({ behavior: 'smooth' });
-                }}
+              <Link
+                href="/#trips-section"
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors cursor-pointer"
               >
                 ค่าคอมมิชชั่น
-              </a>
+              </Link>
             </li>
             <li>
               <a
@@ -225,17 +205,13 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
               </a>
             </li>
             <li>
-              <a
-                href="#footer"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setIsMobileMenuOpen(false);
-                  document.querySelector('footer')?.scrollIntoView({ behavior: 'smooth' });
-                }}
+              <Link
+                href="/#footer"
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors cursor-pointer"
               >
                 ติดต่อ
-              </a>
+              </Link>
             </li>
           </ul>
 

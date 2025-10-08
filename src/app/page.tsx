@@ -8,6 +8,7 @@ import StatisticsSection from "@/components/sections/StatisticsSection";
 import TripsSection from "@/components/sections/TripsSection";
 import WorkingProcessSection from "@/components/sections/WorkingProcessSection";
 import { useTrips } from "@/hooks/useTrips";
+import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
 // Lazy load components that are not immediately visible
 const AutoPlayVideo = lazy(() => import("@/components/AutoPlayVideo"));
@@ -182,6 +183,7 @@ const PartnerSection = () => (
 );
 export default function Home() {
   const { trips, loading, currentPage, paginationData, handlePageChange } = useTrips();
+  useSmoothScroll();
 
   return (
     <>
