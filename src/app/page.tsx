@@ -126,7 +126,7 @@ const ProgramSection = () => (
               }
             >
               <AutoPlayVideo
-                src="https://player.mux.com/luARYH7ivpfkiPmkino8I5LlmSez6ENhGExHg2BmFLI?autoplay=0&muted=0&loop=1"
+                src="https://player.mux.com/4V00YS7sc8t58rF01eJUb01uKu3TUW00gK02hUzKC02t4mMI00?autoplay=0&muted=0&loop=1"
                 style={{ width: "100%", border: "none", aspectRatio: "9/16" }}
                 className="rounded-3xl shadow-2xl border-4 border-white"
               />
