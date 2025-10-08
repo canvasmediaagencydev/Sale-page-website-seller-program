@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface NavbarProps {
   className?: string;
@@ -30,7 +31,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
       <div className="container mx-auto max-w-7xl px-4 lg:px-8">
         <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo Section */}
-          <div className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center space-x-3">
             <div className="relative">
               <Image
                 src="/img/paydee LOGO 03.svg"
@@ -55,7 +56,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
                 paydee<span className="text-paydee-yellow-primary">.me</span>
               </span>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
@@ -87,6 +88,17 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
                   }`}
                 >
                   ค่าคอมมิชชั่น
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paydee-yellow-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/seller-rules"
+                  className={`font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer ${
+                    isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/90 hover:text-white'
+                  }`}
+                >
+                  เงื่อนไขและข้อตกลง
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paydee-yellow-primary transition-all duration-300 group-hover:w-full"></span>
                 </a>
               </li>
@@ -201,6 +213,15 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
                 className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors cursor-pointer"
               >
                 ค่าคอมมิชชั่น
+              </a>
+            </li>
+            <li>
+              <a
+                href="/seller-rules"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors cursor-pointer"
+              >
+                ข้อตกลง
               </a>
             </li>
             <li>

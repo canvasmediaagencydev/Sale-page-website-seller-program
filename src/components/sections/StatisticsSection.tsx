@@ -44,7 +44,7 @@ const StatisticsSection = () => {
               </h2>
               <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-2xl">
                 เปลี่ยนความรู้เรื่องการท่องเที่ยวของคุณให้เป็นรายได้จริง
-                ด้วยคอมมิชชั่นสูงสุด <span className="font-bold text-paydee-orange-primary">3,000+ บาทต่อทริป</span>
+                ด้วยคอมมิชชั่นสูงสุด <span className="font-bold text-paydee-orange-primary">2,000+ บาทต่อทริป</span>
               </p>
             </div>
 
@@ -62,7 +62,7 @@ const StatisticsSection = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 mb-1">คอมมิชชั่นสูง</h3>
-                  <p className="text-gray-600">ได้รับคอมมิชชั่นสูง 3,000+ บาท ต่อการขาย 1 ทริป</p>
+                  <p className="text-gray-600">ได้รับคอมมิชชั่นสูง 2,000+ บาท ต่อการขาย 1 ทริป</p>
                 </div>
               </motion.div>
 

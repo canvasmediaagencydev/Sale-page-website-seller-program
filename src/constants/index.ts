@@ -11,7 +11,7 @@ export const ANIMATION_DELAYS = {
 } as const;
 
 export const STATISTICS = {
-  COMMISSION: 3000,
+  COMMISSION: 2000,
   EXPERIENCE_YEARS: 8,
   CUSTOMERS: 2400,
 } as const;
