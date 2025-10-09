@@ -41,7 +41,7 @@ const SellerRulesPage = () => {
                 "ทุกบิลโปร่งใส ทุกบาทถึงมือคุณ"
               </p>
               <p className="text-sm opacity-90">
-                Fair Pay. Fast Pay. | Paydee.me by Gography Tour and Travel
+                Fair Pay. Fast Pay. | Paydee.me
               </p>
             </div>
           </div>
@@ -98,10 +98,8 @@ const SellerRulesPage = () => {
           {/* Section 4 */}
           <section id="commission" className="mb-8">
             <h2 className="text-xl font-bold text-gray-900 mb-4">4. ระบบค่าคอมมิชชั่น</h2>
-            <div className="bg-green-50 p-4 rounded-lg mb-4">
-              <p className="font-semibold text-green-800">ค่าคอมมิชชั่นเริ่มต้นที่ 2,000 บาทต่อทริป (ขึ้นอยู่กับโปรแกรม)</p>
-            </div>
             <ul className="space-y-2 text-gray-700">
+              <li>• ค่าคอมมิชชั่นเริ่มต้นที่ 2,000 บาทต่อทริป (ขึ้นอยู่กับโปรแกรม)</li>
               <li>• บริษัทจะโอนเงินให้ภายใน 24 ชั่วโมง หลังทริปได้รับการยืนยัน</li>
               <li>• สามารถตรวจสอบยอดได้ใน Dashboard แบบเรียลไทม์</li>
               <li>• ค่าคอมคำนวณจากราคาขายสุทธิหลังหักส่วนลดหรือค่าใช้จ่าย</li>
