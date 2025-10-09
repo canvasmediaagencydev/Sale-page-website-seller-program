@@ -215,7 +215,7 @@ const SellerRulesPage = () => {
           <div className="text-center mt-8">
             <Link 
               href="/"
-              className="inline-block px-6 py-3 bg-paydee-blue-primary text-white font-medium rounded-lg hover:bg-paydee-blue-secondary transition-colors"
+              className="inline-block px-6 py-3 bg-paydee-blue-primary text-white font-bold rounded-lg hover:bg-paydee-blue-secondary transition-colors"
             >
               กลับสู่หน้าหลัก
             </Link>
