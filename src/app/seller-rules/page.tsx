@@ -115,7 +115,7 @@ const SellerRulesPage = () => {
               <li>• ทุกยอดขายจะเชื่อมโยงกับรหัสลูกค้าของ Seller โดยอัตโนมัติ</li>
               <li>• Dashboard แสดงสถานะบิลแบบเรียลไทม์ (Pending / Confirmed / Paid)</li>
               <li>• หากมีข้อสงสัย บริษัทจะตรวจสอบหลักฐานก่อนตัดสินผล</li>
-              <li>• ผู้ขายสามารถร้องเรียนหรือสอบถามผ่าน Line OA: PaydeeSupport</li>
+              <li>• ผู้ขายสามารถร้องเรียนหรือสอบถามผ่าน support@paydee.me</li>
             </ul>
           </section>
 
