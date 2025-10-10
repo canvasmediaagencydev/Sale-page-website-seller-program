@@ -62,7 +62,7 @@ const StatisticsSection = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 mb-1">คอมมิชชั่นสูง</h3>
-                  <p className="text-gray-600">ได้รับคอมมิชชั่นสูง 2,000+ บาท ต่อการขาย 1 ทริป</p>
+                  <p className="text-gray-600">ได้รับคอมมิชชันเริ่มต้น 2,000+ บาท ต่อการขาย 1 ทริป</p>
                 </div>
               </motion.div>
 

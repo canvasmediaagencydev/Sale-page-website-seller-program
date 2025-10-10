@@ -96,7 +96,7 @@ const HeroSection = ({ className = "" }: HeroSectionProps) => {
                     <RiMoneyDollarCircleFill className="text-2xl" />
                   </div>
                   <div>
-                    <div className="text-white font-semibold text-lg">คอมมิชชั่นสูง</div>
+                    <div className="text-white font-semibold text-lg">คอมมิชชั่นเริ่มต้น</div>
                     <div className="text-paydee-yellow-primary font-bold text-xl">2,000+ บาท/ทริป</div>
                   </div>
                 </div>
@@ -162,7 +162,7 @@ const HeroSection = ({ className = "" }: HeroSectionProps) => {
                   <div className="text-center">
                     <div className="text-6xl font-black text-paydee-yellow-primary mb-3 tracking-tight">2,000 +</div>
                     <div className="text-white font-bold text-xl mb-6">บาท/ทริป</div>
-                    <div className="text-white/80 text-base leading-relaxed">คอมมิชชั่นสูง ไม่จำกัด</div>
+                    <div className="text-white/80 text-base leading-relaxed">คอมมิชชั่นเริ่มต้น</div>
                   </div>
                 </div>
 

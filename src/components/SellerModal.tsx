@@ -60,7 +60,7 @@ const SellerModal = ({ isOpen, onClose }: SellerModalProps) => {
               <div className="w-8 h-8 bg-paydee-orange-primary rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-sm">✓</span>
               </div>
-              <span className="text-gray-700">คอมมิชชั่นสูง 2,000+ บาท/ทริป</span>
+              <span className="text-gray-700">คอมมิชชั่นเริ่มต้น 2,000+ บาท/ทริป</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 bg-paydee-blue-primary rounded-full flex items-center justify-center">
