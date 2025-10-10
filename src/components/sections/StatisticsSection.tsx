@@ -128,11 +128,11 @@ const StatisticsSection = () => {
             <div className="relative">
               <div className="relative overflow-hidden rounded-3xl">
                 <Image
-                  src="/img/7411 1.svg"
+                  src="/img/3c4edb9c-e628-4f12-896c-2966be9d75c5.webp"
                   alt="PayDee Success"
                   width={400}
                   height={300}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-120 object-cover"
                   priority
                 />
                 {/* Overlay Stats */}
@@ -142,7 +142,7 @@ const StatisticsSection = () => {
                       <div className="grid grid-cols-2 gap-4 text-center">
                         <div>
                           <div className="text-3xl font-black text-paydee-orange-primary mb-1">
-                            <CountUp from={0} to={3} duration={1.5} />K+
+                            <CountUp from={0} to={2} duration={1.5} />K+
                           </div>
                           <div className="text-sm text-gray-600 font-medium">บาท/ทริป</div>
                         </div>
