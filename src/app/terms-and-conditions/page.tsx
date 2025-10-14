@@ -50,7 +50,7 @@ const TermsAndConditionsPage = () => {
 
       {/* Content Section */}
       <div className="max-w-4xl mx-auto py-12 px-4">
-        <div className="bg-white rounded-lg shadow-sm p-8">
+        <div className="bg-white rounded-lg shadow-sm md:p-8 p-0">
 
         {/* Content */}
         <div className="bg-white rounded-lg shadow-sm p-8">
