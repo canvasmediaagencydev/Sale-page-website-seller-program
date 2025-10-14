@@ -118,10 +118,10 @@ export default function Footer() {
                 © 2024 {BRAND.NAME}. All rights reserved.
               </p>
               <div className="flex items-center gap-6">
-                <a href="#" className="text-blue-100 hover:text-white text-sm transition-colors cursor-pointer">
-                  นโยบายความเป็นส่วนตัว
+                <a href="/seller-rules" className="text-blue-100 hover:text-white text-sm transition-colors cursor-pointer">
+                  Seller Rules
                 </a>
-                <a href="#" className="text-blue-100 hover:text-white text-sm transition-colors cursor-pointer">
+                <a href="/terms-and-conditions" className="text-blue-100 hover:text-white text-sm transition-colors cursor-pointer">
                   เงื่อนไขการใช้งาน
                 </a>
               </div>

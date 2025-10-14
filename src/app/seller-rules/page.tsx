@@ -9,7 +9,7 @@ const SellerRulesPage = () => {
 
         {/* Header Content */}
         <div className="relative z-10 container mx-auto max-w-7xl min-h-[60vh] flex items-center px-4 lg:px-8 xl:px-16">
-          <div className="text-center text-white space-y-6 py-20 w-full">
+          <div className="text-center text-white space-y-6 py-20 w-full mt-5">
             {/* Badge */}
             <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-paydee-orange-primary/20 to-paydee-yellow-primary/20 backdrop-blur-sm rounded-full text-sm font-semibold border border-paydee-yellow-primary/30">
               ข้อตกลงและเงื่อนไขการใช้บริการ
