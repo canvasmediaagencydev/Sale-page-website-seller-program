@@ -92,7 +92,7 @@ export default function RootLayout({
               "alternateName": ["เพย์ดี"],
               "description": "แพลตฟอร์มตัวแทนขายทัวร์ที่ให้คอมมิชชั่นสูง พร้อมระบบสนับสนุนการขายครบครัน",
               "url": "https://www.paydee.me",
-              "logo": "https://www.paydee.me/img/bg.jpg",
+              "logo": "https://www.paydee.me/img/paydee%20LOGO%2003.svg",
               "foundingDate": "2016",
               "contactPoint": {
                 "@type": "ContactPoint",
