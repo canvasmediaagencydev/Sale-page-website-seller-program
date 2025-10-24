@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     siteName: "PayDee - ตัวแทนขายทัวร์คอมมิชชั่นสูง",
     images: [
       {
-        url: "https://www.paydee.me/img/bg.jpg",
-        width: 1200,
-        height: 630,
+        url: "https://www.paydee.me/img/paydee%20LOGO%2003.svg",
+        width: 2500,
+        height: 2500,
         alt: "PayDee ตัวแทนขายทัวร์ คอมมิชชั่นสูง รายได้เสริม งานพาร์ทไทม์",
       },
     ],
