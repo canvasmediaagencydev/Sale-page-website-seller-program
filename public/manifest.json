@@ -1,0 +1,31 @@
+{
+  "name": "PayDee - ตัวแทนขายทัวร์คอมมิชชั่นสูง",
+  "short_name": "PayDee",
+  "description": "สมัครเป็นตัวแทนขายทัวร์กับ PayDee รับคอมมิชชั่นสูง รายได้เสริม งานพาร์ทไทม์",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e40af",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["business", "travel"],
+  "lang": "th",
+  "dir": "ltr"
+}

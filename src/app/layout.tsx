@@ -29,14 +29,20 @@ export const metadata: Metadata = {
     "PayDee"
   ],
   authors: [{ name: "PayDee" }],
+  manifest: '/manifest.json',
   icons: {
     icon: [
+      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
       { url: '/icon.png', sizes: '512x512', type: 'image/png' },
       { url: '/img/paydee LOGO 03.svg', type: 'image/svg+xml' }
     ],
     apple: [
       { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }
     ],
+    other: [
+      { url: '/icon.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon.png', sizes: '512x512', type: 'image/png' }
+    ]
   },
   openGraph: {
     title: "PayDee - ตัวแทนขายทัวร์คอมมิชชั่นสูง รายได้เสริม งานพาร์ทไทม์",
@@ -75,6 +81,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="theme-color" content="#1e40af" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="format-detection" content="telephone=no" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
