@@ -97,7 +97,7 @@ const HeroSection = ({ className = "" }: HeroSectionProps) => {
                   </div>
                   <div>
                     <div className="text-white font-semibold text-lg">คอมมิชชั่นเริ่มต้น</div>
-                    <div className="text-paydee-yellow-primary font-bold text-xl">2,000+ บาท/ทริป</div>
+                    <div className="text-paydee-yellow-primary font-bold text-xl">2,000+ บาท/คน</div>
                   </div>
                 </div>
 
@@ -161,7 +161,7 @@ const HeroSection = ({ className = "" }: HeroSectionProps) => {
                 <div className="relative z-20 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-xl rounded-4xl p-10 border border-white/30 shadow-2xl animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
                   <div className="text-center">
                     <div className="text-6xl font-black text-paydee-yellow-primary mb-3 tracking-tight">2,000 +</div>
-                    <div className="text-white font-bold text-xl mb-6">บาท/ทริป</div>
+                    <div className="text-white font-bold text-xl mb-6">บาท/คน</div>
                     <div className="text-white/80 text-base leading-relaxed">คอมมิชชั่นเริ่มต้น</div>
                   </div>
                 </div>

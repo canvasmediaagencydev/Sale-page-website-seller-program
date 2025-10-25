@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     default: "PayDee - ตัวแทนขายทัวร์คอมมิชชั่นสูง รายได้เสริม งานพาร์ทไทม์",
     template: "%s | PayDee"
   },
-  description: "สมัครเป็นตัวแทนขายทัวร์กับ PayDee รับคอมมิชชั่นเริ่มต้นถึง 2,000+ บาท/ทริป ไม่มีเป้ายอดขายขั้นต่ำ งานพาร์ทไทม์ทำที่บ้าน ทีมงานช่วยปิดการขาย มีระบบหลังบ้านครบครัน",
+  description: "สมัครเป็นตัวแทนขายทัวร์กับ PayDee รับคอมมิชชั่นเริ่มต้นถึง 2,000+ บาท/คน ไม่มีเป้ายอดขายขั้นต่ำ งานพาร์ทไทม์ทำที่บ้าน ทีมงานช่วยปิดการขาย มีระบบหลังบ้านครบครัน",
   keywords: [
     "ตัวแทนขายทัวร์",
     "คอมมิชชั่นทัวร์",
@@ -29,9 +29,18 @@ export const metadata: Metadata = {
     "PayDee"
   ],
   authors: [{ name: "PayDee" }],
+  icons: {
+    icon: [
+      { url: '/icon', type: 'image/png' },
+      { url: '/img/paydee LOGO 03.svg', type: 'image/svg+xml' }
+    ],
+    apple: [
+      { url: '/apple-icon', type: 'image/png' }
+    ],
+  },
   openGraph: {
     title: "PayDee - ตัวแทนขายทัวร์คอมมิชชั่นสูง รายได้เสริม งานพาร์ทไทม์",
-    description: "สมัครเป็นตัวแทนขายทัวร์กับ PayDee รับคอมมิชชั่นเริ่มต้น 2,000+ บาท/ทริป ไม่มีเป้ายอดขายขั้นต่ำ งานพาร์ทไทม์ทำที่บ้าน",
+    description: "สมัครเป็นตัวแทนขายทัวร์กับ PayDee รับคอมมิชชั่นเริ่มต้น 2,000+ บาท/คน ไม่มีเป้ายอดขายขั้นต่ำ งานพาร์ทไทม์ทำที่บ้าน",
     url: "https://www.paydee.me",
     siteName: "PayDee - ตัวแทนขายทัวร์คอมมิชชั่นสูง",
     images: [
@@ -66,7 +75,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/img/paydee LOGO 03.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
@@ -103,7 +111,7 @@ export default function RootLayout({
               },
               "offers": {
                 "@type": "Offer",
-                "description": "โอกาสเป็นตัวแทนขายทัวร์ คอมมิชชั่นเริ่มต้น 2,000+ บาทต่อทริป ไม่มีขั้นต่ำ",
+                "description": "โอกาสเป็นตัวแทนขายทัวร์ คอมมิชชั่นเริ่มต้น 2,000+ บาทต่อคน ไม่มีขั้นต่ำ",
                 "category": "Business Opportunity"
               },
               "serviceType": "Travel Agency",
@@ -122,7 +130,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "JobPosting",
               "title": "ตัวแทนขายทัวร์ - คอมมิชชั่นสูง",
-              "description": "เปิดรับสมัครตัวแทนขายทัวร์ รับคอมมิชชั่นเริ่มต้น 2,000+ บาทต่อทริป ไม่มีเป้ายอดขายขั้นต่ำ ทำงานที่บ้านได้ ทีมงานสนับสนุน",
+              "description": "เปิดรับสมัครตัวแทนขายทัวร์ รับคอมมิชชั่นเริ่มต้น 2,000+ บาทต่อคน ไม่มีเป้ายอดขายขั้นต่ำ ทำงานที่บ้านได้ ทีมงานสนับสนุน",
               "employmentType": "PART_TIME",
               "hiringOrganization": {
                 "@type": "Organization",

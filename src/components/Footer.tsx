@@ -103,7 +103,7 @@ export default function Footer() {
                 </div>
                 <div className="space-y-2">
                   <p className="text-paydee-yellow-primary font-bold">คอมมิชชั่นสูง</p>
-                  <p className="text-2xl font-black text-white">{STATISTICS.COMMISSION.toLocaleString()}+ บาท/ทริป</p>
+                  <p className="text-2xl font-black text-white">{STATISTICS.COMMISSION.toLocaleString()}+ บาท/คน</p>
                 </div>
               </div>
             </div>

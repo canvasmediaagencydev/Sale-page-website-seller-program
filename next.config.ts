@@ -51,6 +51,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdn1.matadornetwork.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
   // Bundle analyzer in development
