@@ -31,11 +31,11 @@ export const metadata: Metadata = {
   authors: [{ name: "PayDee" }],
   icons: {
     icon: [
-      { url: '/icon', type: 'image/png' },
+      { url: '/icon.png', sizes: '512x512', type: 'image/png' },
       { url: '/img/paydee LOGO 03.svg', type: 'image/svg+xml' }
     ],
     apple: [
-      { url: '/apple-icon', type: 'image/png' }
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }
     ],
   },
   openGraph: {
