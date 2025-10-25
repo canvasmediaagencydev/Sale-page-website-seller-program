@@ -100,7 +100,7 @@ export default function RootLayout({
               "alternateName": ["เพย์ดี"],
               "description": "แพลตฟอร์มตัวแทนขายทัวร์ที่ให้คอมมิชชั่นสูง พร้อมระบบสนับสนุนการขายครบครัน",
               "url": "https://www.paydee.me",
-              "logo": "https://www.paydee.me/img/paydee%20LOGO%2003.svg",
+              "logo": "https://www.paydee.me/icon.png",
               "foundingDate": "2016",
               "contactPoint": {
                 "@type": "ContactPoint",
@@ -135,8 +135,8 @@ export default function RootLayout({
               "hiringOrganization": {
                 "@type": "Organization",
                 "name": "PayDee",
-                "sameAs": "https://paydee.me",
-                "logo": "https://www.paydee.me/img/bg.jpg"
+                "sameAs": "https://www.paydee.me",
+                "logo": "https://www.paydee.me/icon.png"
               },
               "jobLocation": {
                 "@type": "Place",
