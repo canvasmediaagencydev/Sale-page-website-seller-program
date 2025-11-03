@@ -19,13 +19,19 @@ export const STATISTICS = {
 export const CONTACT_INFO = {
   PHONE: '097-919-9293',
   EMAIL: 'info@paydee.me',
-  LINE_ID: '@629cggrt',
+  LINE_ID: '@paydeeme',
   ADDRESS: {
     STREET: '79/576 ซอยสนามกีฬาแห่ง 150 แขวงสะพานสูง',
     DISTRICT: 'เขตสะพานสูง',
     PROVINCE: 'กรุงเทพมหานคร',
     POSTAL_CODE: '10240',
   },
+} as const;
+
+export const SOCIAL_LINKS = {
+  FACEBOOK: 'https://www.facebook.com/profile.php?id=61582623393215',
+  LINE: 'https://line.me/ti/p/@paydeeme',
+  INSTAGRAM: '#',
 } as const;
 
 export const BRAND = {

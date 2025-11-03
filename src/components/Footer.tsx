@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { FaFacebook, FaInstagram, FaLine, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { RiRocketFill } from "react-icons/ri";
-import { CONTACT_INFO, STATISTICS, BRAND } from "@/constants";
+import { CONTACT_INFO, STATISTICS, BRAND, SOCIAL_LINKS } from "@/constants";
 
 export default function Footer() {
   return (
@@ -80,21 +80,27 @@ export default function Footer() {
                 <h4 className="text-xl font-bold">ติดตามเรา</h4>
                 <div className="flex gap-4">
                   <a
-                    href="#"
+                    href={SOCIAL_LINKS.FACEBOOK}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-paydee-orange-primary hover:scale-110 transition-all duration-300 cursor-pointer"
                     aria-label="Facebook"
                   >
                     <FaFacebook className="text-xl" />
                   </a>
                   <a
-                    href="#"
+                    href={SOCIAL_LINKS.INSTAGRAM}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-paydee-orange-primary hover:scale-110 transition-all duration-300 cursor-pointer"
                     aria-label="Instagram"
                   >
                     <FaInstagram className="text-xl" />
                   </a>
                   <a
-                    href="#"
+                    href={SOCIAL_LINKS.LINE}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-paydee-orange-primary hover:scale-110 transition-all duration-300 cursor-pointer"
                     aria-label="Line"
                   >
