@@ -220,7 +220,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </a>
             <Link
               href="/blog"
-              className="inline-block rounded-full border-2 border-white px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-primary"
+              className="inline-block rounded-full bg-white px-8 py-4 font-semibold text-primary shadow-lg transition-all duration-300 hover:bg-gray-100 hover:shadow-xl mt-10 hover:-translate-y-0.5"
             >
               อ่านบทความอื่นๆ
             </Link>
