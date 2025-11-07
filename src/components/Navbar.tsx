@@ -84,6 +84,17 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
                 </Link>
               </li>
               <li>
+                <Link
+                  href="/blog"
+                  className={`font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer ${
+                    isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/90 hover:text-white'
+                  }`}
+                >
+                  บทความ
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paydee-yellow-primary transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+              </li>
+              <li>
                 <a
                   href="/seller-rules"
                   className={`font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer ${
@@ -193,6 +204,15 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
                 className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors cursor-pointer"
               >
                 ค่าคอมมิชชั่น
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors cursor-pointer"
+              >
+                บทความ
               </Link>
             </li>
             <li>
