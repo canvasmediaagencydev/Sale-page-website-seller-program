@@ -53,12 +53,12 @@ export default function SellerSearchPage() {
         </section>
 
         <section className="mb-12">
-          <div className="bg-white/75 backdrop-blur-xl rounded-[32px] border border-white/50 shadow-2xl p-8">
+          <div className="bg-white/75 backdrop-blur-xl rounded-[32px] border border-white/50 shadow-2xl md:p-8 p-4">
             <div className="relative">
               <HiMagnifyingGlass className="absolute left-6 top-1/2 -translate-y-1/2 h-6 w-6 text-gray-400" />
               <input
                 type="text"
-                placeholder="ค้นหาด้วยชื่อ-นามสกุล หรือ Seller ID"
+                placeholder="ชื่อจริง-นามสกุล หรือ Seller ID"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-16 pr-6 py-5 text-lg bg-white/60 border border-white/60 rounded-2xl focus:border-paydee-blue-primary focus:ring-4 focus:ring-paydee-blue-primary/15 transition-all placeholder:text-gray-400"

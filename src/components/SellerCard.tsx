@@ -75,14 +75,14 @@ export default function SellerCard({ seller, sellerId }: SellerCardProps) {
               <p className="font-mono text-lg tracking-[0.35em] text-slate-900">{displaySellerId}</p>
             </div>
 
-            <div className="flex items-center justify-between text-xs text-slate-500 rounded-2xl border border-white/30 bg-white/30 px-4 py-3 backdrop-blur">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-xs text-slate-500 rounded-2xl border border-white/30 bg-white/30 px-4 py-3 backdrop-blur">
               <div className="flex items-center gap-2">
                 <HiOutlineEnvelope className="h-4 w-4 text-slate-400" />
                 <span className="truncate max-w-[160px]">
                   {seller.email || 'verified@paydee.me'}
                 </span>
               </div>
-              <span>{approvedText}</span>
+              <span className="text-slate-600 sm:text-right">{approvedText}</span>
             </div>
 
             <div className="flex items-center justify-between border-t border-white/50 pt-4">
