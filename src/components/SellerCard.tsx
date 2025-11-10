@@ -17,11 +17,12 @@ export default function SellerCard({ seller, sellerId }: SellerCardProps) {
 
   return (
     <div className="w-full flex flex-col items-center gap-5">
-      <div className="w-full max-w-sm">
-        <div className="rounded-[30px] border border-slate-100 bg-white shadow-[0_35px_80px_-60px_rgba(15,23,42,0.45)]">
+      <div className="relative w-full max-w-sm">
+        <div className="absolute -inset-6 rounded-[36px] bg-gradient-to-br from-paydee-blue-primary/10 via-white/30 to-paydee-orange-primary/10 blur-3xl" aria-hidden="true" />
+        <div className="relative rounded-[30px] border border-white/40 bg-white/55 shadow-[0_35px_80px_-60px_rgba(15,23,42,0.55)] backdrop-blur-xl">
           <div className="p-5 pb-6 space-y-5">
             {/* Portrait */}
-            <div className="relative aspect-[3/4] rounded-[26px] overflow-hidden bg-gradient-to-br from-slate-200 via-white to-slate-50">
+            <div className="relative aspect-[3/4] rounded-[26px] overflow-hidden border border-white/40 bg-white/25 backdrop-blur">
               {seller.avatar_url ? (
                 <Image
                   src={seller.avatar_url}
@@ -57,21 +58,16 @@ export default function SellerCard({ seller, sellerId }: SellerCardProps) {
                 <div className="flex items-center gap-2">
                   <h1 className="text-xl font-semibold text-slate-900">{sellerName}</h1>
                   {isApproved && (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-700">
+                    <span className="inline-flex items-center gap-1 rounded-full text-[11px] font-semibold text-emerald-700">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
-                        className="h-4 w-4"
+                        className="h-6 w-6"
                       >
                         <path
                           fillRule="evenodd"
-                          d="M12 1.5a5.25 5.25 0 0 0-5.25 5.25v3a3 3 0 0 0-3 3v6.75a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3v-6.75a3 3 0 0 0-3-3v-3c0-2.9-2.35-5.25-5.25-5.25Zm3.75 8.25v-3a3.75 3.75 0 1 0-7.5 0v3h7.5Z"
-                          clipRule="evenodd"
-                        />
-                        <path
-                          fillRule="evenodd"
-                          d="M9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25a.75.75 0 0 0-1.22-.872l-3.236 4.53L9.53 12.22Z"
+                          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75-9.75-4.365-9.75-9.75Zm14.31-1.56a.75.75 0 0 0-1.12-.99l-4.347 4.92-2.443-2.443a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.093-.035l4.877-5.512Z"
                           clipRule="evenodd"
                         />
                       </svg>
@@ -79,17 +75,17 @@ export default function SellerCard({ seller, sellerId }: SellerCardProps) {
                   )}
                 </div>
                 <p className="mt-1 text-sm text-slate-600">
-                  ตัวแทนขาย PayDee ที่ผ่านการตรวจสอบแล้ว ตรวจสอบ ID ก่อนโอนเพื่อความสบายใจของลูกค้า
+                  ตัวแทนขาย PayDee ที่ผ่านการตรวจสอบแล้ว
                 </p>
               </div>
             </div>
 
-            <div className="rounded-2xl bg-slate-50 px-4 py-3">
+            <div className="rounded-2xl border border-white/40 bg-white/35 px-4 py-3 backdrop-blur">
               <p className="text-[11px] uppercase tracking-[0.3em] text-slate-400">Seller ID</p>
               <p className="font-mono text-lg tracking-[0.35em] text-slate-900">{displaySellerId}</p>
             </div>
 
-            <div className="flex items-center justify-between text-xs text-slate-500">
+            <div className="flex items-center justify-between text-xs text-slate-500 rounded-2xl border border-white/30 bg-white/30 px-4 py-3 backdrop-blur">
               <div className="flex items-center gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +105,7 @@ export default function SellerCard({ seller, sellerId }: SellerCardProps) {
               <span>{approvedText}</span>
             </div>
 
-            <div className="flex items-center justify-between border-t border-slate-100 pt-4">
+            <div className="flex items-center justify-between border-t border-white/50 pt-4">
               <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">
                 PayDee Secure Seller
               </span>
@@ -124,18 +120,18 @@ export default function SellerCard({ seller, sellerId }: SellerCardProps) {
         </div>
       </div>
 
-      <div className="w-full max-w-sm rounded-2xl border border-slate-100 bg-white/80 px-4 py-5 shadow-[0_20px_45px_-40px_rgba(15,23,42,0.4)] backdrop-blur">
-        <p className="text-center text-sm font-semibold text-slate-900">แชร์โปรไฟล์นี้</p>
-        <p className="text-center text-xs text-slate-500">
-          ส่งให้ลูกค้าเพื่อยืนยันตัวตนหรือเก็บไว้เป็นหลักฐานการชำระเงิน
-        </p>
-        <div className="mt-4">
-          <ShareButtons
-            url={cardUrl}
-            sellerName={sellerName}
-            sellerId={sellerId}
-            variant="seller"
-          />
+      <div className="relative w-full max-w-sm">
+        <div className="absolute -inset-4 rounded-[30px] bg-gradient-to-br from-white/30 via-paydee-orange-primary/10 to-paydee-blue-primary/10 blur-3xl" aria-hidden="true" />
+        <div className="relative rounded-2xl border border-white/40 bg-white/55 px-4 py-5 shadow-[0_20px_45px_-40px_rgba(15,23,42,0.45)] backdrop-blur-xl">
+          <p className="text-center text-sm font-semibold text-slate-900">แชร์โปรไฟล์นี้</p>
+          <div className="mt-4">
+            <ShareButtons
+              url={cardUrl}
+              sellerName={sellerName}
+              sellerId={sellerId}
+              variant="seller"
+            />
+          </div>
         </div>
       </div>
     </div>

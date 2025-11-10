@@ -1,11 +1,17 @@
 "use client"
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { FaFacebook, FaInstagram, FaLine, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { RiRocketFill } from "react-icons/ri";
 import { CONTACT_INFO, STATISTICS, BRAND, SOCIAL_LINKS } from "@/constants";
 
 export default function Footer() {
+  const pathname = usePathname() || '';
+  if (/^\/seller-verification\/.+/.test(pathname)) {
+    return null;
+  }
+
   return (
     <footer id="footer" className="bg-paydee-blue-primary text-white relative overflow-hidden">
       {/* Background Pattern */}

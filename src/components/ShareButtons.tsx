@@ -79,9 +79,6 @@ export default function ShareButtons({
   if (variant === 'seller') {
     return (
       <div className="space-y-3">
-        <p className="text-center text-sm font-bold text-gray-700">
-          แชร์ Profile
-        </p>
         <div className="flex items-center justify-center gap-3">
           {/* LINE */}
           <button

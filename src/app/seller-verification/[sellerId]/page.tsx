@@ -97,18 +97,10 @@ export default async function SellerCardPage({ params }: SellerCardPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-paydee-blue-primary via-paydee-blue-primary/80 to-paydee-blue-primary/60 pt-32 md:pt-36 pb-20 px-4">
-      {/* Decorative Background Elements */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-10 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-paydee-orange-primary/20 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="relative z-10">
-        <Suspense fallback={<SellerCardSkeleton />}>
-          <SellerCard seller={seller} sellerId={sellerId} />
-        </Suspense>
-      </div>
+    <div className="w-full max-w-4xl mx-auto">
+      <Suspense fallback={<SellerCardSkeleton />}>
+        <SellerCard seller={seller} sellerId={sellerId} />
+      </Suspense>
 
       {/* Optional: Add schema.org structured data for better SEO */}
       <script

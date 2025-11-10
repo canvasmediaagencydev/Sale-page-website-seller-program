@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface NavbarProps {
   className?: string;
@@ -11,8 +12,13 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname() || '';
+  const hideNavbar = /^\/seller-verification\/.+/.test(pathname);
 
   useEffect(() => {
+    if (hideNavbar) {
+      return;
+    }
     const handleScroll = () => {
       const scrollY = window.scrollY;
       setIsScrolled(scrollY > 50);
@@ -20,7 +26,11 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [hideNavbar]);
+
+  if (hideNavbar) {
+    return null;
+  }
 
   return (
     <nav className={`transition-all duration-500 ease-in-out ${
