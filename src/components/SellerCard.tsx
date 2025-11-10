@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { HiCheckCircle, HiOutlineEnvelope } from 'react-icons/hi2'
 import ShareButtons from '@/components/ShareButtons'
 import { SellerCardProps } from '@/types/seller'
 import { formatApprovedDate } from '@/lib/seller-utils'
@@ -59,18 +60,7 @@ export default function SellerCard({ seller, sellerId }: SellerCardProps) {
                   <h1 className="text-xl font-semibold text-slate-900">{sellerName}</h1>
                   {isApproved && (
                     <span className="inline-flex items-center gap-1 rounded-full text-[11px] font-semibold text-emerald-700">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        className="h-6 w-6"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75-9.75-4.365-9.75-9.75Zm14.31-1.56a.75.75 0 0 0-1.12-.99l-4.347 4.92-2.443-2.443a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.093-.035l4.877-5.512Z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
+                      <HiCheckCircle className="h-5 w-5" />
                     </span>
                   )}
                 </div>
@@ -87,17 +77,7 @@ export default function SellerCard({ seller, sellerId }: SellerCardProps) {
 
             <div className="flex items-center justify-between text-xs text-slate-500 rounded-2xl border border-white/30 bg-white/30 px-4 py-3 backdrop-blur">
               <div className="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={1.7}
-                  className="h-4 w-4 text-slate-400"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="m4 6 8 5 8-5" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16v12H4z" />
-                </svg>
+                <HiOutlineEnvelope className="h-4 w-4 text-slate-400" />
                 <span className="truncate max-w-[160px]">
                   {seller.email || 'verified@paydee.me'}
                 </span>
