@@ -43,8 +43,11 @@ function TripCard({ trip }: TripCardProps) {
                         (e.target as HTMLImageElement).src = "/img/bg.jpg";
                     }}
                 />
+                {/* Price Badge */}
+                <div className="absolute bottom-3 right-3 bg-gray-800/20 text-white px-3 py-2 rounded-lg shadow-lg backdrop-blur-xs">
+                    <p className="text-lg font-bold">{trip.price_per_person.toLocaleString()} .-</p>
+                </div>
             </div>
-
             {/* Content */}
             <div className="p-4">
                 {/* Title */}
