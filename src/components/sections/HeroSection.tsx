@@ -72,7 +72,7 @@ const HeroSection = ({ className = "" }: HeroSectionProps) => {
             </Button>
 
             <Button
-              onClick={() => document.getElementById('trips')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('trips-section')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-800 dark:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 border border-gray-200 dark:border-gray-600 shadow-md hover:shadow-lg flex items-center gap-2"
             >
               <RiCalendarLine className="text-xl text-paydee-blue-primary dark:text-paydee-blue-light" />
