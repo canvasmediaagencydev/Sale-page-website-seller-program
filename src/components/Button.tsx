@@ -25,12 +25,20 @@ export default function Button({
     }
   };
 
+  // Check if custom background is provided
+  const hasCustomBg = className.includes('bg-');
+  const hasCustomText = className.includes('text-');
+
+  const baseStyles = "rounded-full px-18 py-3 cursor-pointer transition-colors";
+  const defaultBg = hasCustomBg ? "" : "bg-paydee-orange-primary hover:bg-paydee-yellow-primary";
+  const defaultText = hasCustomText ? "" : "text-white";
+
   return (
     <button
       type={type}
       onClick={handleClick}
       disabled={disabled}
-      className={`rounded-full bg-paydee-orange-primary hover:bg-paydee-yellow-primary px-18 py-3 text-white cursor-pointer transition-colors ${className}`}
+      className={`${baseStyles} ${defaultBg} ${defaultText} ${className}`}
     >
       {children}
     </button>

@@ -239,6 +239,15 @@
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.8s ease-out;
   opacity: 0;
@@ -261,6 +270,10 @@
   animation: fadeInDown 0.8s ease-out 0.2s;
   opacity: 0;
   animation-fill-mode: both;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
 
 /* Background utility classes */

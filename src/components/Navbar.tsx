@@ -35,7 +35,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
   return (
     <nav className={`transition-all duration-500 ease-in-out ${
       isScrolled
-        ? 'fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg'
+        ? 'fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg'
         : ''
     } ${className}`}>
       <div className="container mx-auto max-w-7xl px-4 lg:px-8">
@@ -44,7 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
           <Link href="/" className="flex items-center space-x-3">
             <div className="relative">
               <Image
-                src="/img/paydee LOGO 03.svg"
+                src="/img/paydee LOGO 04.svg"
                 alt="PayDee Logo"
                 width={140}
                 height={45}
@@ -53,16 +53,12 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
               />
             </div>
             <div className="block md:hidden">
-              <span className={`font-bold text-lg tracking-tight drop-shadow-lg transition-colors duration-500 ease-in-out ${
-                isScrolled ? 'text-gray-900' : 'text-white'
-              }`}>
+              <span className="font-bold text-lg tracking-tight transition-colors duration-500 ease-in-out text-gray-900 dark:text-white">
                 paydee<span className="text-paydee-yellow-primary">.me</span>
               </span>
             </div>
             <div className="hidden md:block">
-              <span className={`font-bold text-2xl md:text-3xl tracking-tight drop-shadow-lg transition-colors duration-500 ease-in-out ${
-                isScrolled ? 'text-gray-900' : 'text-white'
-              }`}>
+              <span className="font-bold text-2xl md:text-3xl tracking-tight transition-colors duration-500 ease-in-out text-gray-900 dark:text-white">
                 paydee<span className="text-paydee-yellow-primary">.me</span>
               </span>
             </div>
@@ -74,9 +70,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
               <li>
                 <Link
                   href="/#statistics-section"
-                  className={`font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer ${
-                    isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/90 hover:text-white'
-                  }`}
+                  className="font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer text-gray-700 hover:text-gray-900 dark:text-white/90 dark:hover:text-white"
                 >
                   เกี่ยวกับเรา
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paydee-yellow-primary transition-all duration-300 group-hover:w-full"></span>
@@ -85,31 +79,16 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
               <li>
                 <Link
                   href="/#trips-section"
-                  className={`font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer ${
-                    isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/90 hover:text-white'
-                  }`}
+                  className="font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer text-gray-700 hover:text-gray-900 dark:text-white/90 dark:hover:text-white"
                 >
                   ค่าคอมมิชชั่น
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paydee-yellow-primary transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/blog"
-                  className={`font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer ${
-                    isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/90 hover:text-white'
-                  }`}
-                >
-                  บทความ
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paydee-yellow-primary transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              </li>
-              <li>
                 <a
                   href="/seller-rules"
-                  className={`font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer ${
-                    isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/90 hover:text-white'
-                  }`}
+                  className="font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer text-gray-700 hover:text-gray-900 dark:text-white/90 dark:hover:text-white"
                 >
                   เงื่อนไขและข้อตกลง
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paydee-yellow-primary transition-all duration-300 group-hover:w-full"></span>
@@ -118,9 +97,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
               <li>
                 <Link
                   href="/#footer"
-                  className={`font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer ${
-                    isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/90 hover:text-white'
-                  }`}
+                  className="font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer text-gray-700 hover:text-gray-900 dark:text-white/90 dark:hover:text-white"
                 >
                   ติดต่อ
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paydee-yellow-primary transition-all duration-300 group-hover:w-full"></span>
@@ -139,23 +116,13 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`md:hidden relative z-50 p-3 rounded-full backdrop-blur-sm transition-all duration-300 cursor-pointer ${
-              isScrolled
-                ? 'bg-gray-100 hover:bg-gray-200'
-                : 'bg-white/10 hover:bg-white/20'
-            }`}
+            className="md:hidden relative z-50 p-3 rounded-full backdrop-blur-sm transition-all duration-300 cursor-pointer bg-gray-100 hover:bg-gray-200 dark:bg-white/10 dark:hover:bg-white/20"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <div className="w-6 h-6 flex flex-col justify-center space-y-1">
-              <div className={`h-0.5 transition-all duration-300 ${
-                isScrolled ? 'bg-gray-700' : 'bg-white'
-              } ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></div>
-              <div className={`h-0.5 transition-all duration-300 ${
-                isScrolled ? 'bg-gray-700' : 'bg-white'
-              } ${isMobileMenuOpen ? 'opacity-0' : ''}`}></div>
-              <div className={`h-0.5 transition-all duration-300 ${
-                isScrolled ? 'bg-gray-700' : 'bg-white'
-              } ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></div>
+              <div className={`h-0.5 transition-all duration-300 bg-gray-700 dark:bg-white ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></div>
+              <div className={`h-0.5 transition-all duration-300 bg-gray-700 dark:bg-white ${isMobileMenuOpen ? 'opacity-0' : ''}`}></div>
+              <div className={`h-0.5 transition-all duration-300 bg-gray-700 dark:bg-white ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></div>
             </div>
           </button>
         </div>
@@ -214,15 +181,6 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
                 className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors cursor-pointer"
               >
                 ค่าคอมมิชชั่น
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors cursor-pointer"
-              >
-                บทความ
               </Link>
             </li>
             <li>

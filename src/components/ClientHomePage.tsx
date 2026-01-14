@@ -4,7 +4,6 @@ import { lazy, Suspense } from "react";
 import Button from "@/components/Button";
 import Image from "next/image";
 import HeroSection from "@/components/sections/HeroSection";
-import StatisticsSection from "@/components/sections/StatisticsSection";
 import TripsSection from "@/components/sections/TripsSection";
 import WorkingProcessSection from "@/components/sections/WorkingProcessSection";
 import { useTrips } from "@/hooks/useTrips";
@@ -109,11 +108,10 @@ const ProgramSection = () => (
       {/* Video Section */}
       <div className="text-center">
         <div className="inline-flex items-center px-4 py-2 bg-paydee-orange-primary/10 border border-paydee-orange-primary/20 text-paydee-orange-primary rounded-full text-sm font-semibold mb-8">
-          🎬 ดูการใช้งานจริง
+          🎬 ดูวิดีโอสอน
         </div>
         <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8">
-          เรียนรู้การใช้งานระบบใน
-          <span className="text-paydee-orange-primary"> 1 นาที</span>
+          <span className="text-paydee-orange-primary">วิธีการทำ Affiliate</span>
         </h3>
 
         <div className="flex justify-center">
@@ -126,9 +124,9 @@ const ProgramSection = () => (
               }
             >
               <AutoPlayVideo
-                src="https://player.mux.com/4V00YS7sc8t58rF01eJUb01uKu3TUW00gK02hUzKC02t4mMI00?autoplay=0&muted=0&loop=1"
-                style={{ width: "100%", border: "none", aspectRatio: "9/16" }}
-                className="rounded-3xl shadow-2xl border-4 border-white md:h-180"
+                src="https://player.mux.com/dtcED00t6ASUpGg012pU5bFNmOQNQtIu3YyoJr7myCusk"
+                style={{ width: "100%", border: "none", aspectRatio: "16/9" }}
+                className="rounded-3xl shadow-2xl border-4 border-white"
               />
             </Suspense>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-paydee-yellow-primary/20 rounded-full blur-2xl"></div>
@@ -190,9 +188,6 @@ export default function ClientHomePage() {
     <>
       <HeroSection />
       <WorkingProcessSection />
-      <StatisticsSection />
-      <ProgramSection />
-      <PartnerSection />
       <TripsSection
         loading={loading}
         paginationData={paginationData}
@@ -200,6 +195,8 @@ export default function ClientHomePage() {
         handlePageChange={handlePageChange}
         totalTrips={trips.length}
       />
+      <ProgramSection />
+      <PartnerSection />
     </>
   );
 }
