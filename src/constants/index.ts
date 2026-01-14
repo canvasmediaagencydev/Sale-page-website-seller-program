@@ -37,6 +37,6 @@ export const SOCIAL_LINKS = {
 export const BRAND = {
   NAME: 'Paydee',
   TAGLINE: 'ตัวแทนขายทัวร์คอมมิชชั่นสูง',
-  DESCRIPTION: 'สร้างรายได้เสริมจากการขายทัวร์',
+  DESCRIPTION: 'แพลตฟอร์มสำหรับนักขาย ค่าคอมเต็ม 100%',
 } as const;
 

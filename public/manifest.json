@@ -1,7 +1,7 @@
 {
   "name": "PayDee - ตัวแทนขายทัวร์คอมมิชชั่นสูง",
   "short_name": "PayDee",
-  "description": "สมัครเป็นตัวแทนขายทัวร์กับ PayDee รับคอมมิชชั่นสูง รายได้เสริม งานพาร์ทไทม์",
+  "description": "PayDee แพลตฟอร์มสำหรับนักขาย ค่าคอมเต็ม 100% ตรวจสอบได้ จ่ายภายใน 24 ชั่วโมง",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

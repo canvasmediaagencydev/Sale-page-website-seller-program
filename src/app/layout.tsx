@@ -10,7 +10,7 @@ import ContactStickyButton from "@/components/ContactStickyButton";
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.paydee.me'),
   title: {
-    default: "PayDee - ตัวแทนขายทัวร์คอมมิชชั่นสูง รายได้เสริม งานพาร์ทไทม์",
+    default: "PayDee - แพลตฟอร์มสำหรับนักขาย ค่าคอมเต็ม 100% จ่ายภายใน 24 ชั่วโมง",
     template: "%s | PayDee"
   },
   description: "สมัครเป็นตัวแทนขายทัวร์กับ PayDee รับคอมมิชชั่นเริ่มต้นถึง 2,000+ บาท/คน ไม่มีเป้ายอดขายขั้นต่ำ งานพาร์ทไทม์ทำที่บ้าน ทีมงานช่วยปิดการขาย มีระบบหลังบ้านครบครัน",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "ตัวแทนขายทัวร์",
     "คอมมิชชั่นทัวร์",
     "งานขายทัวร์",
-    "รายได้เสริม",
+    "ค่าคอมเต็ม 100%",
     "งานพาร์ทไทม์",
     "ทัวร์ต่างประเทศ",
     "agent ขายทัวร์",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     ]
   },
   openGraph: {
-    title: "PayDee - ตัวแทนขายทัวร์คอมมิชชั่นสูง รายได้เสริม งานพาร์ทไทม์",
+    title: "PayDee - แพลตฟอร์มสำหรับนักขาย ค่าคอมเต็ม 100% จ่ายภายใน 24 ชั่วโมง",
     description: "สมัครเป็นตัวแทนขายทัวร์กับ PayDee รับคอมมิชชั่นเริ่มต้น 2,000+ บาท/คน ไม่มีเป้ายอดขายขั้นต่ำ งานพาร์ทไทม์ทำที่บ้าน",
     url: "https://www.paydee.me",
     siteName: "PayDee - ตัวแทนขายทัวร์คอมมิชชั่นสูง",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
         url: "https://www.paydee.me/img/meta.jpg",
         width: 1200,
         height: 630,
-        alt: "PayDee ตัวแทนขายทัวร์ คอมมิชชั่นสูง รายได้เสริม งานพาร์ทไทม์",
+        alt: "PayDee แพลตฟอร์มสำหรับนักขาย ค่าคอมเต็ม 100% ตรวจสอบได้ จ่ายภายใน 24 ชั่วโมง",
       },
     ],
     locale: "th_TH",

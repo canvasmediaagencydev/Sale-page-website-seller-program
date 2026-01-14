@@ -58,15 +58,15 @@ const WorkingProcessSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-paydee-orange-primary to-paydee-yellow-primary rounded-2xl p-8 text-white"
+            className="bg-gradient-to-br from-paydee-orange-primary to-paydee-yellow-primary rounded-2xl p-8"
           >
-            <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-5">
-              <RiShareFill className="w-7 h-7" />
+            <div className="w-14 h-14 bg-gray-900/20 rounded-xl flex items-center justify-center mb-5">
+              <RiShareFill className="w-7 h-7 text-gray-900" />
             </div>
-            <h3 className="text-2xl font-bold mb-2">บอกต่อ</h3>
-            <p className="text-lg text-white/90 mb-3">แนะนำคนอื่น ก็ได้ค่าคอม</p>
-            <p className="text-white/70">
-              แค่แนะนำเพื่อน ครอบครัว หรือคนรู้จักมา ทุกการจองคือค่าคอมของคุณ!
+            <h3 className="text-2xl font-bold mb-2 text-gray-900">แนะนำการขาย</h3>
+            <p className="text-lg text-gray-800 mb-3">รับค่าคอมเต็ม 100%</p>
+            <p className="text-gray-700">
+              แนะนำเพื่อน ครอบครัว หรือคนรู้จัก ทุกการจองคือค่าคอมของคุณ ตรวจสอบได้!
             </p>
           </motion.div>
         </div>

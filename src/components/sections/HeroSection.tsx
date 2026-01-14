@@ -50,7 +50,7 @@ const HeroSection = ({ className = "" }: HeroSectionProps) => {
               animationFillMode: 'both'
             }}
           >
-            สมัครครั้งเดียว เที่ยวเองก็คุ้ม บอกต่อก็ได้เงิน
+            ค่าคอมเต็ม 100% สำหรับคนทำงานจริง ตรวจสอบได้ จ่ายภายใน 24 ชั่วโมง
           </p>
 
           {/* CTA Buttons */}
