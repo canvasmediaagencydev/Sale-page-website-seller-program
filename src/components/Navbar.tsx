@@ -41,10 +41,10 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
       <div className="container mx-auto max-w-7xl px-4 lg:px-8">
         <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo Section */}
-          <Link href="/" className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center space-x-3 no-underline">
             <div className="relative">
               <Image
-                src="/img/paydee LOGO 04.svg"
+                src="/img/paydee LOGO 03.svg"
                 alt="PayDee Logo"
                 width={140}
                 height={45}
@@ -53,13 +53,13 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
               />
             </div>
             <div className="block md:hidden">
-              <span className="font-bold text-lg tracking-tight transition-colors duration-500 ease-in-out text-gray-900 dark:text-white">
-                paydee<span className="text-paydee-yellow-primary">.me</span>
+              <span className="font-bold text-lg tracking-tight" style={{ color: '#111827 !important' }}>
+                paydee<span style={{ color: '#febf12' }}>.me</span>
               </span>
             </div>
             <div className="hidden md:block">
-              <span className="font-bold text-2xl md:text-3xl tracking-tight transition-colors duration-500 ease-in-out text-gray-900 dark:text-white">
-                paydee<span className="text-paydee-yellow-primary">.me</span>
+              <span className="font-bold text-2xl md:text-3xl tracking-tight" style={{ color: '#111827 !important' }}>
+                paydee<span style={{ color: '#febf12' }}>.me</span>
               </span>
             </div>
           </Link>

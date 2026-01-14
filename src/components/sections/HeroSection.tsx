@@ -36,23 +36,21 @@ const HeroSection = ({ className = "" }: HeroSectionProps) => {
               animationFillMode: 'both'
             }}
           >
-            ร่วมเป็นตัวแทนขาย
+            เปลี่ยนการท่องเที่ยว
             <span className="bg-gradient-to-r from-paydee-blue-primary to-paydee-blue-light bg-clip-text text-transparent">
-              มืออาชีพ
+              เป็นรายได้
             </span>
           </h1>
 
           {/* Subtitle */}
           <p
-            className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10 animate-fade-in-up"
+            className="text-lg md:text-xl text-gray-500 dark:text-gray-400 max-w-xl mx-auto mb-10 animate-fade-in-up"
             style={{
               animationDelay: `${ANIMATION_DELAYS.HERO_CONTENT}s`,
               animationFillMode: 'both'
             }}
           >
-            เปลี่ยนความรู้เรื่องการท่องเที่ยวของคุณให้เป็นรายได้จริง
-            <br />
-            ด้วยคอมมิชชั่นสูงสุด 2,000+ บาทต่อคน
+            สมัครครั้งเดียว เที่ยวเองก็คุ้ม บอกต่อก็ได้เงิน
           </p>
 
           {/* CTA Buttons */}
