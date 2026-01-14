@@ -20,8 +20,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
       return;
     }
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      setIsScrolled(scrollY > 50);
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -32,188 +31,122 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
     return null;
   }
 
+  const navLinks = [
+    { href: '/#statistics-section', label: 'เกี่ยวกับเรา' },
+    { href: '/#trips-section', label: 'ค่าคอมมิชชั่น' },
+    { href: '/seller-rules', label: 'ข้อตกลง', isExternal: true },
+    { href: '/#footer', label: 'ติดต่อ' },
+  ];
+
   return (
-    <nav className={`transition-all duration-500 ease-in-out ${
-      isScrolled
-        ? 'fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg'
-        : ''
-    } ${className}`}>
-      <div className="container mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="flex items-center justify-between h-20 md:h-24">
-          {/* Logo Section */}
-          <Link href="/" className="flex items-center space-x-3 no-underline">
-            <div className="relative">
+    <>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white shadow-md' : 'bg-white'
+      } ${className}`}>
+        <div className="container mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="flex items-center justify-between h-16 md:h-20">
+            {/* Logo */}
+            <Link href="/" className="flex items-center gap-3">
               <Image
                 src="/img/paydee LOGO 03.svg"
                 alt="PayDee Logo"
-                width={140}
-                height={45}
-                className="h-10 md:h-12 w-auto drop-shadow-lg"
+                width={44}
+                height={44}
+                className="h-10 md:h-11 w-auto"
                 priority
               />
-            </div>
-            <div className="block md:hidden">
-              <span className="font-bold text-lg tracking-tight" style={{ color: '#111827 !important' }}>
-                paydee<span style={{ color: '#febf12' }}>.me</span>
+              <span className="font-bold text-xl md:text-2xl text-gray-900">
+                paydee<span className="text-paydee-yellow-primary">.me</span>
               </span>
-            </div>
-            <div className="hidden md:block">
-              <span className="font-bold text-2xl md:text-3xl tracking-tight" style={{ color: '#111827 !important' }}>
-                paydee<span style={{ color: '#febf12' }}>.me</span>
-              </span>
-            </div>
-          </Link>
+            </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <ul className="flex items-center space-x-8">
-              <li>
-                <Link
-                  href="/#statistics-section"
-                  className="font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer text-gray-700 hover:text-gray-900 dark:text-white/90 dark:hover:text-white"
-                >
-                  เกี่ยวกับเรา
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paydee-yellow-primary transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/#trips-section"
-                  className="font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer text-gray-700 hover:text-gray-900 dark:text-white/90 dark:hover:text-white"
-                >
-                  ค่าคอมมิชชั่น
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paydee-yellow-primary transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              </li>
-              <li>
+            {/* Desktop Menu */}
+            <div className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                link.isExternal ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="text-gray-600 hover:text-paydee-blue-primary font-medium transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-gray-600 hover:text-paydee-blue-primary font-medium transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                )
+              ))}
+
+              <button
+                onClick={() => window.open('https://app.paydee.me', '_blank')}
+                className="bg-paydee-blue-primary hover:bg-paydee-blue-primary/90 text-white px-6 py-2.5 rounded-full font-semibold transition-colors cursor-pointer"
+              >
+                เริ่มต้นเลย
+              </button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden p-2 cursor-pointer"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              <div className="w-6 h-5 flex flex-col justify-between">
+                <span className={`h-0.5 bg-gray-800 rounded transition-all origin-center ${isMobileMenuOpen ? 'rotate-45 translate-y-[9px]' : ''}`}></span>
+                <span className={`h-0.5 bg-gray-800 rounded transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
+                <span className={`h-0.5 bg-gray-800 rounded transition-all origin-center ${isMobileMenuOpen ? '-rotate-45 -translate-y-[9px]' : ''}`}></span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <div className={`md:hidden bg-white border-t border-gray-100 overflow-hidden transition-all duration-300 ${
+          isMobileMenuOpen ? 'max-h-80' : 'max-h-0'
+        }`}>
+          <div className="container mx-auto px-4 py-4 space-y-1">
+            {navLinks.map((link) => (
+              link.isExternal ? (
                 <a
-                  href="/seller-rules"
-                  className="font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer text-gray-700 hover:text-gray-900 dark:text-white/90 dark:hover:text-white"
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block py-3 text-gray-700 hover:text-paydee-blue-primary font-medium transition-colors"
                 >
-                  เงื่อนไขและข้อตกลง
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paydee-yellow-primary transition-all duration-300 group-hover:w-full"></span>
+                  {link.label}
                 </a>
-              </li>
-              <li>
+              ) : (
                 <Link
-                  href="/#footer"
-                  className="font-bold text-lg transition-all duration-500 ease-in-out hover:scale-105 relative group cursor-pointer text-gray-700 hover:text-gray-900 dark:text-white/90 dark:hover:text-white"
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block py-3 text-gray-700 hover:text-paydee-blue-primary font-medium transition-colors"
                 >
-                  ติดต่อ
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paydee-yellow-primary transition-all duration-300 group-hover:w-full"></span>
+                  {link.label}
                 </Link>
-              </li>
-            </ul>
+              )
+            ))}
 
-            {/* CTA Button */}
             <button
-              onClick={() => window.open('https://app.paydee.me', '_blank')}
-              className="bg-gradient-to-r from-paydee-orange-primary to-paydee-yellow-primary hover:from-paydee-yellow-primary hover:to-paydee-orange-primary text-white px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer"
-            >
-              เริ่มต้นเลย
-            </button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden relative z-50 p-3 rounded-full backdrop-blur-sm transition-all duration-300 cursor-pointer bg-gray-100 hover:bg-gray-200 dark:bg-white/10 dark:hover:bg-white/20"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            <div className="w-6 h-6 flex flex-col justify-center space-y-1">
-              <div className={`h-0.5 transition-all duration-300 bg-gray-700 dark:bg-white ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></div>
-              <div className={`h-0.5 transition-all duration-300 bg-gray-700 dark:bg-white ${isMobileMenuOpen ? 'opacity-0' : ''}`}></div>
-              <div className={`h-0.5 transition-all duration-300 bg-gray-700 dark:bg-white ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></div>
-            </div>
-          </button>
-        </div>
-      </div>
-
-
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <div
-          className="md:hidden fixed inset-0 bg-black/50 transition-opacity duration-300"
-          onClick={() => setIsMobileMenuOpen(false)}
-          style={{ zIndex: 9998 }}
-        />
-      )}
-
-      {/* Mobile Menu */}
-      <div
-        className={`md:hidden fixed inset-0 transform transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
-        style={{
-          backgroundColor: '#176daf',
-          zIndex: 9999,
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          width: '100vw',
-          height: '100vh'
-        }}
-      >
-        {/* Close Button */}
-        <div className="absolute top-6 right-6">
-          <button
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex flex-col justify-center items-center text-white transition-all duration-300 transform hover:scale-110 cursor-pointer"
-          >
-            <div className="w-6 h-0.5 bg-white transform rotate-45 translate-y-0.5 transition-all duration-300"></div>
-            <div className="w-6 h-0.5 bg-white transform -rotate-45 -translate-y-0.5 transition-all duration-300"></div>
-          </button>
-        </div>
-        <div className="pt-24 px-6">
-          <ul className="space-y-6">
-            <li>
-              <Link
-                href="/#statistics-section"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors cursor-pointer"
-              >
-                เกี่ยวกับเรา
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/#trips-section"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors cursor-pointer"
-              >
-                ค่าคอมมิชชั่น
-              </Link>
-            </li>
-            <li>
-              <a
-                href="/seller-rules"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors cursor-pointer"
-              >
-                ข้อตกลง
-              </a>
-            </li>
-            <li>
-              <Link
-                href="/#footer"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-white font-bold text-xl py-3 border-b border-white/20 hover:text-paydee-yellow-primary transition-colors cursor-pointer"
-              >
-                ติดต่อ
-              </Link>
-            </li>
-          </ul>
-
-          <div className="mt-8">
-            <button
-              onClick={() => window.open('https://app.paydee.me', '_blank')}
-              className="w-full bg-gradient-to-r from-paydee-orange-primary to-paydee-yellow-primary text-white px-6 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
+              onClick={() => {
+                window.open('https://app.paydee.me', '_blank');
+                setIsMobileMenuOpen(false);
+              }}
+              className="w-full mt-3 bg-paydee-blue-primary text-white py-3 rounded-full font-semibold cursor-pointer"
             >
               เริ่มต้นเลย
             </button>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Spacer */}
+      <div className="h-16 md:h-20"></div>
+    </>
   );
 };
 
